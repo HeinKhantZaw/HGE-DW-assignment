@@ -1423,7 +1423,7 @@
                                 <div class="l-f-o">
                                     <div class="l-f-o__pad-box">
                                         <h1 class="gl-h1">PERSONAL INFORMATION</h1>
-                                        <form class="l-f-o__form">
+                                        <form class="l-f-o__form" action="db/queries/customer_register.php" method="post">
                                             <div class="gl-s-api">
                                                 <div class="u-s-m-b-15">
 
@@ -1438,62 +1438,40 @@
                                             </div>
                                             <div class="u-s-m-b-30">
 
-                                                <label class="gl-label" for="reg-fname">FIRST NAME *</label>
+                                                <label class="gl-label" for="customerFirstName">FIRST NAME *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="reg-fname" placeholder="First Name"></div>
+                                                <input class="input-text input-text--primary-style" type="text" id="customerFirstName" name="customerFirstName" placeholder="First Name"></div>
                                             <div class="u-s-m-b-30">
 
-                                                <label class="gl-label" for="reg-lname">LAST NAME *</label>
+                                                <label class="gl-label" for="customerLastName">LAST NAME *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="reg-lname" placeholder="Last Name"></div>
-                                            <div class="gl-inline">
-                                                <div class="u-s-m-b-30">
-
-                                                    <!--====== Date of Birth Select-Box ======-->
-
-                                                    <span class="gl-label">BIRTHDAY</span>
-                                                    <div class="gl-dob"><select class="select-box select-box--primary-style">
-                                                            <option selected>Month</option>
-                                                            <option value="male">January</option>
-                                                            <option value="male">February</option>
-                                                            <option value="male">March</option>
-                                                            <option value="male">April</option>
-                                                        </select><select class="select-box select-box--primary-style">
-                                                            <option selected>Day</option>
-                                                            <option value="01">01</option>
-                                                            <option value="02">02</option>
-                                                            <option value="03">03</option>
-                                                            <option value="04">04</option>
-                                                        </select><select class="select-box select-box--primary-style">
-                                                            <option selected>Year</option>
-                                                            <option value="1991">1991</option>
-                                                            <option value="1992">1992</option>
-                                                            <option value="1993">1993</option>
-                                                            <option value="1994">1994</option>
-                                                        </select></div>
-                                                    <!--====== End - Date of Birth Select-Box ======-->
-                                                </div>
-                                                <div class="u-s-m-b-30">
-
-                                                    <label class="gl-label" for="gender">GENDER</label><select class="select-box select-box--primary-style u-w-100" id="gender">
-                                                        <option selected>Select</option>
-                                                        <option value="male">Male</option>
-                                                        <option value="male">Female</option>
-                                                    </select></div>
-                                            </div>
+                                                <input class="input-text input-text--primary-style" type="text" id="customerLastName" name="customerLastName" placeholder="Last Name"></div>
                                             <div class="u-s-m-b-30">
 
-                                                <label class="gl-label" for="reg-email">E-MAIL *</label>
+                                                <label class="gl-label" for="customerEmail">E-MAIL *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="reg-email" placeholder="Enter E-mail"></div>
+                                                <input class="input-text input-text--primary-style" type="email" id="customerEmail" name="customerEmail" placeholder="Enter your E-mail"></div>
                                             <div class="u-s-m-b-30">
 
-                                                <label class="gl-label" for="reg-password">PASSWORD *</label>
+                                                <label class="gl-label" for="customerPassword">PASSWORD *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="reg-password" placeholder="Enter Password"></div>
+                                                <input class="input-text input-text--primary-style" type="password" id="customerPassword" name="customerPassword" placeholder="Enter Password"></div>
+
+                                            <div class="u-s-m-b-30">
+
+                                                <label class="gl-label" for="customerAddress">ADDRESS *</label>
+
+                                                <input class="input-text input-text--primary-style" type="text" id="customerAddress" name="customerAddress" placeholder="Enter your Address"></div>
+
+                                            <div class="u-s-m-b-30">
+
+                                                <label class="gl-label" for="customerPhone">YOUR PHONE *</label>
+
+                                                <input class="input-text input-text--primary-style" type="text" id="customerPhone" name="customerPhone" placeholder="Enter your Phone"></div>
+
                                             <div class="u-s-m-b-15">
 
-                                                <button class="btn btn--e-transparent-brand-b-2" type="submit">CREATE</button></div>
+                                                <button class="btn btn--e-transparent-brand-b-2" name="btnRegister" type="submit">CREATE</button></div>
 
                                             <a class="gl-link" href="#">Return to Store</a>
                                         </form>

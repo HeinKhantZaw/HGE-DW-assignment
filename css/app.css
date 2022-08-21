@@ -7452,6 +7452,14 @@ input::-ms-clear {
 .ah-list li {
     list-style: none;
 }
+.nav-item-hover {
+    background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 3px
+    no-repeat;
+    transition: 0.5s;
+}
+.nav-item-hover:hover {
+    --d: 100%;
+}
 
 .ah-list ul {
     margin: 0;
@@ -8200,7 +8208,7 @@ input::-ms-clear {
 
 .hero-slide-overlay {
     padding: 4rem;
-    background: rgba(255, 252, 252, 0.14);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4px);
@@ -8208,15 +8216,15 @@ input::-ms-clear {
 }
 
 .hero-slide--1 {
-    background-image: url(../images/slider/slide-1.jpg);
+    background-image: url(../images/slider/slider-1.jpg);
 }
 
 .hero-slide--2 {
-    background-image: url(../images/slider/slide-2.jpg);
+    background-image: url(../images/slider/slider-2.jpg);
 }
 
 .hero-slide--3 {
-    background-image: url(../images/slider/slide-3.jpg);
+    background-image: url(../images/slider/slider-3.jpg);
 }
 
 .hero-slide--4 {
@@ -8697,4 +8705,29 @@ input::-ms-clear {
 /* Logo Size */
 .HgeLogo {
     width: 70px;
+}
+
+.strikethrough {
+    position: relative;
+}
+.strikethrough:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 2px solid #d90000 !important;
+    border-color: inherit;
+
+    -webkit-transform:rotate(-5deg);
+    -moz-transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    -o-transform:rotate(-5deg);
+    transform:rotate(-5deg);
+}
+.text-align-right{
+    text-align: end;
+}
+.text-margin-top{
+    margin-top: 40%;
 }
