@@ -17,7 +17,20 @@ include 'components/header.php';
         <?php include "components/slider.php"; ?>
         <!--====== End - Primary Slider ======-->
 
-
+        <!--====== Cookie Policy Modal ======-->
+        <div id="cookiePopup" class="hide">
+            <img src="images/cookie.png"/>
+            <p>
+                HGE website uses cookies to provide your browsing experience and
+                relevant information. Before continuing to use our website, you agree &
+                accept of our Cookie Policy & Privacy.
+            </p>
+            <div class="cookieBtn">
+                <button id="denyCookie">Deny</button>
+                <button id="acceptCookie">Accept</button>
+            </div>
+        </div>
+        <!--====== End - Cookie Policy Modal ======-->
         <!--====== Section 1 ======-->
         <div class="u-s-p-y-60">
 
@@ -27,7 +40,7 @@ include 'components/header.php';
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section__text-wrap">
-                                <h1 class="content-span-1  u-c-silver u-s-m-b-12">ARE YOU READY TO</h1>
+                                <h1 class="content-span-1 u-c-silver u-s-m-b-12">ARE YOU READY TO</h1>
                                 <span class="section__heading u-c-secondary"> Get Fit, Stay Strong & Motivated</span>
                             </div>
                         </div>
@@ -49,10 +62,23 @@ include 'components/header.php';
                         </div>
                         <div class="col-lg-5 col-md-5 u-s-m-b-30">
                             <span class="content-span-2 u-c-black">BEAST MODE ON</span>
+                            <blockquote class="testimonial__block-quote">
+                                <p>
+                                    After you've gotten into the habit of going to the gym on a daily basis, the most
+                                    difficult part will be giving it up. When you feel like giving up is the time you've
+                                    really put in some work.
+                                </p>
+                            </blockquote>
 
+                            <blockquote>
+                                <p>
+                                    The sport of bodybuilding is indeed not different to any other sport. If you want to
+                                    be successful, you have to give one hundred percent of yourself to your workouts,
+                                    food, and mental attitude.
+                                </p>
+                            </blockquote>
                             </a></div>
                         <div class="col-lg-7 col-md-7 u-s-m-b-30">
-
                             <span class="content-span-2 u-c-black text-align-right text-margin-top">BE STRONGER THAN YOUR EXCUSES</span>
                         </div>
                         <div class="col-lg-5 col-md-5 u-s-m-b-30">
@@ -68,586 +94,6 @@ include 'components/header.php';
             <!--====== Section Content ======-->
         </div>
         <!--====== End - Section 1 ======-->
-
-
-        <!--====== Section 2 ======-->
-        <div class="u-s-p-b-60">
-
-            <!--====== Section Intro ======-->
-            <div class="section__intro u-s-m-b-16">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section__text-wrap">
-                                <h1 class="section__heading u-c-secondary u-s-m-b-12">TOP TRENDING</h1>
-
-                                <span class="section__span u-c-silver">CHOOSE CATEGORY</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--====== End - Section Intro ======-->
-
-
-            <!--====== Section Content ======-->
-            <div class="section__content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="filter-category-container">
-                                <div class="filter__category-wrapper">
-
-                                    <button class="btn filter__btn filter__btn--style-1 js-checked" type="button"
-                                            data-filter="*">ALL
-                                    </button>
-                                </div>
-                                <div class="filter__category-wrapper">
-
-                                    <button class="btn filter__btn filter__btn--style-1" type="button"
-                                            data-filter=".headphone">HEADPHONES
-                                    </button>
-                                </div>
-                                <div class="filter__category-wrapper">
-
-                                    <button class="btn filter__btn filter__btn--style-1" type="button"
-                                            data-filter=".smartphone">SMARTPHONES
-                                    </button>
-                                </div>
-                                <div class="filter__category-wrapper">
-
-                                    <button class="btn filter__btn filter__btn--style-1" type="button"
-                                            data-filter=".sportgadget">SPORT GADGETS
-                                    </button>
-                                </div>
-                                <div class="filter__category-wrapper">
-
-                                    <button class="btn filter__btn filter__btn--style-1" type="button"
-                                            data-filter=".dslr">DSLR
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="filter__grid-wrapper u-s-m-t-30">
-                                <div class="row">
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item headphone">
-                                        <div class="product-o product-o--hover-on product-o--radius">
-                                            <div class="product-o__wrap">
-
-                                                <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                                                   href="product-detail.html">
-
-                                                    <img class="aspect__img"
-                                                         src="images/product/electronic/product2.jpg" alt=""></a>
-                                                <div class="product-o__action-wrap">
-                                                    <ul class="product-o__action-list">
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#quick-look"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Quick View"><i class="fas fa-search-plus"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#add-to-cart"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Add to Cart"><i
-                                                                        class="fas fa-plus-circle"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top" title="Add to Wishlist"><i
-                                                                        class="fas fa-heart"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top"
-                                                               title="Email me When the price drops"><i
-                                                                        class="fas fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <span class="product-o__category">
-
-                                                    <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                            <span class="product-o__name">
-
-                                                    <a href="product-detail.html">Red Wireless Headphone</a></span>
-                                            <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-
-                                                <span class="product-o__review">(23)</span></div>
-
-                                            <span class="product-o__price">$125.00
-
-                                                    <span class="strikethrough">$160.00</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item headphone">
-                                        <div class="product-o product-o--hover-on product-o--radius">
-                                            <div class="product-o__wrap">
-
-                                                <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                                                   href="product-detail.html">
-
-                                                    <img class="aspect__img"
-                                                         src="images/product/electronic/product3.jpg" alt=""></a>
-                                                <div class="product-o__action-wrap">
-                                                    <ul class="product-o__action-list">
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#quick-look"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Quick View"><i class="fas fa-search-plus"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#add-to-cart"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Add to Cart"><i
-                                                                        class="fas fa-plus-circle"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top" title="Add to Wishlist"><i
-                                                                        class="fas fa-heart"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top"
-                                                               title="Email me When the price drops"><i
-                                                                        class="fas fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <span class="product-o__category">
-
-                                                    <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                            <span class="product-o__name">
-
-                                                    <a href="product-detail.html">Yellow Wireless Headphone</a></span>
-                                            <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i
-                                                        class="far fa-star"></i><i class="far fa-star"></i>
-
-                                                <span class="product-o__review">(23)</span></div>
-
-                                            <span class="product-o__price">$125.00
-
-                                                    <span class="product-o__discount">$160.00</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item sportgadget">
-                                        <div class="product-o product-o--hover-on product-o--radius">
-                                            <div class="product-o__wrap">
-
-                                                <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                                                   href="product-detail.html">
-
-                                                    <img class="aspect__img"
-                                                         src="images/product/electronic/product4.jpg" alt=""></a>
-                                                <div class="product-o__action-wrap">
-                                                    <ul class="product-o__action-list">
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#quick-look"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Quick View"><i class="fas fa-search-plus"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#add-to-cart"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Add to Cart"><i
-                                                                        class="fas fa-plus-circle"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top" title="Add to Wishlist"><i
-                                                                        class="fas fa-heart"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top"
-                                                               title="Email me When the price drops"><i
-                                                                        class="fas fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <span class="product-o__category">
-
-                                                    <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                            <span class="product-o__name">
-
-                                                    <a href="product-detail.html">Hover Skateboard Scooter</a></span>
-                                            <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-
-                                                <span class="product-o__review">(23)</span></div>
-
-                                            <span class="product-o__price">$125.00
-
-                                                    <span class="product-o__discount">$160.00</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item sportgadget">
-                                        <div class="product-o product-o--hover-on product-o--radius">
-                                            <div class="product-o__wrap">
-
-                                                <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                                                   href="product-detail.html">
-
-                                                    <img class="aspect__img"
-                                                         src="images/product/electronic/product5.jpg" alt=""></a>
-                                                <div class="product-o__action-wrap">
-                                                    <ul class="product-o__action-list">
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#quick-look"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Quick View"><i class="fas fa-search-plus"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#add-to-cart"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Add to Cart"><i
-                                                                        class="fas fa-plus-circle"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top" title="Add to Wishlist"><i
-                                                                        class="fas fa-heart"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top"
-                                                               title="Email me When the price drops"><i
-                                                                        class="fas fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <span class="product-o__category">
-
-                                                    <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                            <span class="product-o__name">
-
-                                                    <a href="product-detail.html">Hover Red Skateboard Scooter</a></span>
-                                            <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-
-                                                <span class="product-o__review">(23)</span></div>
-
-                                            <span class="product-o__price">$125.00
-
-                                                    <span class="product-o__discount">$160.00</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item dslr">
-                                        <div class="product-o product-o--hover-on product-o--radius">
-                                            <div class="product-o__wrap">
-
-                                                <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                                                   href="product-detail.html">
-
-                                                    <img class="aspect__img"
-                                                         src="images/product/electronic/product6.jpg" alt=""></a>
-                                                <div class="product-o__action-wrap">
-                                                    <ul class="product-o__action-list">
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#quick-look"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Quick View"><i class="fas fa-search-plus"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#add-to-cart"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Add to Cart"><i
-                                                                        class="fas fa-plus-circle"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top" title="Add to Wishlist"><i
-                                                                        class="fas fa-heart"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top"
-                                                               title="Email me When the price drops"><i
-                                                                        class="fas fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <span class="product-o__category">
-
-                                                    <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                            <span class="product-o__name">
-
-                                                    <a href="product-detail.html">Canon DSLR Camera 4k</a></span>
-                                            <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-
-                                                <span class="product-o__review">(23)</span></div>
-
-                                            <span class="product-o__price">$125.00
-
-                                                    <span class="product-o__discount">$160.00</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item dslr">
-                                        <div class="product-o product-o--hover-on product-o--radius">
-                                            <div class="product-o__wrap">
-
-                                                <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                                                   href="product-detail.html">
-
-                                                    <img class="aspect__img"
-                                                         src="images/product/electronic/product7.jpg" alt=""></a>
-                                                <div class="product-o__action-wrap">
-                                                    <ul class="product-o__action-list">
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#quick-look"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Quick View"><i class="fas fa-search-plus"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#add-to-cart"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Add to Cart"><i
-                                                                        class="fas fa-plus-circle"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top" title="Add to Wishlist"><i
-                                                                        class="fas fa-heart"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top"
-                                                               title="Email me When the price drops"><i
-                                                                        class="fas fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <span class="product-o__category">
-
-                                                    <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                            <span class="product-o__name">
-
-                                                    <a href="product-detail.html">Nikon DSLR Camera 4k</a></span>
-                                            <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-
-                                                <span class="product-o__review">(23)</span></div>
-
-                                            <span class="product-o__price">$125.00
-
-                                                    <span class="product-o__discount">$160.00</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item smartphone">
-                                        <div class="product-o product-o--hover-on product-o--radius">
-                                            <div class="product-o__wrap">
-
-                                                <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                                                   href="product-detail.html">
-
-                                                    <img class="aspect__img"
-                                                         src="images/product/electronic/product8.jpg" alt=""></a>
-                                                <div class="product-o__action-wrap">
-                                                    <ul class="product-o__action-list">
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#quick-look"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Quick View"><i class="fas fa-search-plus"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#add-to-cart"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Add to Cart"><i
-                                                                        class="fas fa-plus-circle"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top" title="Add to Wishlist"><i
-                                                                        class="fas fa-heart"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top"
-                                                               title="Email me When the price drops"><i
-                                                                        class="fas fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <span class="product-o__category">
-
-                                                    <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                            <span class="product-o__name">
-
-                                                    <a href="product-detail.html">Smartphone RAM 4GB New</a></span>
-                                            <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-
-                                                <span class="product-o__review">(23)</span></div>
-
-                                            <span class="product-o__price">$125.00
-
-                                                    <span class="product-o__discount">$160.00</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item smartphone">
-                                        <div class="product-o product-o--hover-on product-o--radius">
-                                            <div class="product-o__wrap">
-
-                                                <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                                                   href="product-detail.html">
-
-                                                    <img class="aspect__img"
-                                                         src="images/product/electronic/product9.jpg" alt=""></a>
-                                                <div class="product-o__action-wrap">
-                                                    <ul class="product-o__action-list">
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#quick-look"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Quick View"><i class="fas fa-search-plus"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#add-to-cart"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Add to Cart"><i
-                                                                        class="fas fa-plus-circle"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top" title="Add to Wishlist"><i
-                                                                        class="fas fa-heart"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top"
-                                                               title="Email me When the price drops"><i
-                                                                        class="fas fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <span class="product-o__category">
-
-                                                    <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                            <span class="product-o__name">
-
-                                                    <a href="product-detail.html">Smartphone RAM 8GB New</a></span>
-                                            <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-
-                                                <span class="product-o__review">(23)</span></div>
-
-                                            <span class="product-o__price">$125.00
-
-                                                    <span class="product-o__discount">$160.00</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item smartphone">
-                                        <div class="product-o product-o--hover-on product-o--radius">
-                                            <div class="product-o__wrap">
-
-                                                <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                                                   href="product-detail.html">
-
-                                                    <img class="aspect__img"
-                                                         src="images/product/electronic/product10.jpg" alt=""></a>
-                                                <div class="product-o__action-wrap">
-                                                    <ul class="product-o__action-list">
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#quick-look"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Quick View"><i class="fas fa-search-plus"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#add-to-cart"
-                                                               data-tooltip="tooltip" data-placement="top"
-                                                               title="Add to Cart"><i
-                                                                        class="fas fa-plus-circle"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top" title="Add to Wishlist"><i
-                                                                        class="fas fa-heart"></i></a></li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                               data-placement="top"
-                                                               title="Email me When the price drops"><i
-                                                                        class="fas fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <span class="product-o__category">
-
-                                                    <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                            <span class="product-o__name">
-
-                                                    <a href="product-detail.html">Smartphone RAM 16GB New</a></span>
-                                            <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-
-                                                <span class="product-o__review">(23)</span></div>
-
-                                            <span class="product-o__price">$125.00
-
-                                                    <span class="product-o__discount">$160.00</span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="load-more">
-
-                                <button class="btn btn--e-brand" type="button">Load More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--====== End - Section Content ======-->
-        </div>
-        <!--====== End - Section 2 ======-->
 
 
         <!--====== Section 3 ======-->
@@ -2179,168 +1625,7 @@ include 'components/header.php';
 
 
     <!--====== Main Footer ======-->
-    <footer>
-        <div class="outer-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="outer-footer__content u-s-m-b-40">
-
-                            <span class="outer-footer__content-title">Contact Us</span>
-                            <div class="outer-footer__text-wrap"><i class="fas fa-home"></i>
-
-                                <span>4247 Ashford Drive Virginia VA-20006 USA</span></div>
-                            <div class="outer-footer__text-wrap"><i class="fas fa-phone-volume"></i>
-
-                                <span>(+0) 900 901 904</span></div>
-                            <div class="outer-footer__text-wrap"><i class="far fa-envelope"></i>
-
-                                <span>contact@domain.com</span></div>
-                            <div class="outer-footer__social">
-                                <ul>
-                                    <li>
-
-                                        <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li>
-
-                                        <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li>
-
-                                        <a class="s-youtube--color-hover" href="#"><i class="fab fa-youtube"></i></a>
-                                    </li>
-                                    <li>
-
-                                        <a class="s-insta--color-hover" href="#"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-
-                                        <a class="s-gplus--color-hover" href="#"><i
-                                                    class="fab fa-google-plus-g"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="outer-footer__content u-s-m-b-40">
-
-                                    <span class="outer-footer__content-title">Information</span>
-                                    <div class="outer-footer__list-wrap">
-                                        <ul>
-                                            <li>
-
-                                                <a href="cart.html">Cart</a></li>
-                                            <li>
-
-                                                <a href="dashboard.html">Account</a></li>
-                                            <li>
-
-                                                <a href="shop-side-version-2.html">Manufacturer</a></li>
-                                            <li>
-
-                                                <a href="dash-payment-option.html">Finance</a></li>
-                                            <li>
-
-                                                <a href="shop-side-version-2.html">Shop</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="outer-footer__content u-s-m-b-40">
-                                    <div class="outer-footer__list-wrap">
-
-                                        <span class="outer-footer__content-title">Our Company</span>
-                                        <ul>
-                                            <li>
-
-                                                <a href="about.html">About us</a></li>
-                                            <li>
-
-                                                <a href="contact.html">Contact Us</a></li>
-                                            <li>
-
-                                                <a href="index.html">Sitemap</a></li>
-                                            <li>
-
-                                                <a href="dash-my-order.html">Delivery</a></li>
-                                            <li>
-
-                                                <a href="shop-side-version-2.html">Store</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="outer-footer__content">
-
-                            <span class="outer-footer__content-title">Join our Newsletter</span>
-                            <form class="newsletter">
-                                <div class="u-s-m-b-15">
-                                    <div class="radio-box newsletter__radio">
-
-                                        <input type="radio" id="male" name="gender">
-                                        <div class="radio-box__state radio-box__state--primary">
-
-                                            <label class="radio-box__label" for="male">Male</label></div>
-                                    </div>
-                                    <div class="radio-box newsletter__radio">
-
-                                        <input type="radio" id="female" name="gender">
-                                        <div class="radio-box__state radio-box__state--primary">
-
-                                            <label class="radio-box__label" for="female">Female</label></div>
-                                    </div>
-                                </div>
-                                <div class="newsletter__group">
-
-                                    <label for="newsletter"></label>
-
-                                    <input class="input-text input-text--only-white" type="text" id="newsletter"
-                                           placeholder="Enter your Email">
-
-                                    <button class="btn btn--e-brand newsletter__btn" type="submit">SUBSCRIBE</button>
-                                </div>
-
-                                <span class="newsletter__text">Subscribe to the mailing list to receive updates on promotions, new arrivals, discount and coupons.</span>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="lower-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="lower-footer__content">
-                            <div class="lower-footer__copyright">
-
-                                <span>Copyright © 2018</span>
-
-                                <a href="index.html">Reshop</a>
-
-                                <span>All Right Reserved</span></div>
-                            <div class="lower-footer__payment">
-                                <ul>
-                                    <li><i class="fab fa-cc-stripe"></i></li>
-                                    <li><i class="fab fa-cc-paypal"></i></li>
-                                    <li><i class="fab fa-cc-mastercard"></i></li>
-                                    <li><i class="fab fa-cc-visa"></i></li>
-                                    <li><i class="fab fa-cc-discover"></i></li>
-                                    <li><i class="fab fa-cc-amex"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    <?php include 'components/footer.php'; ?>
     <!--====== Modal Section ======-->
 
 
@@ -2634,41 +1919,72 @@ include 'components/header.php';
 
 
 <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
+
+<?php include 'components/scripts.php'; ?>
+
+<!--custom script-->
 <script>
-    window.ga = function () {
-        ga.q.push(arguments)
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    let popUp = document.getElementById("cookiePopup");
+    //When user clicks the accept button
+    document.getElementById("denyCookie").addEventListener("click", function () {
+        //Hide the popup
+        popUp.classList.add("hide");
+        popUp.classList.remove("show");
+        sessionStorage.setItem("cookieDenied", "true");
+    });
+    document.getElementById("acceptCookie").addEventListener("click", () => {
+        //Create date object
+        let d = new Date();
+        //Increment the current time by 1 minute (cookie will expire after 1 minute)
+        d.setMinutes(2 + d.getMinutes());
+        $.getJSON('https://json.geoiplookup.io/?callback=?', function (data) {
+            let userInfo = JSON.stringify(data);
+            document.cookie = "info=" + userInfo + "; expires = " + d + ";";
+        });
+        //Hide the popup
+        popUp.classList.add("hide");
+        popUp.classList.remove("show");
+    });
+    //Check if cookie is already present
+    const checkCookie = () => {
+        //Read the cookie and split on "="
+        let input = document.cookie.split("=");
+        //Check for our cookie
+        if (input[0] === "info") {
+            //Hide the popup
+            const userInfo = getCookie("info");
+            const currency = JSON.parse(userInfo).currency_code;
+            alert("Your currency code is " + currency)
+            popUp.classList.add("hide");
+            popUp.classList.remove("show");
+        } else {
+            //Show the popup
+            if(sessionStorage.getItem("cookieDenied")!=="true") {
+                popUp.classList.add("show");
+                popUp.classList.remove("hide");
+            }
+        }
     };
-    ga.q = [];
-    ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto');
-    ga('send', 'pageview')
+    //Check if cookie exists when page loads
+    window.onload = () => {
+        setTimeout(() => {
+            checkCookie();
+        }, 2000);
+    };
 </script>
-<script src="https://www.google-analytics.com/analytics.js" async defer></script>
-
-<!--====== Vendor Js ======-->
-<script src="js/vendor.js"></script>
-
-<!--====== jQuery Shopnav plugin ======-->
-<script src="js/jquery.shopnav.js"></script>
-
-<!--====== App ======-->
-<script src="js/app.js"></script>
-
-<!--====== Noscript ======-->
-<noscript>
-    <div class="app-setting">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="app-setting__wrap">
-                        <h1 class="app-setting__h1">JavaScript is disabled in your browser.</h1>
-
-                        <span class="app-setting__text">Please enable JavaScript in your browser or upgrade to a JavaScript-capable browser.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</noscript>
-</body>
-</html>

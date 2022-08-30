@@ -25,7 +25,7 @@ $customer = "CREATE TABLE IF NOT EXISTS `Customer` (
 )";
 
 
-$result = getResult($connection, $customer, 'Customer');
+//$result = getResult($connection, $customer, 'Customer');
 
 $loginAttempt = "CREATE TABLE IF NOT EXISTS `LoginAttempt` (
     `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -34,7 +34,7 @@ $loginAttempt = "CREATE TABLE IF NOT EXISTS `LoginAttempt` (
     `loginIP` varchar(30),
     FOREIGN KEY (customerId) REFERENCES `Customer`(`id`)
 )";
-$result = getResult($connection, $loginAttempt, 'LoginAttempt');
+//$result = getResult($connection, $loginAttempt, 'LoginAttempt');
 
 
 $category = "CREATE TABLE IF NOT EXISTS `Category`(
@@ -54,4 +54,14 @@ $query = "CREATE TABLE IF NOT EXISTS `Product`(
     `categoryId` int(11),
      FOREIGN KEY (categoryId) REFERENCES `Category`(`id`)
 )";
-$result = getResult($connection, $query, 'Product');
+//$result = getResult($connection, $query, 'Product');
+
+$query = "CREATE TABLE IF NOT EXISTS `Bookings`(
+    `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` varchar(50),
+    `email` varchar(30),
+    `phone` varchar(30),
+    `bookingDate` date,
+    `bookingType` ENUM('Face to Face', 'Online')
+    )";
+$result = getResult($connection, $query, 'Bookings');

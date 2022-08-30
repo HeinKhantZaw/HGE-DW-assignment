@@ -9,7 +9,7 @@
 
                 <!--====== Main Logo ======-->
 
-                <a class="main-logo" href="">
+                <a class="main-logo" href="/dw-assignment-HKZ/index.php">
 
                     <img src="images/logo/logo-1.png" alt="Logo of HGE" class="HgeLogo"></a>
                 <!--====== End - Main Logo ======-->
@@ -47,7 +47,7 @@
 
                                     <!--====== List ======-->
                                     <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
-                                        <li class="nav-item-hover"><a href="shop-side-version-2.html">Information</a></li>
+                                        <li class="nav-item-hover"><a href="information.php">Information</a></li>
                                         <li class="nav-item-hover"><a href="shop-side-version-2.html">Wanted</a></li>
                                         <li class="nav-item-hover"><a href="workshop.php">Workshop</a></li>
                                         <li class="nav-item-hover"><a href="shop-grid-full.html">Gallery</a></li>
@@ -89,7 +89,7 @@
                         <!--====== List ======-->
                         <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                             <li>
-                                <a href="signin.html"><i class="fas fa-sign-in-alt u-s-m-r-6"></i>
+                                <a href="signin.php"><i class="fas fa-sign-in-alt u-s-m-r-6"></i>
                                     <span>Login</span></a>
                             </li>
                             <li>
@@ -103,9 +103,9 @@
                     <!--====== End - Menu ======-->
                 </div>
                 <!--====== End - Dropdown Main plugin ======-->
+                </div>
+                <!--====== End - Primary Nav ======-->
             </div>
-            <!--====== End - Primary Nav ======-->
-        </div>
-    </nav>
-    <!--====== End - Nav 1 ======-->
+        </nav>
+        <!--====== End - Nav 1 ======-->
 </header>
