@@ -1,6 +1,23 @@
 <?php
 $GLOBALS['title'] = "HGE - Contact Us";
 include 'components/header.php';
+include 'db/connect.php';
+
+if (isset($_POST['sendBtn'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $message = $_POST['message'];
+    $query = "INSERT INTO `ContactForms`(`name`, `email`, `phone`, `message`) VALUES ('$name', '$email', '$phone', '$message')";
+    $result = mysqli_query($connection, $query);
+    if ($result) {
+        echo "<script>alert('Message sent successfully')</script>";
+        echo "<script>window.open('contact.php', '_self')</script>";
+    } else {
+        $err = mysqli_error($connection);
+        echo "<script>alert('Message sent Fail'+ $err )</script>";
+    }
+}
 ?>
     <!--====== Main App ======-->
     <div id="app">
@@ -128,7 +145,9 @@ include 'components/header.php';
                                                     <label for="c-name"></label>
 
                                                     <input class="input-text input-text--border-radius input-text--primary-style"
-                                                           type="text" id="c-name" placeholder="Name (Required)"
+                                                           type="text" id="c-name"
+                                                           name="name"
+                                                           placeholder="Name (Required) Eg. John Doe"
                                                            required>
                                                 </div>
                                                 <div class="u-s-m-b-30">
@@ -136,7 +155,9 @@ include 'components/header.php';
                                                     <label for="c-email"></label>
 
                                                     <input class="input-text input-text--border-radius input-text--primary-style"
-                                                           type="text" id="c-email" placeholder="Email (Required)"
+                                                           type="email" id="c-email"
+                                                           name="email"
+                                                           placeholder="Email (Required) Eg. JohnDoe@gmail.com"
                                                            required>
                                                 </div>
                                                 <div class="u-s-m-b-30">
@@ -144,7 +165,10 @@ include 'components/header.php';
                                                     <label for="c-subject"></label>
 
                                                     <input class="input-text input-text--border-radius input-text--primary-style"
-                                                           type="text" id="c-subject" placeholder="Subject (Required)"
+                                                           type="text" id="c-subject"
+                                                           placeholder="Phone number (Required) Eg. 09123456"
+                                                           pattern="[0-9]{8,}"
+                                                           name="phone"
                                                            required></div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 u-h-100">
@@ -153,11 +177,14 @@ include 'components/header.php';
                                                     <label for="c-message"></label><textarea
                                                             class="text-area text-area--border-radius text-area--primary-style"
                                                             id="c-message" placeholder="Compose a Message (Required)"
+                                                            name="message"
                                                             required></textarea></div>
                                             </div>
                                             <div class="col-lg-12">
 
-                                                <button class="btn btn--e-brand-b-2" type="submit">Send Message</button>
+                                                <button class="btn btn--e-brand-b-2" name="sendBtn" type="submit">Send
+                                                    Message
+                                                </button>
                                             </div>
                                         </div>
                                     </form>

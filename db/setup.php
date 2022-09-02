@@ -39,15 +39,15 @@ $loginAttempt = "CREATE TABLE IF NOT EXISTS `LoginAttempt` (
 
 $category = "CREATE TABLE IF NOT EXISTS `Category`(
     `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `categoryName` varchar(30)
+    `categoryName` varchar(30) NOT NULL
 )";
 //$result = getResult($connection, $category, 'Category');
 
 $query = "CREATE TABLE IF NOT EXISTS `Product`(
     `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `productName` varchar(255),
-    `productAmount` int,
-    `productQuantity` int,
+    `productName` varchar(255) NOT NULL,
+    `productAmount` int CHECK (productAmount >= 0),
+    `productQuantity` int CHECK (productQuantity >= 0),
     `productImage` text,
     `productDescription` varchar(255),
     `productStatus` varchar(30),
@@ -58,10 +58,19 @@ $query = "CREATE TABLE IF NOT EXISTS `Product`(
 
 $query = "CREATE TABLE IF NOT EXISTS `Bookings`(
     `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `name` varchar(50),
-    `email` varchar(30),
+    `name` varchar(50) NOT NULL,
+    `email` varchar(30) NOT NULL CHECK (email LIKE '%@%'),
     `phone` varchar(30),
     `bookingDate` date,
-    `bookingType` ENUM('Face to Face', 'Online')
+    `bookingType` ENUM('Face to Face', 'Online') DEFAULT 'Face to Face'
     )";
 $result = getResult($connection, $query, 'Bookings');
+
+$query = "CREATE TABLE IF NOT EXISTS `ContactForms`(
+    `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` varchar(50) NOT NULL,
+    `email` varchar(30) NOT NULL CHECK (email LIKE '%@%'),
+    `phone` varchar(30),
+    `message` varchar(255)
+    )";
+$result = getResult($connection, $query, 'ContactForms');
