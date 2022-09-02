@@ -1748,12 +1748,6 @@ include 'components/header.php';
             }
         }
     };
-    // Get next month of current date in YYYY/MM/DD format
-    const getNextMonth = () => {
-        let d = new Date();
-        d.setMonth(d.getMonth() + 1);
-        return d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
-    }
     //Check if cookie exists when page loads
     window.onload = () => {
         setTimeout(() => {
