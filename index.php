@@ -86,6 +86,11 @@ include 'components/header.php';
                             <div class="aspect aspect--square">
                                 <img class="aspect__img" src="images/home/gym-trainer.png" alt="Gym Trainer">
                             </div>
+                            <blockquote>
+                                <p>Let's face it: it's not always simple to get yourself to the gym. You know you should
+                                    prioritize your health and fitness, but you might use some motivation to get started
+                                    (or finish) your newest at-home workout.</p>
+                            </blockquote>
                         </div>
                     </div>
                 </div>

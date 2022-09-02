@@ -51,7 +51,7 @@
                                         <li class="nav-item-hover"><a href="shop-side-version-2.html">Wanted</a></li>
                                         <li class="nav-item-hover"><a href="workshop.php">Workshop</a></li>
                                         <li class="nav-item-hover"><a href="shop-grid-full.html">Gallery</a></li>
-                                        <li class="nav-item-hover"><a href="contact.html">Contact</a></li>
+                                        <li class="nav-item-hover"><a href="contact.php">Contact</a></li>
                                         <li class="nav-item-hover"><a href="shop-grid-right.html">Featured</a></li>
                                     </ul>
                                     <!--====== End - List ======-->
@@ -93,7 +93,7 @@
                                     <span>Login</span></a>
                             </li>
                             <li>
-                                <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
+                                <a href="signup.php"><i class="fas fa-user-plus u-s-m-r-6"></i>
                                     <span>Register</span></a>
                             </li>
 

@@ -1195,12 +1195,11 @@ include 'components/header.php';
             </div>
             <!--====== End - Section 10 ======-->
         </div>
-
-        <!--====== Main Footer ======-->
-        <?php include 'components/footer.php'; ?>
-        <!--====== Modal Section ======-->
     </div>
-</div>
+    <!--====== Main Footer ======-->
+    <?php include 'components/footer.php'; ?>
+    <!--====== Modal Section ======-->
 
+</div>
 
 <?php include 'components/scripts.php'; ?>
