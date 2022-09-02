@@ -4,7 +4,12 @@
 (function ($) {
     // Main Object
     var RESHOP = {};
-
+    // get one month from current date in YYYY/MM/DD format
+    const getOneMonthAfter = () => {
+        let d = new Date();
+        d.setMonth(d.getMonth() + 1);
+        return d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+    }
     // Predefined variables
     var
         $filterGridWrapper = $('.filter__grid-wrapper'),
@@ -327,12 +332,12 @@
 
     // Bind countdown plugin
     RESHOP.timerCountDown = function() {
+        const countdownDate = getOneMonthAfter();
         // Check if Count Down on the page
         if ($collectionCountDown.length) {
             $collectionCountDown.each(function () {
-                var $this = $(this),
-                    finalDate = $(this).data('countdown');
-                $this.countdown(finalDate, function (event) {
+                var $this = $(this);
+                $this.countdown(countdownDate, function (event) {
                       $this.html(event.strftime('<div class="countdown__content"><div><span class="countdown__value">%D</span><span class="countdown__key">Days</span></div></div><div class="countdown__content"><div><span class="countdown__value">%H</span><span class="countdown__key">Hours</span></div></div><div class="countdown__content"><div><span class="countdown__value">%M</span><span class="countdown__key">Mins</span></div></div><div class="countdown__content"><div><span class="countdown__value">%S</span><span class="countdown__key">Secs</span></div></div>'));
                 });
             });
