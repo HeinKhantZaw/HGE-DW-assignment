@@ -30,21 +30,17 @@ if ($GLOBALS['title']) {
 							<ul>
 								<li>
 
-									<a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<a class="s-fb--color-hover" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 								<li>
 
-									<a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a></li>
+									<a class="s-tw--color-hover" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
 								<li>
 
-									<a class="s-youtube--color-hover" href="#"><i class="fab fa-youtube"></i></a>
+									<a class="s-youtube--color-hover" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
 								</li>
 								<li>
 
-									<a class="s-insta--color-hover" href="#"><i class="fab fa-instagram"></i></a>
-								</li>
-								<li>
-
-									<a class="s-gplus--color-hover" href="#"><i class="fab fa-google-plus-g"></i></a>
+									<a class="s-insta--color-hover" href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
 								</li>
 							</ul>
 						</div>
@@ -83,13 +79,13 @@ if ($GLOBALS['title']) {
 										<li>
 											<a href="workshop.php">Workshop</a></li>
 										<li>
-											<a href="contact.html">Contact Us</a></li>
+											<a href="contact.php">Contact Us</a></li>
 										<li>
 											<a href="shop-side-version-2.html">Blog</a></li>
 										<li>
-											<a href="index.html">Login</a></li>
+											<a href="login.php">Login</a></li>
 										<li>
-											<a href="dash-my-order.html">Register</a></li>
+											<a href="register.php">Register</a></li>
 									</ul>
 								</div>
 							</div>

@@ -708,7 +708,7 @@ include 'components/header.php';
 
 									<span class="service__info-text-1">Free Shipping</span>
 
-									<span class="service__info-text-2">Free shipping on all US order or order above $200</span>
+									<span class="service__info-text-2">Free shipping on all Yangon order</span>
 								</div>
 							</div>
 						</div>
@@ -730,7 +730,7 @@ include 'components/header.php';
 
 									<span class="service__info-text-1">24/7 Help Center</span>
 
-									<span class="service__info-text-2">Round-the-clock assistance for a smooth shopping experience</span>
+									<span class="service__info-text-2">24/7 service to provide a stress-free shopping expedition</span>
 								</div>
 							</div>
 						</div>

@@ -53,6 +53,7 @@
                                         <li class="nav-item-hover"><a href="shop-grid-full.html">Gallery</a></li>
                                         <li class="nav-item-hover"><a href="contact.php">Contact</a></li>
                                         <li class="nav-item-hover"><a href="shop-grid-right.html">Featured</a></li>
+	                                    <li class="nav-item-hover"><a href="blog.php">Blog</a></li>
                                     </ul>
                                     <!--====== End - List ======-->
                                 </div>
