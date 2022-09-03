@@ -51,7 +51,7 @@ if (isset($_POST['btnLogin'])) {
     <?php include 'components/navbar.php'; ?>
     <!--====== App Content ======-->
     <div class="app-content">
-
+        <?php include "components/cookiePopup.php"; ?>
         <!--====== Section 1 ======-->
         <div class="u-s-p-y-60">
 
@@ -63,7 +63,7 @@ if (isset($_POST['btnLogin'])) {
                             <ul class="breadcrumb__list">
                                 <li class="has-separator">
 
-                                    <a href="index.html">Home</a></li>
+                                    <a href="index.php">Home</a></li>
                                 <li class="is-marked">
 
                                     <a href="signin.html">Signin</a></li>

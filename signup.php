@@ -31,7 +31,7 @@ if (isset($_POST['btnRegister'])) {
 
     <!--====== App Content ======-->
     <div class="app-content">
-
+        <?php include "components/cookiePopup.php"; ?>
         <!--====== Section 1 ======-->
         <div class="u-s-p-y-60">
 

@@ -8,6 +8,7 @@ include 'components/header.php';
     <?php include 'components/navbar.php'; ?>
     <!--====== End - Main Header ======-->
     <div class="app-content">
+        <?php include "components/cookiePopup.php"; ?>
         <div class="u-s-p-y-60">
 
             <!--====== Section Intro ======-->
