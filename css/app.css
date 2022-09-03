@@ -1281,6 +1281,10 @@ input::-ms-clear {
     padding-bottom: 100%;
 }
 
+.aspect--video{
+    padding-bottom: 20%;
+}
+
 /*
   * Add this class inside '.aspect' child image element. If you want to make an image responsive then
   * you can use utility u-img-fluid class.
@@ -3343,11 +3347,11 @@ input::-ms-clear {
 
 .promotion__content {
     position: absolute;
-    width: 100%;
+    width: 92%;
     z-index: 2;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    top: 50%;
+    top: 76%;
     text-align: center;
 }
 
@@ -8801,3 +8805,103 @@ input::-ms-clear {
         bottom: 0;
     }
 }
+
+/* for videos */
+
+.ugb-video-popup {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+}
+.ugb-video-popup .ugb-video-preview, .ugb-video-popup a, .ugb-video-popup .ugb-play-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.ugb-video-popup .ugb-video-preview {
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+    object-fit: fill;
+    width: 100%;
+}
+.ugb-video-popup:hover .ugb-video-preview {
+    opacity: 0.5;
+}
+.ugb-video-popup .ugb-video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+.ugb-video-popup a {
+    z-index: 3;
+    box-shadow: none !important;
+    background: transparent !important;
+    display: block !important;
+}
+.ugb-video-popup .ugb-play-button {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ugb-video-popup svg {
+    fill: #fff !important;
+}
+
+
+/* info showing */
+
+.message-info{
+    width:80%;
+    background-color: #ffffff;
+    padding:20px;
+    border:1px solid #eee;
+    border-left-width:5px;
+    border-radius: 3px;
+    margin:10px auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.danger{
+    border-left-color: #d9534f; /* Left side border color */
+    background-color: rgba(217, 83, 79, 0.1); /*Same color as the left border with reduced alpha to 0.1*/
+}
+
+.danger strong{
+    color:#d9534f;
+}
+
+.warning{
+    border-left-color: #f0ad4e;
+    background-color: rgba(240, 173, 78, 0.1);
+}
+
+.warning strong{
+    color:#f0ad4e;
+}
+
+.info {
+    border-left-color: #5bc0de;
+    background-color: rgba(91, 192, 222, 0.1);
+}
+
+.info strong {
+    color: #5bc0de;
+}
+
+.success {
+    border-left-color: #00C851;
+    background-color: rgba(0, 200, 81, 0.1);
+}
+
+.success strong {
+    color: #00C851;
+}
+

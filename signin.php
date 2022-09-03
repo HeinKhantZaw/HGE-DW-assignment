@@ -75,7 +75,18 @@ if (isset($_POST['btnLogin'])) {
         </div>
         <!--====== End - Section 1 ======-->
 
-
+	    <div class="message-info danger">
+		    <strong>Error</strong> - You need to remember your username/password. Please try again.
+	    </div>
+	    <div class="message-info warning">
+		    <strong>Error</strong> - You missed a field, pay attention!
+	    </div>
+	    <div class="message-info info">
+		    <strong>Error</strong> - Someone already thought of your dumb username. Choose another.
+	    </div>
+	    <div class="message-info success">
+		    <strong>Finally</strong> - Congrats, you figured out how to login.
+	    </div>
         <!--====== Section 2 ======-->
         <div class="u-s-p-b-60">
 
