@@ -1,6 +1,31 @@
 <?php
 $GLOBALS['title'] = "HGE - Home";
 include 'components/header.php';
+include 'db/connect.php';
+$query = "SELECT * FROM `product` WHERE `productStatus` LIKE '%Featured';";
+$result = mysqli_query($connection, $query);
+if ($result) {
+    $featuredProducts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+//    echo "<pre>";
+//    print_r($featuredProducts);
+//    echo "</pre>";
+}
+$query = "SELECT * FROM `product` WHERE `productStatus` LIKE 'New' order by 'id' DESC LIMIT 3;";
+$result = mysqli_query($connection, $query);
+if ($result) {
+    $latestProducts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+$query = "SELECT * FROM `product` WHERE `productStatus` LIKE 'Second Hand' LIMIT 3;";
+$result = mysqli_query($connection, $query);
+if ($result) {
+    $secondHandProducts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
+$query = "SELECT * FROM `product` ORDER BY `productPrice` DESC LIMIT 3;";
+$result = mysqli_query($connection, $query);
+if ($result) {
+    $premiumProducts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
 ?>
 <!--====== Main App ======-->
 <div id="app">
@@ -114,118 +139,68 @@ include 'components/header.php';
 			<div class="section__content">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-6 col-md-6 u-s-m-b-30">
-							<div class="product-o product-o--radius product-o--hover-off u-h-100">
-								<div class="product-o__wrap">
+                        <?php
+                        $videoLinks = ['sCgT9P175OU', '0kVN_s3LYrI'];
+                        foreach ($featuredProducts as $index => $product) {
+                            $image = explode(",", $product['productImage']);
+                            $imagePath = '/dw-assignment-HKZ/images/product/' . $image[0];
+                            ?>
+							<div class="col-lg-6 col-md-6 u-s-m-b-30">
+								<div class="product-o product-o--radius product-o--hover-off u-h-100">
+									<div class="product-o__wrap">
+										<div class="ugb-video-popup" data-video='<?php echo $videoLinks[$index]; ?>'>
+											<div style="padding-top: 100%">
+												<a href="#"></a>
+												<span class="ugb-play-button">
+                                           <svg xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px"
+                                                viewBox="0 0 50 50" version="1.1">
+												<g id="surface1">
+												<path style=" stroke:none;fill-rule:nonzero;fill:rgb(96.862745%,22.352941%,45.490196%);fill-opacity:1;"
+												      d="M 50 25 C 50 38.789062 38.789062 50 25 50 C 11.210938 50 0 38.789062 0 25 C 0 11.210938 11.210938 0 25 0 C 38.789062 0 50 11.210938 50 25 Z M 50 25 "/>
+												<path style=" stroke:none;fill-rule:nonzero;fill:rgb(86.666667%,2.745098%,44.705882%);fill-opacity:1;"
+												      d="M 25 0 C 38.789062 0 50 11.210938 50 25 C 50 38.789062 38.789062 50 25 50 "/>
+												<path style=" stroke:none;fill-rule:nonzero;fill:rgb(92.941176%,14.901961%,43.137255%);fill-opacity:1;"
+												      d="M 7.339844 7.339844 C 17.097656 -2.417969 32.902344 -2.417969 42.660156 7.339844 C 52.417969 17.097656 52.417969 32.902344 42.660156 42.660156 "/>
+												<path style=" stroke:none;fill-rule:nonzero;fill:rgb(86.666667%,2.745098%,44.705882%);fill-opacity:1;"
+												      d="M 21.453125 36.371094 C 21.289062 36.371094 21.046875 36.289062 20.886719 36.210938 C 20.484375 36.046875 20.160156 35.566406 20.160156 35.160156 L 20.160156 20.082031 C 20.160156 19.675781 20.484375 19.195312 20.886719 19.03125 C 21.289062 18.871094 21.773438 18.871094 22.175781 19.113281 L 32.417969 26.695312 C 32.742188 26.933594 32.902344 27.257812 32.902344 27.660156 C 32.902344 28.066406 32.742188 28.386719 32.417969 28.628906 L 22.175781 36.210938 C 21.933594 36.289062 21.695312 36.371094 21.453125 36.371094 Z M 21.453125 36.371094 "/>
+												<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;"
+												      d="M 21.453125 33.710938 C 21.289062 33.710938 21.046875 33.628906 20.886719 33.546875 C 20.484375 33.386719 20.160156 32.902344 20.160156 32.5 L 20.160156 17.417969 C 20.160156 17.015625 20.484375 16.53125 20.886719 16.371094 C 21.289062 16.210938 21.773438 16.210938 22.175781 16.453125 L 32.417969 24.03125 C 32.742188 24.273438 32.902344 24.597656 32.902344 25 C 32.902344 25.402344 32.742188 25.726562 32.417969 25.96875 L 22.175781 33.546875 C 21.933594 33.628906 21.695312 33.710938 21.453125 33.710938 Z M 21.453125 33.710938 "/>
+												</g>
+											</svg>
 
-									<a class="aspect aspect--bg-grey aspect--square u-d-block"
-									   href="product-detail.html">
-
-										<img class="aspect__img" src="images/product/electronic/product11.jpg"
-										     alt=""></a>
-									<div class="product-o__special-count-wrap">
-										<div class="countdown countdown--style-special"
-										     data-countdown="2022-10-30"></div>
+                                        </span>
+											</div>
+										</div>
+										<img style="margin-top: -93%" class="aspect__img"
+										     src='<?php echo $imagePath; ?>'
+										     alt='<?php echo $product['productName']; ?>'></a>
+										<div class="product-o__special-count-wrap">
+											<div class="countdown countdown--style-special"
+											     data-countdown="2022-10-30"></div>
+										</div>
 									</div>
-									<div class="product-o__action-wrap">
-										<ul class="product-o__action-list">
-											<li>
 
-												<a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip"
-												   data-placement="top" title="Quick View"><i
-															class="fas fa-search-plus"></i></a></li>
-											<li>
+									<span class="product-o__name">
 
-												<a data-modal="modal" data-modal-id="#add-to-cart"
-												   data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i
-															class="fas fa-plus-circle"></i></a></li>
-											<li>
-
-												<a href="signin.html" data-tooltip="tooltip" data-placement="top"
-												   title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
-											<li>
-
-												<a href="signin.html" data-tooltip="tooltip" data-placement="top"
-												   title="Email me When the price drops"><i class="fas fa-envelope"></i></a>
-											</li>
-										</ul>
+                                        <a href="product-detail.html"><?php echo $product['productName']; ?></a></span>
+									<div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
+												class="fas fa-star"></i><i class="fas fa-star"></i><i
+												class="fas fa-star"></i><i class="fas fa-star"></i>
 									</div>
+
+									<span class="product-o__price">
+	                                <?php
+                                    echo number_format($product['productPrice']) . " MMK"; ?>
+	                                <span class="product-o__discount">
+		                                <?php
+                                        echo number_format($product['productPrice'] + (rand(3, 80) * 1000)) . " MMK"; ?>
+	                                </span></span>
 								</div>
-
-								<span class="product-o__category">
-
-                                        
-
-                                <span class="product-o__name">
-
-                                        <a href="product-detail.html">DJI Phantom Drone 4k</a></span>
-                                <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-			                                class="fas fa-star"></i><i class="fas fa-star"></i><i
-			                                class="fas fa-star"></i><i class="fas fa-star"></i>
-
-                                    <span class="product-o__review">(2)</span></div>
-
-                                <span class="product-o__price">$125.00
-
-                                        <span class="product-o__discount">$160.00</span></span>
 							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 u-s-m-b-30">
-							<div class="product-o product-o--radius product-o--hover-off u-h-100">
-								<div class="product-o__wrap">
-
-									<a class="aspect aspect--bg-grey aspect--square u-d-block"
-									   href="product-detail.html">
-
-										<img class="aspect__img" src="images/product/electronic/product12.jpg"
-										     alt=""></a>
-									<div class="product-o__special-count-wrap">
-										<div class="countdown countdown--style-special"
-										     data-countdown="2022/10/30"></div>
-									</div>
-									<div class="product-o__action-wrap">
-										<ul class="product-o__action-list">
-											<li>
-
-												<a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip"
-												   data-placement="top" title="Quick View"><i
-															class="fas fa-search-plus"></i></a></li>
-											<li>
-
-												<a data-modal="modal" data-modal-id="#add-to-cart"
-												   data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i
-															class="fas fa-plus-circle"></i></a></li>
-											<li>
-
-												<a href="signin.html" data-tooltip="tooltip" data-placement="top"
-												   title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
-											<li>
-
-												<a href="signin.html" data-tooltip="tooltip" data-placement="top"
-												   title="Email me When the price drops"><i class="fas fa-envelope"></i></a>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<span class="product-o__category">
-
-                                        
-
-                                <span class="product-o__name">
-
-                                        <a href="product-detail.html">DJI Phantom Drone 2k</a></span>
-                                <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-			                                class="fas fa-star"></i><i class="fas fa-star"></i><i
-			                                class="fas fa-star"></i><i class="fas fa-star"></i>
-
-                                    <span class="product-o__review">(2)</span></div>
-
-                                <span class="product-o__price">$125.00
-
-                                        <span class="product-o__discount">$160.00</span></span>
-							</div>
-						</div>
+                            <?php
+                        }
+                        ?>
 					</div>
 				</div>
 			</div>
@@ -477,57 +452,31 @@ include 'components/header.php';
 
 								<span class="column-product__title u-c-secondary u-s-m-b-25">LATEST PRODUCTS</span>
 								<ul class="column-product__list">
-									<li class="column-product__item">
-										<div class="product-l">
-											<div class="product-l__img-wrap">
+                                    <?php
+                                    foreach ($latestProducts as $product) {
+                                        $image = explode(",", $product['productImage']);
+                                        $imagePath = '/dw-assignment-HKZ/images/product/' . $image[0];
+                                        ?>
+										<li class="column-product__item">
+											<div class="product-l">
+												<div class="product-l__img-wrap">
 
-												<a class="aspect aspect--bg-grey aspect--square u-d-block product-l__link"
-												   href="product-detail.html">
+													<a class="aspect aspect--bg-grey aspect--square u-d-block product-l__link"
+													   href="product-detail.html">
 
-													<img class="aspect__img"
-													     src="images/product/electronic/product23.jpg" alt=""></a></div>
-											<div class="product-l__info-wrap">
+														<img class="aspect__img" src="<?php echo $imagePath; ?>"
+														     alt="<?php echo $product['productName']; ?>"></a>
+												</div>
+												<div class="product-l__info-wrap">
                                                 <span class="product-l__name">
 
-                                                        <a href="product-detail.html">Razor Gear 15 Ram 16GB</a></span>
+                                                        <a href="product-detail.html"><?php echo $product['productName']; ?></a></span>
 
-												<span class="product-l__price">$125.00</span></div>
-										</div>
-									</li>
-									<li class="column-product__item">
-										<div class="product-l">
-											<div class="product-l__img-wrap">
-
-												<a class="aspect aspect--bg-grey aspect--square u-d-block product-l__link"
-												   href="product-detail.html">
-
-													<img class="aspect__img"
-													     src="images/product/electronic/product24.jpg" alt=""></a></div>
-											<div class="product-l__info-wrap">
-                                                <span class="product-l__name">
-
-                                                        <a href="product-detail.html">Razor Gear 13 Ram 16GB</a></span>
-
-												<span class="product-l__price">$125.00</span></div>
-										</div>
-									</li>
-									<li class="column-product__item">
-										<div class="product-l">
-											<div class="product-l__img-wrap">
-
-												<a class="aspect aspect--bg-grey aspect--square u-d-block product-l__link"
-												   href="product-detail.html">
-
-													<img class="aspect__img"
-													     src="images/product/electronic/product25.jpg" alt=""></a></div>
-											<div class="product-l__info-wrap">
-                                                <span class="product-l__name">
-
-                                                        <a href="product-detail.html">Razor Gear 15 Ram 8GB</a></span>
-
-												<span class="product-l__price">$125.00</span></div>
-										</div>
-									</li>
+													<span class="product-l__price"><?php echo number_format($product['productPrice']) . " MMK"; ?></span>
+												</div>
+											</div>
+										</li>
+                                    <?php } ?>
 								</ul>
 							</div>
 						</div>
@@ -535,154 +484,64 @@ include 'components/header.php';
 							<div class="column-product">
 								<span class="column-product__title u-c-secondary u-s-m-b-25">SECOND HAND PRODUCTS</span>
 								<ul class="column-product__list">
-									<li class="column-product__item">
-										<div class="product-l">
-											<div class="product-l__img-wrap">
+                                    <?php
+                                    foreach ($secondHandProducts as $product) {
+                                        $image = explode(",", $product['productImage']);
+                                        $imagePath = '/dw-assignment-HKZ/images/product/' . $image[0];
+                                        ?>
+										<li class="column-product__item">
+											<div class="product-l">
+												<div class="product-l__img-wrap">
 
-												<a class="aspect aspect--bg-grey aspect--square u-d-block product-l__link"
-												   href="product-detail.html">
+													<a class="aspect aspect--bg-grey aspect--square u-d-block product-l__link"
+													   href="product-detail.html">
 
-													<img class="aspect__img"
-													     src="images/product/electronic/product26.jpg" alt=""></a></div>
-											<div class="product-l__info-wrap">
-
-                                                <span class="product-l__name">
-
-                                                        <a href="product-detail.html">Razor Gear 10 Ram 16GB</a></span>
-
-												<span class="product-l__price">$125.00
-
-                                                        <span class="product-l__discount">$160</span></span></div>
-										</div>
-									</li>
-									<li class="column-product__item">
-										<div class="product-l">
-											<div class="product-l__img-wrap">
-
-												<a class="aspect aspect--bg-grey aspect--square u-d-block product-l__link"
-												   href="product-detail.html">
-
-													<img class="aspect__img"
-													     src="images/product/electronic/product27.jpg" alt=""></a></div>
-											<div class="product-l__info-wrap">
-
-                                                    
-
-                                                        
+														<img class="aspect__img" src="<?php echo $imagePath; ?>"
+														     alt="<?php echo $product['productName']; ?>"></a></div>
+												<div class="product-l__info-wrap">
 
                                                 <span class="product-l__name">
 
-                                                        <a href="product-detail.html">Razor Gear 15 Ram 8GB</a></span>
+                                                        <a href="product-detail.html"><?php echo $product['productName']; ?></a></span>
 
-												<span class="product-l__price">$125.00
+													<span class="product-l__price"><?php echo number_format($product['productPrice']) . " MMK"; ?>
 
-                                                        <span class="product-l__discount">$160</span></span></div>
-										</div>
-									</li>
-									<li class="column-product__item">
-										<div class="product-l">
-											<div class="product-l__img-wrap">
-
-												<a class="aspect aspect--bg-grey aspect--square u-d-block product-l__link"
-												   href="product-detail.html">
-
-													<img class="aspect__img"
-													     src="images/product/electronic/product28.jpg" alt=""></a></div>
-											<div class="product-l__info-wrap">
-
-                                                    
-
-                                                        
-
-                                                <span class="product-l__name">
-
-                                                        <a href="product-detail.html">Razor Gear 15 Ultra Ram 16GB</a></span>
-
-												<span class="product-l__price">$125.00
-
-                                                        <span class="product-l__discount">$160</span></span></div>
-										</div>
-									</li>
+                                                        <span class="product-l__discount"><?php
+                                                            echo number_format($product['productPrice'] + (rand(3, 80) * 1000)) . " MMK"; ?></span></span>
+												</div>
+											</div>
+										</li>
+                                    <?php } ?>
 								</ul>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6 col-sm-6 u-s-m-b-30">
 							<div class="column-product">
 
-								<span class="column-product__title u-c-secondary u-s-m-b-25">FEATURED PRODUCTS</span>
+								<span class="column-product__title u-c-secondary u-s-m-b-25">PREMIUM PRODUCTS</span>
 								<ul class="column-product__list">
+                                    <?php
+                                    foreach ($premiumProducts
+
+                                    as $product) {
+                                    $image = explode(",", $product['productImage']);
+                                    $imagePath = '/dw-assignment-HKZ/images/product/' . $image[0];
+                                    ?>
 									<li class="column-product__item">
 										<div class="product-l">
 											<div class="product-l__img-wrap">
-
 												<a class="aspect aspect--bg-grey aspect--square u-d-block product-l__link"
 												   href="product-detail.html">
-
 													<img class="aspect__img"
-													     src="images/product/electronic/product29.jpg" alt=""></a></div>
+													     src="<?php echo $imagePath; ?>" alt="<?php echo $product['productName']; ?>"></a></div>
 											<div class="product-l__info-wrap">
-												<div class="product-l__rating gl-rating-style"><i
-															class="fas fa-star"></i><i class="fas fa-star"></i><i
-															class="fas fa-star"></i><i class="far fa-star"></i><i
-															class="far fa-star"></i></div>
-
-
 												<span class="product-l__name">
-
-                                                        <a href="product-detail.html">Razor Gear 20 Ultra Ram 16GB</a></span>
-
-												<span class="product-l__price">$125.00</span>
+                                                        <a href="product-detail.html"><?php echo $product['productName']; ?></a></span>
+												<span class="product-l__price"><?php echo number_format($product['productPrice']) . " MMK"; ?></span>
 											</div>
 										</div>
 									</li>
-									<li class="column-product__item">
-										<div class="product-l">
-											<div class="product-l__img-wrap">
-
-												<a class="aspect aspect--bg-grey aspect--square u-d-block product-l__link"
-												   href="product-detail.html">
-
-													<img class="aspect__img"
-													     src="images/product/electronic/product30.jpg" alt=""></a></div>
-											<div class="product-l__info-wrap">
-												<div class="product-l__rating gl-rating-style"><i
-															class="fas fa-star"></i><i class="fas fa-star"></i><i
-															class="fas fa-star"></i><i class="far fa-star"></i><i
-															class="far fa-star"></i></div>
-
-
-												<span class="product-l__name">
-
-                                                        <a href="product-detail.html">Razor Gear 11 Ultra Ram 16GB</a></span>
-
-												<span class="product-l__price">$125.00</span>
-											</div>
-										</div>
-									</li>
-									<li class="column-product__item">
-										<div class="product-l">
-											<div class="product-l__img-wrap">
-
-												<a class="aspect aspect--bg-grey aspect--square u-d-block product-l__link"
-												   href="product-detail.html">
-
-													<img class="aspect__img"
-													     src="images/product/electronic/product31.jpg" alt=""></a></div>
-											<div class="product-l__info-wrap">
-												<div class="product-l__rating gl-rating-style"><i
-															class="fas fa-star"></i><i class="fas fa-star"></i><i
-															class="fas fa-star"></i><i class="far fa-star"></i><i
-															class="far fa-star"></i></div>
-
-
-												<span class="product-l__name">
-
-                                                        <a href="product-detail.html">Razor Gear 10 Ultra Ram 16GB</a></span>
-
-												<span class="product-l__price">$125.00</span>
-											</div>
-										</div>
-									</li>
+									<?php } ?>
 								</ul>
 							</div>
 						</div>
@@ -1014,251 +873,251 @@ include 'components/header.php';
 
 
 	<!--====== Quick Look Modal ======-->
-	<div class="modal fade" id="quick-look">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content modal--shadow">
-
-				<button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-lg-5">
-
-							<!--====== Product Breadcrumb ======-->
-							<div class="pd-breadcrumb u-s-m-b-30">
-								<ul class="pd-breadcrumb__list">
-									<li class="has-separator">
-
-										<a href="index.hml">Home</a></li>
-									<li class="has-separator">
-
-										<a href="shop-side-version-2.html">Electronics</a></li>
-									<li class="has-separator">
-
-										<a href="shop-side-version-2.html">DSLR Cameras</a></li>
-									<li class="is-marked">
-
-										<a href="shop-side-version-2.html">Nikon Cameras</a></li>
-								</ul>
-							</div>
-							<!--====== End - Product Breadcrumb ======-->
-
-
-							<!--====== Product Detail ======-->
-							<div class="pd u-s-m-b-30">
-								<div class="pd-wrap">
-									<div id="js-product-detail-modal">
-										<div>
-
-											<img class="u-img-fluid" src="images/product/product-d-1.jpg" alt=""></div>
-										<div>
-
-											<img class="u-img-fluid" src="images/product/product-d-2.jpg" alt=""></div>
-										<div>
-
-											<img class="u-img-fluid" src="images/product/product-d-3.jpg" alt=""></div>
-										<div>
-
-											<img class="u-img-fluid" src="images/product/product-d-4.jpg" alt=""></div>
-										<div>
-
-											<img class="u-img-fluid" src="images/product/product-d-5.jpg" alt=""></div>
-									</div>
-								</div>
-								<div class="u-s-m-t-15">
-									<div id="js-product-detail-modal-thumbnail">
-										<div>
-
-											<img class="u-img-fluid" src="images/product/product-d-1.jpg" alt=""></div>
-										<div>
-
-											<img class="u-img-fluid" src="images/product/product-d-2.jpg" alt=""></div>
-										<div>
-
-											<img class="u-img-fluid" src="images/product/product-d-3.jpg" alt=""></div>
-										<div>
-
-											<img class="u-img-fluid" src="images/product/product-d-4.jpg" alt=""></div>
-										<div>
-
-											<img class="u-img-fluid" src="images/product/product-d-5.jpg" alt=""></div>
-									</div>
-								</div>
-							</div>
-							<!--====== End - Product Detail ======-->
-						</div>
-						<div class="col-lg-7">
-
-							<!--====== Product Right Side Details ======-->
-							<div class="pd-detail">
-								<div>
-
-									<span class="pd-detail__name">Nikon Camera 4k Lens Zoom Pro</span></div>
-								<div>
-									<div class="pd-detail__inline">
-
-										<span class="pd-detail__price">$6.99</span>
-
-										<span class="pd-detail__discount">(76% OFF)</span>
-										<del class="pd-detail__del">$28.97</del>
-									</div>
-								</div>
-								<div class="u-s-m-b-15">
-									<div class="pd-detail__rating gl-rating-style"><i class="fas fa-star"></i><i
-												class="fas fa-star"></i><i class="fas fa-star"></i><i
-												class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-
-										<span class="pd-detail__review u-s-m-l-4">
-
-                                                <a href="product-detail.html">23 Reviews</a></span></div>
-								</div>
-								<div class="u-s-m-b-15">
-									<div class="pd-detail__inline">
-
-										<span class="pd-detail__stock">200 in stock</span>
-
-										<span class="pd-detail__left">Only 2 left</span></div>
-								</div>
-								<div class="u-s-m-b-15">
-
-									<span class="pd-detail__preview-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
-								</div>
-								<div class="u-s-m-b-15">
-									<div class="pd-detail__inline">
-
-                                            <span class="pd-detail__click-wrap"><i class="far fa-heart u-s-m-r-6"></i>
-
-                                                <a href="signin.html">Add to Wishlist</a>
-
-                                                <span class="pd-detail__click-count">(222)</span></span></div>
-								</div>
-								<div class="u-s-m-b-15">
-									<div class="pd-detail__inline">
-
-                                            <span class="pd-detail__click-wrap"><i
-			                                            class="far fa-envelope u-s-m-r-6"></i>
-
-                                                <a href="signin.html">Email me When the price drops</a>
-
-                                                <span class="pd-detail__click-count">(20)</span></span></div>
-								</div>
-								<div class="u-s-m-b-15">
-									<ul class="pd-social-list">
-										<li>
-
-											<a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a>
-										</li>
-										<li>
-
-											<a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a>
-										</li>
-										<li>
-
-											<a class="s-insta--color-hover" href="#"><i
-														class="fab fa-instagram"></i></a></li>
-										<li>
-
-											<a class="s-wa--color-hover" href="#"><i class="fab fa-whatsapp"></i></a>
-										</li>
-										<li>
-
-											<a class="s-gplus--color-hover" href="#"><i
-														class="fab fa-google-plus-g"></i></a></li>
-									</ul>
-								</div>
-								<div class="u-s-m-b-15">
-									<form class="pd-detail__form">
-										<div class="pd-detail-inline-2">
-											<div class="u-s-m-b-15">
-
-												<!--====== Input Counter ======-->
-												<div class="input-counter">
-
-													<span class="input-counter__minus fas fa-minus"></span>
-
-													<input class="input-counter__text input-counter--text-primary-style"
-													       type="text" value="1" data-min="1" data-max="1000">
-
-													<span class="input-counter__plus fas fa-plus"></span></div>
-												<!--====== End - Input Counter ======-->
-											</div>
-											<div class="u-s-m-b-15">
-
-												<button class="btn btn--e-brand-b-2" type="submit">Add to Cart</button>
-											</div>
-										</div>
-									</form>
-								</div>
-								<div class="u-s-m-b-15">
-
-									<span class="pd-detail__label u-s-m-b-8">Product Policy:</span>
-									<ul class="pd-detail__policy-list">
-										<li><i class="fas fa-check-circle u-s-m-r-8"></i>
-
-											<span>Buyer Protection.</span></li>
-										<li><i class="fas fa-check-circle u-s-m-r-8"></i>
-
-											<span>Full Refund if you don't receive your order.</span></li>
-										<li><i class="fas fa-check-circle u-s-m-r-8"></i>
-
-											<span>Returns accepted if product not as described.</span></li>
-									</ul>
-								</div>
-							</div>
-							<!--====== End - Product Right Side Details ======-->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<!--	<div class="modal fade" id="quick-look">-->
+	<!--		<div class="modal-dialog modal-dialog-centered">-->
+	<!--			<div class="modal-content modal--shadow">-->
+	<!---->
+	<!--				<button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>-->
+	<!--				<div class="modal-body">-->
+	<!--					<div class="row">-->
+	<!--						<div class="col-lg-5">-->
+	<!---->
+	<!--							<!--====== Product Breadcrumb ======-->-->
+	<!--							<div class="pd-breadcrumb u-s-m-b-30">-->
+	<!--								<ul class="pd-breadcrumb__list">-->
+	<!--									<li class="has-separator">-->
+	<!---->
+	<!--										<a href="index.hml">Home</a></li>-->
+	<!--									<li class="has-separator">-->
+	<!---->
+	<!--										<a href="shop-side-version-2.html">Electronics</a></li>-->
+	<!--									<li class="has-separator">-->
+	<!---->
+	<!--										<a href="shop-side-version-2.html">DSLR Cameras</a></li>-->
+	<!--									<li class="is-marked">-->
+	<!---->
+	<!--										<a href="shop-side-version-2.html">Nikon Cameras</a></li>-->
+	<!--								</ul>-->
+	<!--							</div>-->
+	<!--							<!--====== End - Product Breadcrumb ======-->-->
+	<!---->
+	<!---->
+	<!--							<!--====== Product Detail ======-->-->
+	<!--							<div class="pd u-s-m-b-30">-->
+	<!--								<div class="pd-wrap">-->
+	<!--									<div id="js-product-detail-modal">-->
+	<!--										<div>-->
+	<!---->
+	<!--											<img class="u-img-fluid" src="images/product/product-d-1.jpg" alt=""></div>-->
+	<!--										<div>-->
+	<!---->
+	<!--											<img class="u-img-fluid" src="images/product/product-d-2.jpg" alt=""></div>-->
+	<!--										<div>-->
+	<!---->
+	<!--											<img class="u-img-fluid" src="images/product/product-d-3.jpg" alt=""></div>-->
+	<!--										<div>-->
+	<!---->
+	<!--											<img class="u-img-fluid" src="images/product/product-d-4.jpg" alt=""></div>-->
+	<!--										<div>-->
+	<!---->
+	<!--											<img class="u-img-fluid" src="images/product/product-d-5.jpg" alt=""></div>-->
+	<!--									</div>-->
+	<!--								</div>-->
+	<!--								<div class="u-s-m-t-15">-->
+	<!--									<div id="js-product-detail-modal-thumbnail">-->
+	<!--										<div>-->
+	<!---->
+	<!--											<img class="u-img-fluid" src="images/product/product-d-1.jpg" alt=""></div>-->
+	<!--										<div>-->
+	<!---->
+	<!--											<img class="u-img-fluid" src="images/product/product-d-2.jpg" alt=""></div>-->
+	<!--										<div>-->
+	<!---->
+	<!--											<img class="u-img-fluid" src="images/product/product-d-3.jpg" alt=""></div>-->
+	<!--										<div>-->
+	<!---->
+	<!--											<img class="u-img-fluid" src="images/product/product-d-4.jpg" alt=""></div>-->
+	<!--										<div>-->
+	<!---->
+	<!--											<img class="u-img-fluid" src="images/product/product-d-5.jpg" alt=""></div>-->
+	<!--									</div>-->
+	<!--								</div>-->
+	<!--							</div>-->
+	<!--							<!--====== End - Product Detail ======-->-->
+	<!--						</div>-->
+	<!--						<div class="col-lg-7">-->
+	<!---->
+	<!--							<!--====== Product Right Side Details ======-->-->
+	<!--							<div class="pd-detail">-->
+	<!--								<div>-->
+	<!---->
+	<!--									<span class="pd-detail__name">Nikon Camera 4k Lens Zoom Pro</span></div>-->
+	<!--								<div>-->
+	<!--									<div class="pd-detail__inline">-->
+	<!---->
+	<!--										<span class="pd-detail__price">$6.99</span>-->
+	<!---->
+	<!--										<span class="pd-detail__discount">(76% OFF)</span>-->
+	<!--										<del class="pd-detail__del">$28.97</del>-->
+	<!--									</div>-->
+	<!--								</div>-->
+	<!--								<div class="u-s-m-b-15">-->
+	<!--									<div class="pd-detail__rating gl-rating-style"><i class="fas fa-star"></i><i-->
+	<!--												class="fas fa-star"></i><i class="fas fa-star"></i><i-->
+	<!--												class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>-->
+	<!---->
+	<!--										<span class="pd-detail__review u-s-m-l-4">-->
+	<!---->
+	<!--                                                <a href="product-detail.html">23 Reviews</a></span></div>-->
+	<!--								</div>-->
+	<!--								<div class="u-s-m-b-15">-->
+	<!--									<div class="pd-detail__inline">-->
+	<!---->
+	<!--										<span class="pd-detail__stock">200 in stock</span>-->
+	<!---->
+	<!--										<span class="pd-detail__left">Only 2 left</span></div>-->
+	<!--								</div>-->
+	<!--								<div class="u-s-m-b-15">-->
+	<!---->
+	<!--									<span class="pd-detail__preview-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>-->
+	<!--								</div>-->
+	<!--								<div class="u-s-m-b-15">-->
+	<!--									<div class="pd-detail__inline">-->
+	<!---->
+	<!--                                            <span class="pd-detail__click-wrap"><i class="far fa-heart u-s-m-r-6"></i>-->
+	<!---->
+	<!--                                                <a href="signin.html">Add to Wishlist</a>-->
+	<!---->
+	<!--                                                <span class="pd-detail__click-count">(222)</span></span></div>-->
+	<!--								</div>-->
+	<!--								<div class="u-s-m-b-15">-->
+	<!--									<div class="pd-detail__inline">-->
+	<!---->
+	<!--                                            <span class="pd-detail__click-wrap"><i-->
+	<!--			                                            class="far fa-envelope u-s-m-r-6"></i>-->
+	<!---->
+	<!--                                                <a href="signin.html">Email me When the price drops</a>-->
+	<!---->
+	<!--                                                <span class="pd-detail__click-count">(20)</span></span></div>-->
+	<!--								</div>-->
+	<!--								<div class="u-s-m-b-15">-->
+	<!--									<ul class="pd-social-list">-->
+	<!--										<li>-->
+	<!---->
+	<!--											<a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a>-->
+	<!--										</li>-->
+	<!--										<li>-->
+	<!---->
+	<!--											<a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a>-->
+	<!--										</li>-->
+	<!--										<li>-->
+	<!---->
+	<!--											<a class="s-insta--color-hover" href="#"><i-->
+	<!--														class="fab fa-instagram"></i></a></li>-->
+	<!--										<li>-->
+	<!---->
+	<!--											<a class="s-wa--color-hover" href="#"><i class="fab fa-whatsapp"></i></a>-->
+	<!--										</li>-->
+	<!--										<li>-->
+	<!---->
+	<!--											<a class="s-gplus--color-hover" href="#"><i-->
+	<!--														class="fab fa-google-plus-g"></i></a></li>-->
+	<!--									</ul>-->
+	<!--								</div>-->
+	<!--								<div class="u-s-m-b-15">-->
+	<!--									<form class="pd-detail__form">-->
+	<!--										<div class="pd-detail-inline-2">-->
+	<!--											<div class="u-s-m-b-15">-->
+	<!---->
+	<!--												<!--====== Input Counter ======-->-->
+	<!--												<div class="input-counter">-->
+	<!---->
+	<!--													<span class="input-counter__minus fas fa-minus"></span>-->
+	<!---->
+	<!--													<input class="input-counter__text input-counter--text-primary-style"-->
+	<!--													       type="text" value="1" data-min="1" data-max="1000">-->
+	<!---->
+	<!--													<span class="input-counter__plus fas fa-plus"></span></div>-->
+	<!--												<!--====== End - Input Counter ======-->-->
+	<!--											</div>-->
+	<!--											<div class="u-s-m-b-15">-->
+	<!---->
+	<!--												<button class="btn btn--e-brand-b-2" type="submit">Add to Cart</button>-->
+	<!--											</div>-->
+	<!--										</div>-->
+	<!--									</form>-->
+	<!--								</div>-->
+	<!--								<div class="u-s-m-b-15">-->
+	<!---->
+	<!--									<span class="pd-detail__label u-s-m-b-8">Product Policy:</span>-->
+	<!--									<ul class="pd-detail__policy-list">-->
+	<!--										<li><i class="fas fa-check-circle u-s-m-r-8"></i>-->
+	<!---->
+	<!--											<span>Buyer Protection.</span></li>-->
+	<!--										<li><i class="fas fa-check-circle u-s-m-r-8"></i>-->
+	<!---->
+	<!--											<span>Full Refund if you don't receive your order.</span></li>-->
+	<!--										<li><i class="fas fa-check-circle u-s-m-r-8"></i>-->
+	<!---->
+	<!--											<span>Returns accepted if product not as described.</span></li>-->
+	<!--									</ul>-->
+	<!--								</div>-->
+	<!--							</div>-->
+	<!--							<!--====== End - Product Right Side Details ======-->-->
+	<!--						</div>-->
+	<!--					</div>-->
+	<!--				</div>-->
+	<!--			</div>-->
+	<!--		</div>-->
+	<!--	</div>-->
 	<!--====== End - Quick Look Modal ======-->
 
 
 	<!--====== Add to Cart Modal ======-->
-	<div class="modal fade" id="add-to-cart">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content modal-radius modal-shadow">
-
-				<button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-lg-6 col-md-12">
-							<div class="success u-s-m-b-30">
-								<div class="success__text-wrap"><i class="fas fa-check"></i>
-
-									<span>Item is added successfully!</span></div>
-								<div class="success__img-wrap">
-
-									<img class="u-img-fluid" src="images/product/electronic/product1.jpg" alt=""></div>
-								<div class="success__info-wrap">
-
-									<span class="success__name">Beats Bomb Wireless Headphone</span>
-
-									<span class="success__quantity">Quantity: 1</span>
-
-									<span class="success__price">$170.00</span></div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-12">
-							<div class="s-option">
-
-								<span class="s-option__text">1 item (s) in your cart</span>
-								<div class="s-option__link-box">
-
-									<a class="s-option__link btn--e-white-brand-shadow" data-dismiss="modal">CONTINUE
-										SHOPPING</a>
-
-									<a class="s-option__link btn--e-white-brand-shadow" href="cart.html">VIEW CART</a>
-
-									<a class="s-option__link btn--e-brand-shadow" href="checkout.html">PROCEED TO
-										CHECKOUT</a></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<!--	<div class="modal fade" id="add-to-cart">-->
+	<!--		<div class="modal-dialog modal-dialog-centered">-->
+	<!--			<div class="modal-content modal-radius modal-shadow">-->
+	<!---->
+	<!--				<button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>-->
+	<!--				<div class="modal-body">-->
+	<!--					<div class="row">-->
+	<!--						<div class="col-lg-6 col-md-12">-->
+	<!--							<div class="success u-s-m-b-30">-->
+	<!--								<div class="success__text-wrap"><i class="fas fa-check"></i>-->
+	<!---->
+	<!--									<span>Item is added successfully!</span></div>-->
+	<!--								<div class="success__img-wrap">-->
+	<!---->
+	<!--									<img class="u-img-fluid" src="images/product/electronic/product1.jpg" alt=""></div>-->
+	<!--								<div class="success__info-wrap">-->
+	<!---->
+	<!--									<span class="success__name">Beats Bomb Wireless Headphone</span>-->
+	<!---->
+	<!--									<span class="success__quantity">Quantity: 1</span>-->
+	<!---->
+	<!--									<span class="success__price">$170.00</span></div>-->
+	<!--							</div>-->
+	<!--						</div>-->
+	<!--						<div class="col-lg-6 col-md-12">-->
+	<!--							<div class="s-option">-->
+	<!---->
+	<!--								<span class="s-option__text">1 item (s) in your cart</span>-->
+	<!--								<div class="s-option__link-box">-->
+	<!---->
+	<!--									<a class="s-option__link btn--e-white-brand-shadow" data-dismiss="modal">CONTINUE-->
+	<!--										SHOPPING</a>-->
+	<!---->
+	<!--									<a class="s-option__link btn--e-white-brand-shadow" href="cart.html">VIEW CART</a>-->
+	<!---->
+	<!--									<a class="s-option__link btn--e-brand-shadow" href="checkout.html">PROCEED TO-->
+	<!--										CHECKOUT</a></div>-->
+	<!--							</div>-->
+	<!--						</div>-->
+	<!--					</div>-->
+	<!--				</div>-->
+	<!--			</div>-->
+	<!--		</div>-->
+	<!--	</div>-->
 	<!--====== End - Add to Cart Modal ======-->
 
 

@@ -41,30 +41,57 @@ $category = "CREATE TABLE IF NOT EXISTS `Category`(
     `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `categoryName` varchar(30) NOT NULL
 )";
-//$result = getResult($connection, $category, 'Category');
+$result = getResult($connection, $category, 'Category');
 
 $query = "CREATE TABLE IF NOT EXISTS `Product`(
     `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `productName` varchar(255) NOT NULL,
-    `productAmount` int CHECK (productAmount >= 0),
+    `productPrice` int CHECK (productAmount >= 0),
     `productQuantity` int CHECK (productQuantity >= 0),
     `productImage` text,
-    `productDescription` varchar(255),
+    `productDescription` text,
     `productStatus` varchar(30),
     `categoryId` int(11),
      FOREIGN KEY (categoryId) REFERENCES `Category`(`id`)
 )";
-//$result = getResult($connection, $query, 'Product');
+$result = getResult($connection, $query, 'Product');
+
+// THIS IS NOT CREATED YET
+$query = "CREATE TABLE IF NOT EXISTS `Order`(
+    `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `customerId` int(11),
+    `productId` int(11),
+    `orderDate` date,
+    `orderStatus` varchar(30),
+    FOREIGN KEY (customerId) REFERENCES `Customer`(`id`),
+    FOREIGN KEY (productId) REFERENCES `Product`(`id`)
+)";
+//$result = getResult($connection, $query, 'Order');
+
+$query = "CREATE TABLE IF NOT EXISTS `OrderDetails`(
+    `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `orderId` int(11),
+    `orderLocation` varchar(255),
+    `orderPhone` varchar(30),
+    `quantity` int(11),
+    `price` int(11),
+    `tax` int(11),
+    `total` int(11),
+    `remark` varchar(255),
+    `status` varchar(30),
+    `paymentMethod` varchar(30),
+    FOREIGN KEY (orderId) REFERENCES `Order`(`id`)
+)";
+$result = getResult($connection, $query, 'OrderDetails');
 
 $query = "CREATE TABLE IF NOT EXISTS `Bookings`(
     `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `name` varchar(50) NOT NULL,
-    `email` varchar(30) NOT NULL CHECK (email LIKE '%@%'),
-    `phone` varchar(30),
+    `customerId` int(11),
     `bookingDate` date,
-    `bookingType` ENUM('Face to Face', 'Online') DEFAULT 'Face to Face'
+    `bookingType` ENUM('Face to Face', 'Online') DEFAULT 'Face to Face',
+    FOREIGN KEY (customerId) REFERENCES `Customer`(`id`)
     )";
-$result = getResult($connection, $query, 'Bookings');
+//$result = getResult($connection, $query, 'Bookings');
 
 $query = "CREATE TABLE IF NOT EXISTS `ContactForms`(
     `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -73,4 +100,4 @@ $query = "CREATE TABLE IF NOT EXISTS `ContactForms`(
     `phone` varchar(30),
     `message` varchar(255)
     )";
-$result = getResult($connection, $query, 'ContactForms');
+//$result = getResult($connection, $query, 'ContactForms');
