@@ -8905,3 +8905,17 @@ input::-ms-clear {
     color: #00C851;
 }
 
+.vertical-text{
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    position: relative;
+    bottom: 0;
+}
+.vertical-center {
+    margin: 0;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    width: 50%;
+    bottom: 10px;
+}

@@ -147,7 +147,7 @@ include 'components/header.php';
                                 <div class="team-member__wrap">
                                     <div class="aspect aspect--bg-grey-fb aspect--square">
 
-                                        <img class="aspect__img team-member__img" src="images/trainers/trainer-1.png"
+                                        <img class="aspect__img team-member__img" src="images/technicians/technician1.jpg"
                                              alt=""></div>
                                     <div class="team-member__social-wrap">
                                         <ul class="team-member__social-list">
@@ -172,7 +172,7 @@ include 'components/header.php';
                                 </div>
                                 <div class="team-member__info">
 
-                                    <span class="team-member__name">Joseph Min</span>
+                                    <span class="team-member__name">Joseph Smith</span>
 
                                     <span class="team-member__job-title">Team Leader</span></div>
                             </div>
@@ -182,7 +182,7 @@ include 'components/header.php';
                                 <div class="team-member__wrap">
                                     <div class="aspect aspect--bg-grey-fb aspect--square">
 
-                                        <img class="aspect__img team-member__img" src="images/trainers/trainer-2.png"
+                                        <img class="aspect__img team-member__img" src="images/technicians/technician2.jpg"
                                              alt=""></div>
                                     <div class="team-member__social-wrap">
                                         <ul class="team-member__social-list">
@@ -207,7 +207,7 @@ include 'components/header.php';
                                 </div>
                                 <div class="team-member__info">
 
-                                    <span class="team-member__name">Katherina Missie</span>
+                                    <span class="team-member__name">David Leong</span>
 
                                     <span class="team-member__job-title">Fitness Equipment Technician</span></div>
                             </div>
@@ -217,7 +217,7 @@ include 'components/header.php';
                                 <div class="team-member__wrap">
                                     <div class="aspect aspect--bg-grey-fb aspect--square">
 
-                                        <img class="aspect__img team-member__img" src="images/trainers/trainer-3.png"
+                                        <img class="aspect__img team-member__img" src="images/technicians/technician3.jpg"
                                              alt=""></div>
                                     <div class="team-member__social-wrap">
                                         <ul class="team-member__social-list">
@@ -252,7 +252,7 @@ include 'components/header.php';
                                 <div class="team-member__wrap">
                                     <div class="aspect aspect--bg-grey-fb aspect--square">
 
-                                        <img class="aspect__img team-member__img" src="images/trainers/trainer-4.png"
+                                        <img class="aspect__img team-member__img" src="images/technicians/technician4.jpg"
                                              alt=""></div>
                                     <div class="team-member__social-wrap">
                                         <ul class="team-member__social-list">
@@ -277,7 +277,7 @@ include 'components/header.php';
                                 </div>
                                 <div class="team-member__info">
 
-                                    <span class="team-member__name">Cali Essie</span>
+                                    <span class="team-member__name">Jeremy Harris</span>
 
                                     <span class="team-member__job-title">Equipment Maintenance Technician</span></div>
                             </div>
@@ -324,7 +324,7 @@ include 'components/header.php';
 
                                     <span class="testimonial__double-quote"><i class="fas fa-quote-right"></i></span>
                                     <blockquote class="testimonial__block-quote">
-                                        <p>"HGE Repair Service is really great. I had Joseph Min for repairing my gym
+                                        <p>"HGE Repair Service is really great. I had Joseph Smith for repairing my gym
                                             equipments and now I have recently observed favorable changes. I am happy
                                             with myself. If you're in the search for gym repair service
                                             , go no further than Joseph and HGE."</p>
@@ -340,7 +340,7 @@ include 'components/header.php';
 
                                     <span class="testimonial__double-quote"><i class="fas fa-quote-right"></i></span>
                                     <blockquote class="testimonial__block-quote">
-                                        <p>"In a Genuine Maintenance service, you should hire Katherina if you want
+                                        <p>"In a Genuine Maintenance service, you should hire David if you want
                                             someone who is skillful in
                                             fitness equipments and takes a personal interest in your
                                             fitness goals. HGE Repair Service comes extremely recommended from
@@ -374,7 +374,7 @@ include 'components/header.php';
 
                                     <span class="testimonial__double-quote"><i class="fas fa-quote-right"></i></span>
                                     <blockquote class="testimonial__block-quote">
-                                        <p>"Cali is dedicated to assisting me for maintaining my gym equipments and ensures
+                                        <p>"Jeremy is dedicated to assisting me for maintaining my gym equipments and ensures
                                             that each maintenance session is full of quality control. My fitness level has
                                             improved substantially due to her assistance and because of good quality equipments,
                                             I've noticed an increase in my capacity to perform a greater number of
