@@ -1,16 +1,3 @@
-/*
-Theme Name: Ludus
-Author: ahfront
-Description: Ludus - is complete multipurpose polish eCommerce template built with
-best practices. It will be perfect solution for your current or future shop, customizable
-into any store contains responsiveness & great UI. Well tested on compatible browsers.
-The template contains 40+ HTML files, 3 Homepages, 3 Header Styles, 12 Dashboard Pages,
-3 Product Pages, 7 Shop Pages, 5 Blog Pages, Box mode and generated 10 Color variations but could
-create unlimited colors.
-Version: 1.0.0
-Tags: one-column, two-columns, three-columns, four-columns, right-sidebar,
-custom-colors, box-mode, custom-header, custom-menu, custom-logo, featured-images
-*/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -490,14 +477,6 @@ body {
 }
 
 /*
-  * Global classes you can use these classes on elements and components of your application.
-  * Remember: Don't confuse your mind with utility classes & Global classes.
-  * Utility class has a prefix 'u' that represents root namespace also has a sub-namespace
-  * prefix. These are low-level utility classes that make it easy to build complex user interfaces.
-  * Global class has a prefix 'gl' and these classes are ready-made styles that you could
-  * use on different elements like span, div, h1, h3 and components like button, selectbox. scrollbar etc.
- */
-/*
   * Chrome Default Style for scrollbar
  */
 .gl-scroll::-webkit-scrollbar {
@@ -770,11 +749,7 @@ body {
 /*--------------------------------------------------------------
 4.0 Layout Utility Styles
 --------------------------------------------------------------*/
-/**
- * Utility classes for colors:
- * Convey meaning through color with a handful of color utility classes.
- * Includes support for styling links too.
- */
+
 .u-c-brand {
     color: #0D122C !important;
 }
@@ -1237,34 +1212,6 @@ input::-ms-clear {
     display: none;
 }
 
-/* Preload Aspect Ratio Component */
-/*
-  * Example 1 For Square: <a class="aspect aspect--bg-grey aspect--square u-d-block"><img src="a.jpg" class="aspect__img" alt=""></a>
-  * Example 2 For Non Square: <div class="aspect aspect--bg-grey aspect--1286-890"><img src="a.jpg" class="aspect__img" alt=""></div>
- */
-/*
-  * Some Points to use Aspect Ratio Component classes:
-  * Make sure the element on which it adds, it would be a block or inline-block element,
-  * if it is not then you could add utility class 'u-d-block', 'u-d-inline-block' or you
-  * could directly target that element with CSS to make inline or block.
-  * By default '.aspect--square' or '.aspect--16:9: resolution' class takes height according to
-  * the height of the child image element.
-  * But if the parent element is a flex element then aspect ratio technique doesn't work because
-  * '.aspect--square' or '.aspect--16:9: resolution' contains padding top/bottom property with a
-  * percentage value.
-  * There are also some cases you do not want to have '.aspect--square' or '.aspect--16:9: resolution'
-  * class to take width & height that match with child image element.
-  * Then you could append CSS class or directly target that parent element with CSS and
-  * set your custom width & height.
-  * If the image has aspect ratio square, i.e. 4:3 then you would add class '.aspect--square'
-  * on the element. This class has a padding-bottom:100% property.
-  * 100% means to take the entire height of the image.
-  * If the image doesn't have aspect ratio square then to make a custom class
-  * like '.aspect--imageWidth-imageHeight' and use ready-made sass function() nonsquare(imageWidth,imageHeight)
-  * that returns padding-bottom property with the value calculated according to image resolution.
-  * You could also change the background-color of placeholder according to your own choice.
-  * By default, only 2 classes are generated.
- */
 .aspect {
     position: relative;
 }
@@ -1285,10 +1232,6 @@ input::-ms-clear {
     padding-bottom: 20%;
 }
 
-/*
-  * Add this class inside '.aspect' child image element. If you want to make an image responsive then
-  * you can use utility u-img-fluid class.
- */
 .aspect__img {
     position: absolute;
     width: 100%;
@@ -2057,12 +2000,7 @@ input::-ms-clear {
 }
 
 /* Checkbox, Radio Component */
-/*
-  * Remember these are very important styles and make sure input checkbox always has a greater z-index from label
-  * and any other div's.
-  * Remember these styles make checkbox horizontal center, and when you click out of the boundary region
-  * Behind the scenes checkbox has a opacity 0 but it will be checked.
- */
+
 .check-box [type="checkbox"] {
     position: absolute;
     left: 0;
@@ -3270,10 +3208,6 @@ input::-ms-clear {
     color: #333333;
 }
 
-.filter__btn--style-2.js-checked {
-    border-color: #0D122C;
-    color: #333333;
-}
 
 .load-more {
     text-align: center;

@@ -1,3 +1,5 @@
+USE DBDD;
+
 INSERT INTO Specializations (SpecializationID, SpecializationName) VALUES
 ('SP-000001','Urology'),
 ('SP-000002','Neurology'),
@@ -165,7 +167,7 @@ INSERT INTO Appointments (AppointmentID, AppointmentDate, PatientID, DoctorID, S
 ('AP-000019', '12/10/2022', 'P-0000012', 'D-000001', 'Sudden intense headache ', 'AS-01'),
 ('AP-000020', '22/10/2022', 'P-0000020', 'D-000001', 'Pain when you urinate', 'AS-01');
 
-
+SELECT * FROM Appointments;
 
 
 /*Not done yet*/ 

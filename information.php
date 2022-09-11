@@ -94,7 +94,7 @@ if ($resultProduct) {
 											<span class="product-o__name">
 
                                             <a href="product-detail.html"><?php echo $product['productName'] ?></a></span>
-											<span class="product-o__price">$125.00</span>
+											<span class="product-o__price"><?php echo  number_format($product['productPrice']) . " MMK";?></span>
 										</div>
 									</div>
                                 <?php } ?>
@@ -183,7 +183,7 @@ if ($resultProduct) {
 
                                                     <a href="product-detail.html"><?php echo $product['productName']; ?></a></span>
 
-													<span class="product-o__price"><?php echo $product['productPrice']; ?></span>
+													<span class="product-o__price"><?php echo  number_format($product['productPrice']) . " MMK"; ?></span>
 												</div>
 											</div>
                                         <?php } ?>
