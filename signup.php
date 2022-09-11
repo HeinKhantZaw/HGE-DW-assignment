@@ -26,144 +26,153 @@ if (isset($_POST['btnRegister'])) {
 ?>
 <!--====== Main App ======-->
 <div id="app">
-    <!--====== Main Header ======-->
+	<!--====== Main Header ======-->
     <?php include 'components/navbar.php'; ?>
 
-    <!--====== App Content ======-->
-    <div class="app-content">
+	<!--====== App Content ======-->
+	<div class="app-content">
         <?php include "components/cookiePopup.php"; ?>
-        <!--====== Section 1 ======-->
-        <div class="u-s-p-y-60">
+		<!--====== Section 1 ======-->
+		<div class="u-s-p-y-60">
 
-            <!--====== Section Content ======-->
-            <div class="section__content">
-                <div class="container">
-                    <div class="breadcrumb">
-                        <div class="breadcrumb__wrap">
-                            <ul class="breadcrumb__list">
-                                <li class="has-separator">
+			<!--====== Section Content ======-->
+			<div class="section__content">
+				<div class="container">
+					<div class="breadcrumb">
+						<div class="breadcrumb__wrap">
+							<ul class="breadcrumb__list">
+								<li class="has-separator">
 
-                                    <a href="index.php">Home</a></li>
-                                <li class="is-marked">
+									<a href="index.php">Home</a></li>
+								<li class="is-marked">
 
-                                    <a href="signup.php">Register</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--====== End - Section 1 ======-->
-
-
-        <!--====== Section 2 ======-->
-        <div class="u-s-p-b-60">
-
-            <!--====== Section Intro ======-->
-            <div class="section__intro u-s-m-b-60">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section__text-wrap">
-                                <h1 class="section__heading u-c-secondary">CREATE AN ACCOUNT</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--====== End - Section Intro ======-->
+									<a href="signup.php">Register</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--====== End - Section 1 ======-->
 
 
-            <!--====== Section Content ======-->
-            <div class="section__content">
-                <div class="container">
-                    <div class="row row--center">
-                        <div class="col-lg-6 col-md-8 u-s-m-b-30">
-                            <div class="l-f-o">
-                                <div class="l-f-o__pad-box">
-                                    <h1 class="gl-h1">PERSONAL INFORMATION</h1>
-                                    <form class="l-f-o__form" action="signup.php" method="post">
-                                        <div class="gl-s-api">
-                                            <div class="u-s-m-b-15">
+		<!--====== Section 2 ======-->
+		<div class="u-s-p-b-60">
 
-                                                <button class="gl-s-api__btn gl-s-api__btn--fb" type="button"><i
-                                                            class="fab fa-facebook-f"></i>
+			<!--====== Section Intro ======-->
+			<div class="section__intro u-s-m-b-60">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="section__text-wrap">
+								<h1 class="section__heading u-c-secondary">CREATE AN ACCOUNT</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--====== End - Section Intro ======-->
 
-                                                    <span>Signup with Facebook</span></button>
-                                            </div>
-                                            <div class="u-s-m-b-30">
 
-                                                <button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i
-                                                            class="fab fa-google"></i>
+			<!--====== Section Content ======-->
+			<div class="section__content">
+				<div class="container">
+					<div class="row row--center">
+						<div class="col-lg-6 col-md-8 u-s-m-b-30">
+							<div class="l-f-o">
+								<div class="l-f-o__pad-box">
+									<h1 class="gl-h1">PERSONAL INFORMATION</h1>
+									<form class="l-f-o__form" action="signup.php" method="post">
+										<div class="gl-s-api">
+											<div class="u-s-m-b-15">
 
-                                                    <span>Signup with Google</span></button>
-                                            </div>
-                                        </div>
-                                        <div class="u-s-m-b-30">
+												<button class="gl-s-api__btn gl-s-api__btn--fb" type="button"><i
+															class="fab fa-facebook-f"></i>
 
-                                            <label class="gl-label" for="customerFirstName">FIRST NAME *</label>
+													<span>Signup with Facebook</span></button>
+											</div>
+											<div class="u-s-m-b-30">
 
-                                            <input class="input-text input-text--primary-style" type="text"
-                                                   id="customerFirstName" name="customerFirstName"
-                                                   placeholder="First Name"></div>
-                                        <div class="u-s-m-b-30">
+												<button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i
+															class="fab fa-google"></i>
 
-                                            <label class="gl-label" for="customerLastName">LAST NAME *</label>
+													<span>Signup with Google</span></button>
+											</div>
+										</div>
+										<div class="u-s-m-b-30">
 
-                                            <input class="input-text input-text--primary-style" type="text"
-                                                   id="customerLastName" name="customerLastName"
-                                                   placeholder="Last Name"></div>
-                                        <div class="u-s-m-b-30">
+											<label class="gl-label" for="customerFirstName">FIRST NAME *</label>
 
-                                            <label class="gl-label" for="customerEmail">E-MAIL *</label>
+											<input class="input-text input-text--primary-style" type="text"
+											       id="customerFirstName" name="customerFirstName"
+											       placeholder="First Name"></div>
+										<div class="u-s-m-b-30">
 
-                                            <input class="input-text input-text--primary-style" type="email"
-                                                   id="customerEmail" name="customerEmail"
-                                                   placeholder="Enter your E-mail"></div>
-                                        <div class="u-s-m-b-30">
+											<label class="gl-label" for="customerLastName">LAST NAME *</label>
 
-                                            <label class="gl-label" for="customerPassword">PASSWORD *</label>
+											<input class="input-text input-text--primary-style" type="text"
+											       id="customerLastName" name="customerLastName"
+											       placeholder="Last Name"></div>
+										<div class="u-s-m-b-30">
 
-                                            <input class="input-text input-text--primary-style" type="password"
-                                                   id="customerPassword" name="customerPassword"
-                                                   placeholder="Enter Password"></div>
+											<label class="gl-label" for="customerEmail">E-MAIL *</label>
 
-                                        <div class="u-s-m-b-30">
+											<input class="input-text input-text--primary-style" type="email"
+											       id="customerEmail" name="customerEmail"
+											       placeholder="Enter your E-mail"></div>
+										<div class="u-s-m-b-30">
+											<label class="gl-label" for="customerPassword">PASSWORD *</label>
+											<div class="row u-s-m-b-30">
+												<div class="col-lg-8 u-s-m-t-15">
+													<input class="input-text input-text--primary-style" type="password"
+													       id="customerPassword" name="customerPassword"
+													       placeholder="Enter Password">
+												</div>
+												<div class="col-lg-4 u-s-m-t-15">
+													<button class="btn btn--e-transparent-brand-b-2"
+													        onclick="createRandom()">
+														Generate Random
+													</button>
+												</div>
+											</div
+										</div>
 
-                                            <label class="gl-label" for="customerAddress">ADDRESS *</label>
+										<div class="u-s-m-b-30">
 
-                                            <input class="input-text input-text--primary-style" type="text"
-                                                   id="customerAddress" name="customerAddress"
-                                                   placeholder="Enter your Address"></div>
+											<label class="gl-label" for="customerAddress">ADDRESS *</label>
 
-                                        <div class="u-s-m-b-30">
+											<input class="input-text input-text--primary-style" type="text"
+											       id="customerAddress" name="customerAddress"
+											       placeholder="Enter your Address"></div>
 
-                                            <label class="gl-label" for="customerPhone">YOUR PHONE *</label>
+										<div class="u-s-m-b-30">
 
-                                            <input class="input-text input-text--primary-style" type="text"
-                                                   id="customerPhone" name="customerPhone"
-                                                   placeholder="Enter your Phone" pattern="[0-9]{9,}"></div>
+											<label class="gl-label" for="customerPhone">YOUR PHONE *</label>
 
-                                        <div class="u-s-m-b-15">
+											<input class="input-text input-text--primary-style" type="text"
+											       id="customerPhone" name="customerPhone"
+											       placeholder="Enter your Phone" pattern="[0-9]{9,}"></div>
 
-                                            <button class="btn btn--e-transparent-brand-b-2" name="btnRegister"
-                                                    type="submit">CREATE
-                                            </button>
-                                        </div>
+										<div class="u-s-m-b-15">
 
-                                        <a class="gl-link" href="#">Return to Store</a>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--====== End - Section Content ======-->
-        </div>
-        <!--====== End - Section 2 ======-->
-    </div>
-    <!--====== End - App Content ======-->
+											<button class="btn btn--e-transparent-brand-b-2" name="btnRegister"
+											        type="submit">CREATE
+											</button>
+										</div>
+
+										<a class="gl-link" href="#">Return to Store</a>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--====== End - Section Content ======-->
+		</div>
+		<!--====== End - Section 2 ======-->
+	</div>
+	<!--====== End - App Content ======-->
 
     <?php include 'components/footer.php'; ?>
 </div>
@@ -173,9 +182,16 @@ if (isset($_POST['btnRegister'])) {
 <!--custom scripts-->
 <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld6VsohAAAAAFZ2QsIRLNh4TfzdSAhAkYflbtfw"></script>
 <script>
-    grecaptcha.enterprise.ready(function() {
-        grecaptcha.enterprise.execute('6Ld6VsohAAAAAFZ2QsIRLNh4TfzdSAhAkYflbtfw', {action: 'login'}).then(function(token) {
-        ...
-        });
-    });
+
+    function createRandom() {
+        // Generate random password
+	    event.preventDefault();
+        let length = 16,
+            charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[];?><,./-=",
+            retVal = "";
+        for (let i = 0, n = charset.length; i < length; ++i) {
+            retVal += charset.charAt(Math.floor(Math.random() * n));
+        }
+        document.getElementById("customerPassword").value = retVal;
+    }
 </script>
