@@ -7,7 +7,7 @@ $productFound = false;
 if (isset($_GET['q'])) {
     $search = true;
     $name = $_GET['q'];
-    $query = "SELECT * FROM `product`,`category` WHERE `product`.`categoryId` = `category`.`id` AND `productStatus` = 'Second Hand' AND `productName` LIKE '%$name%';";
+    $query = "SELECT `product`.`id`, `product`.`productName`,`product`.`productPrice`, `product`.`productDescription`, `product`.`productImage`, `category`.`categoryName` FROM `product`,`category` WHERE `product`.`categoryId` = `category`.`id` AND `productStatus` = 'Second Hand' AND `productName` LIKE '%$name%';";
     $result = mysqli_query($connection, $query);
     $count = mysqli_num_rows($result);
     if ($count > 0) {
@@ -15,12 +15,14 @@ if (isset($_GET['q'])) {
         $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 } else {
-    $query = "SELECT * FROM `product`,`category` WHERE `product`.`categoryId` = `category`.`id` AND `productStatus` = 'Second Hand';";
+    $query = "SELECT `product`.`id`, `product`.`productName`,`product`.`productPrice`, `product`.`productDescription`, `product`.`productImage`, `category`.`categoryName` FROM `product`,`category` WHERE `product`.`categoryId` = `category`.`id` AND `productStatus` = 'Second Hand';";
     $result = mysqli_query($connection, $query);
     if ($result) {
         $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 }
+
+
 ?>
 	<div id="app">
 	<!--====== Main Header ======-->
@@ -65,7 +67,7 @@ if (isset($_GET['q'])) {
 									<span class="empty__big-text">SORRY</span>
 
 									<span class="empty__text-1">Your search did not match any products. Suggestions: Make sure that all words are spelled correctly. Try different keywords.</span>
-									<a class="about__link btn--e-secondary" href="index.html" target="_blank">See
+									<a class="about__link btn--e-secondary" href="wanted.php">See
 										all products</a>
 								</div>
 							</div>
@@ -129,19 +131,20 @@ if (isset($_GET['q'])) {
 													<div class="product-m__thumb">
 
 														<a class="aspect aspect--bg-grey aspect--square u-d-block"
-														   href="product-detail.html">
+														   href="product-detail.php?productId=<?php echo $product['id']; ?>">
 
 															<img class="aspect__img" src="<?php echo $imagePath ?>"
 															     alt="<?php echo $product['productName']; ?>"></a>
 														<div class="product-m__add-cart">
 
-															<a class="btn--e-brand" href="product-detail.html">View
+															<a class="btn--e-brand"
+															   href="product-detail.php?productId=<?php echo $product['id']; ?>">View
 																Product</a></div>
 													</div>
 													<div class="product-m__content">
 														<div class="product-m__category">
 
-															<a href="shop-side-version-2.html"><?php echo $product['categoryName']; ?></a>
+															<div class="product-m__preview-description"><?php echo $product['categoryName']; ?></div>
 														</div>
 														<div class="product-m__name">
 

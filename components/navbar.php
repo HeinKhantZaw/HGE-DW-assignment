@@ -54,7 +54,7 @@ session_start();
 										<li class="nav-item-hover"><a href="information.php">Information</a></li>
 										<li class="nav-item-hover"><a href="wanted.php">Wanted</a></li>
 										<li class="nav-item-hover"><a href="workshop.php">Workshop</a></li>
-										<li class="nav-item-hover"><a href="shop-grid-full.html">Gallery</a></li>
+										<li class="nav-item-hover"><a href="gallery.php">Gallery</a></li>
 										<li class="nav-item-hover"><a href="contact.php">Contact</a></li>
 										<li class="nav-item-hover"><a href="featured.php">Featured</a></li>
 										<!--	                                    <li class="nav-item-hover"><a href="blog.php">Blog</a></li>-->
@@ -72,12 +72,12 @@ session_start();
 				</nav>
 
 				<!--====== Search Form ======-->
-				<form class="main-form">
+				<form class="main-form" action="wanted.php">
 
 					<label for="main-search"></label>
 
-					<input class="input-text input-text--border-radius input-text--style-1" type="text" id="main-search"
-					       placeholder="Search">
+					<input class="input-text input-text--border-radius input-text--style-1" type="text" id="main-search" name="q"
+					       placeholder="Search" required>
 
 					<button class="btn btn--icon fas fa-search main-search-button" type="submit"></button>
 				</form>

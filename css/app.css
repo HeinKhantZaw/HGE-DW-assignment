@@ -3184,13 +3184,6 @@ input::-ms-clear {
     width: 100%;
 }
 
-.filter__btn--style-1.js-checked {
-    color: #0D122C;
-}
-
-.filter__btn--style-1.js-checked:before {
-    width: 100%;
-}
 
 .filter__btn--style-2 {
     transition: all 0.3s ease 0s;

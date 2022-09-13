@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 $GLOBALS['title'] = "HGE - Featured";
 include 'components/header.php';
@@ -20,7 +19,7 @@ foreach ($wearableProduct as $key => $product) {
     $imagePath[] = '/dw-assignment-HKZ/images/product/' . $image[0];
     $categoryName[] = explode('-', $product['categoryName'])[1];
 }
-$query = "SELECT * FROM `product`, `category` WHERE`product`.`categoryId` = `category`.`id` AND `category`.`categoryName` LIKE 'Wearable%' ORDER BY RAND();";
+$query = "SELECT `product`.`id`, `product`.`productName`,`product`.`productPrice`, `product`.`productDescription`, `product`.`productImage`, `category`.`categoryName` FROM `product`, `category` WHERE`product`.`categoryId` = `category`.`id` AND `category`.`categoryName` LIKE 'Wearable%' ORDER BY RAND();";
 $result = mysqli_query($connection, $query);
 if ($result) {
     $productList = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -34,7 +33,7 @@ if ($result) {
 } else {
     echo "Error: " . $query . "<br>" . mysqli_error($connection);
 }
-$query = "SELECT * FROM `product`,`category` WHERE `product`.`productStatus`='New' AND `product`.`categoryId` = `category`.`id` AND `category`.`categoryName` LIKE 'Wearable%'  GROUP BY `product`.`categoryId` LIMIT 3;";
+$query = "SELECT `product`.`id`, `product`.`productName`,`product`.`productPrice`, `product`.`productDescription`, `product`.`productImage`, `category`.`categoryName` FROM `product`,`category` WHERE `product`.`productStatus`='New' AND `product`.`categoryId` = `category`.`id` AND `category`.`categoryName` LIKE 'Wearable%'  GROUP BY `product`.`categoryId` LIMIT 3;";
 $result = mysqli_query($connection, $query);
 if ($result) {
     $topThree = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -101,12 +100,12 @@ if ($result) {
 						</div>
 						<div class="col-lg-5 col-md-5 u-s-m-b-30">
 
-							<a class="collection" href="shop-side-version-2.html">
-								<div class="aspect aspect--bg-grey aspect--square">
-									<img class="aspect__img collection__img" src="<?php echo $imagePath[0]; ?>"
-									     alt="<?php echo $wearableProduct[0]['productName']; ?>">
-								</div>
-							</a>
+
+							<div class="aspect aspect--bg-grey aspect--square">
+								<img class="aspect__img collection__img" src="<?php echo $imagePath[0]; ?>"
+								     alt="<?php echo $wearableProduct[0]['productName']; ?>">
+							</div>
+
 						</div>
 						<div class="col-lg-1 col-md-7 u-s-m-b-30">
 							<div class="vertical-center">
@@ -115,23 +114,22 @@ if ($result) {
 						</div>
 						<div class="col-lg-5 col-md-7 u-s-m-b-30">
 
-							<a class="collection" href="shop-side-version-2.html">
-								<div class="aspect aspect--bg-grey aspect--square">
 
-									<img class="aspect__img collection__img" src="<?php echo $imagePath[1]; ?>"
-									     alt="<?php echo $wearableProduct[1]['productName']; ?>">
-								</div>
-							</a>
+							<div class="aspect aspect--bg-grey aspect--square">
+
+								<img class="aspect__img collection__img" src="<?php echo $imagePath[1]; ?>"
+								     alt="<?php echo $wearableProduct[1]['productName']; ?>">
+							</div>
+
 						</div>
 						<div class="col-lg-5 col-md-7 u-s-m-b-30">
 
-							<a class="collection" href="shop-side-version-2.html">
-								<div class="aspect aspect--bg-grey aspect--square">
+							<div class="aspect aspect--bg-grey aspect--square">
 
-									<img class="aspect__img collection__img" src="<?php echo $imagePath[2]; ?>"
-									     alt="<?php echo $wearableProduct[2]['productName']; ?>">
-								</div>
-							</a>
+								<img class="aspect__img collection__img" src="<?php echo $imagePath[2]; ?>"
+								     alt="<?php echo $wearableProduct[2]['productName']; ?>">
+							</div>
+
 						</div>
 						<div class="col-lg-1 col-md-7 u-s-m-b-30">
 							<div class="vertical-center">
@@ -140,13 +138,10 @@ if ($result) {
 						</div>
 						<div class="col-lg-5 col-md-5 u-s-m-b-30">
 
-							<a class="collection" href="shop-side-version-2.html">
-								<div class="aspect aspect--bg-grey aspect--square">
-
-									<img class="aspect__img collection__img" src="<?php echo $imagePath[3]; ?>"
-									     alt="<?php echo $wearableProduct[3]['productName']; ?>">
-								</div>
-							</a>
+							<div class="aspect aspect--bg-grey aspect--square">
+								<img class="aspect__img collection__img" src="<?php echo $imagePath[3]; ?>"
+								     alt="<?php echo $wearableProduct[3]['productName']; ?>">
+							</div>
 						</div>
 						<div class="col-lg-1 col-md-7 u-s-m-b-30">
 							<div class="vertical-center">
@@ -194,7 +189,7 @@ if ($result) {
 													<div class="product-m__thumb">
 
 														<a class="aspect aspect--bg-grey aspect--square u-d-block"
-														   href="product-detail.html">
+														   href="product-detail.php?productId=<?php echo $product['id']; ?>">
 
 															<img class="aspect__img" src="<?php echo $imagePath; ?>"
 															     alt="<?php echo $product['productName']; ?>"></a>
@@ -202,9 +197,9 @@ if ($result) {
 													<div class="product-m__content">
 														<div class="product-m__category">
 
-															<a href="shop-side-version-2.html"><?php echo explode('-', $product['categoryName'])[1]; ?></a>
+															<a href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo explode('-', $product['categoryName'])[1]; ?></a>
 														</div>
-														<div class="product-m__name">
+														<div class="product-detail.php?productId=<?php echo $product['id']; ?>">
 
 															<a href="product-detail.html"><?php echo $product['productName']; ?></a>
 														</div>
@@ -221,7 +216,6 @@ if ($result) {
 															<div class="product-m__price"><?php echo number_format($product['productPrice']) . " MMK"; ?></div>
 															<div class="product-m__hover">
 																<div class="product-m__preview-description">
-
 																	<span><?php echo $product['productDescription']; ?></span>
 																</div>
 															</div>
@@ -312,7 +306,7 @@ if ($result) {
 									<div class="product-o__wrap">
 
 										<a class="aspect aspect--bg-grey aspect--square u-d-block"
-										   href="product-detail.html">
+										   href="product-detail.php?productId=<?php echo $product['id']; ?>">
 
 											<img class="aspect__img" src="<?php echo $imagePath; ?>"
 											     alt="<?php echo $product['productName']; ?>"></a>
@@ -320,23 +314,20 @@ if ($result) {
 										<div class="product-o__action-wrap">
 											<ul class="product-o__action-list">
 												<li>
-
-													<a><i class="fas fa-search-plus"></i></a>
+													<a href="product-detail.php?productId=<?php echo $product['id']; ?>"><i class="fas fa-search"></i></a>
 												</li>
 											</ul>
 										</div>
 									</div>
 
-									<span class="product-o__category">
-
-                                        <a href="shop-side-version-2.html"><?php echo $product['categoryName']; ?></a></span>
-
+									<span class="product-o__category ">
+									<?php echo $product['categoryName']; ?></span>
 									<span class="product-o__name">
 
-                                        <a href="product-detail.html"><?php echo $product['productName']; ?></a></span>
+                                        <a href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo $product['productName']; ?></a></span>
 
 									<span class="product-o__price">
-										<?php echo number_format($product['productPrice']) . " MMK";?>
+										<?php echo number_format($product['productPrice']) . " MMK"; ?>
 									</span>
 								</div>
 							</div>
