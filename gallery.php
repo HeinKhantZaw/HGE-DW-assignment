@@ -2,7 +2,7 @@
 $GLOBALS['title'] = "HGE - Gallery";
 include 'components/header.php';
 include 'db/connect.php';
-$query = "SELECT * FROM `product`,`category` WHERE `product`.`categoryId` = `category`.`id` ORDER BY `category`.`categoryName`;";
+$query = "SELECT `product`.`id`, `product`.`productName`,`product`.`productPrice`, `product`.`productDescription`, `product`.`productImage`, `category`.`categoryName` FROM `product`,`category` WHERE `product`.`categoryId` = `category`.`id` ORDER BY `category`.`categoryName`;";
 $result = mysqli_query($connection, $query);
 if ($result) {
     $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -47,67 +47,81 @@ if ($result) {
 		<!--====== End - Section 1 ======-->
 
 		<!--====== Section 2 ======-->
-		<div class="u-s-p-y-90">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="shop-p">
-							<div class="shop-p__toolbar u-s-m-b-30">
-								<div class="shop-p__tool-style">
-									<div class="tool-style__group u-s-m-b-8">
-
-										<span class="js-shop-filter-target" data-side="#side-filter">Filters</span>
-
-										<span class="js-shop-grid-target is-active">Grid</span>
-
-										<span class="js-shop-list-target">List</span></div>
-								</div>
+		<div class="u-s-p-y-60">
+			<!--====== Section Intro ======-->
+			<div class="section__intro u-s-m-b-46">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="section__text-wrap">
+								<h1 class="section__heading u-c-secondary u-s-m-b-12">Product Gallery</h1>
+								<span class="section__span u-c-silver">SEE ALL OF OUR PRODUCTS IN THIS PAGE</span>
 							</div>
-							<div class="shop-p__collection filter__grid-wrapper">
-								<div class="row is-grid-active">
-                                    <?php
-                                    foreach ($products as $key => $product) {
-                                        $image = explode(",", $product['productImage']);
-                                        $imagePath = "/dw-assignment-HKZ/images/product/" . $image[0];
-                                        ?>
-										<div class="<?php echo "col-lg-3 col-md-4 col-sm-6 filter__item " . strtok($product['categoryName'], " "); ?>">
-											<div class="product-m">
-												<div class="product-m__thumb">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--====== End - Section Intro ======-->
 
-													<a class="aspect aspect--bg-grey aspect--square u-d-block"
-													   href="product-detail.html">
 
-														<img class="aspect__img" src="<?php echo $imagePath; ?>"
-														     alt="<?php echo $product['productName']; ?>"></a>
+			<!--====== Section Content ======-->
+			<div class="section__content">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="shop-p">
+								<div class="shop-p__toolbar u-s-m-b-30">
+									<div class="shop-p__tool-style">
+										<div class="tool-style__group u-s-m-b-8">
+											<span class="js-shop-filter-target" data-side="#side-filter">Filters</span>
+									</div>
+								</div>
+								<div class="shop-p__collection filter__grid-wrapper">
+									<div class="row is-grid-active">
+                                        <?php
+                                        foreach ($products as $key => $product) {
+                                            $image = explode(",", $product['productImage']);
+                                            $imagePath = "/dw-assignment-HKZ/images/product/" . $image[0];
+                                            ?>
+											<div class="<?php echo "col-lg-3 col-md-4 col-sm-6 filter__item " . strtok($product['categoryName'], " "); ?>">
+												<div class="product-m">
+													<div class="product-m__thumb">
 
-												</div>
-												<div class="product-m__content">
-													<div class="product-m__category">
+														<a class="aspect aspect--bg-grey aspect--square u-d-block"
+														   href="product-detail.php?productId=<?php echo $product['id']; ?>">
 
-														<a href="shop-side-version-2.html"> <a
-																	href="shop-side-version-2.html">
-                                                                <?php
-                                                                if (strpos($product['categoryName'], '-') > 0)
-                                                                    echo explode('-', $product['categoryName'])[1];
-                                                                else
-                                                                    echo $product['categoryName']; ?>
-															</a>
+															<img class="aspect__img" src="<?php echo $imagePath; ?>"
+															     alt="<?php echo $product['productName']; ?>"></a>
+
 													</div>
-													<div class="product-m__name">
+													<div class="product-m__content">
+														<div class="product-m__category">
 
-														<a href="product-detail.html"><?php echo $product['productName']; ?></a>
-													</div>
-													<br/>
-													<div class="product-m__price"><?php echo number_format($product['productPrice']) . " MMK"; ?></div>
-													<div class="product-m__hover">
-														<div class="product-m__preview-description">
-															<span><?php echo substr_replace($product['productDescription'], "...", 200); ?></span>
+															<a href="shop-side-version-2.html"> <a
+																		href="shop-side-version-2.html">
+                                                                    <?php
+                                                                    if (strpos($product['categoryName'], '-') > 0)
+                                                                        echo explode('-', $product['categoryName'])[1];
+                                                                    else
+                                                                        echo $product['categoryName']; ?>
+																</a>
+														</div>
+														<div class="product-m__name">
+
+															<a href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo $product['productName']; ?></a>
+														</div>
+														<br/>
+														<div class="product-m__price"><?php echo number_format($product['productPrice']) . " MMK"; ?></div>
+														<div class="product-m__hover">
+															<div class="product-m__preview-description">
+																<span><?php echo substr_replace($product['productDescription'], "...", 200); ?></span>
+															</div>
 														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-                                    <?php } ?>
+                                        <?php } ?>
+									</div>
 								</div>
 							</div>
 						</div>

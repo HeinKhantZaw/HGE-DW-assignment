@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+	session_start();
+}
 ?>
 <header class="header--style-1">
 
@@ -103,12 +105,16 @@ session_start();
 								<span class="js-menu-toggle"></span>
 								<ul style="width:120px">
 									<li>
-										<a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
+										<a href="dashboard.php"><i class="fas fa-user-circle u-s-m-r-6"></i>
 											<span>Dashboard</span></a>
 									</li>
 									<li>
+										<a href="shoppingCart.php"><i class="fa fa-shopping-cart u-s-m-r-6"></i>
+										<span>Cart</span></a>
+									</li>
+									<li>
 
-										<a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
+										<a href="signout.php"><i class="fas fa-lock-open u-s-m-r-6"></i>
 											<span>Signout</span></a>
 									</li>
 								</ul>

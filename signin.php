@@ -1,8 +1,9 @@
 <?php
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}
 $GLOBALS['title'] = "HGE - Sign In";
 include 'components/header.php';
-session_start();
 include 'db/connect.php';
 if (isset($_POST['btnLogin'])) {
     $email = $_POST['customerEmail'];
@@ -32,7 +33,7 @@ if (isset($_POST['btnLogin'])) {
         } else {
             if (password_verify($password, $db_password)) {
                 $_SESSION['cid'] = $row['id'];
-                $_SESSION['cname'] = $row['customerName'];
+                $_SESSION['cname'] = $row['customerFirstName'] . " " . $row['customerLastName'];
 
 	            echo '<div class="message-info success">
 						<strong>Login Successful</strong> - Welcome back!
@@ -131,22 +132,22 @@ if (isset($_POST['btnLogin'])) {
 
 									<span class="gl-text u-s-m-b-30">If you have an account with us, please log in.</span>
 									<form class="l-f-o__form" action="signin.php" method="post">
-										<div class="gl-s-api">
-											<div class="u-s-m-b-15">
-
-												<button class="gl-s-api__btn gl-s-api__btn--fb" type="button"><i
-															class="fab fa-facebook-f"></i>
-
-													<span>Signin with Facebook</span></button>
-											</div>
-											<div class="u-s-m-b-15">
-
-												<button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i
-															class="fab fa-google"></i>
-
-													<span>Signin with Google</span></button>
-											</div>
-										</div>
+<!--										<div class="gl-s-api">-->
+<!--											<div class="u-s-m-b-15">-->
+<!---->
+<!--												<button class="gl-s-api__btn gl-s-api__btn--fb" type="button"><i-->
+<!--															class="fab fa-facebook-f"></i>-->
+<!---->
+<!--													<span>Signin with Facebook</span></button>-->
+<!--											</div>-->
+<!--											<div class="u-s-m-b-15">-->
+<!---->
+<!--												<button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i-->
+<!--															class="fab fa-google"></i>-->
+<!---->
+<!--													<span>Signin with Google</span></button>-->
+<!--											</div>-->
+<!--										</div>-->
 										<div class="u-s-m-b-30">
 
 											<label class="gl-label" for="login-email">E-MAIL *</label>
@@ -171,19 +172,6 @@ if (isset($_POST['btnLogin'])) {
 
 												<a class="gl-link" href="lost-password.html">Lost Your Password?</a>
 											</div>
-										</div>
-										<div class="u-s-m-b-30">
-
-											<!--====== Check Box ======-->
-											<div class="check-box">
-
-												<input type="checkbox" id="remember-me">
-												<div class="check-box__state check-box__state--primary">
-
-													<label class="check-box__label" for="remember-me">Remember
-														Me</label></div>
-											</div>
-											<!--====== End - Check Box ======-->
 										</div>
 									</form>
 								</div>

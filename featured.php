@@ -93,12 +93,12 @@ if ($result) {
 			<div class="section__content">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-1 col-md-7 u-s-m-b-30">
+						<div class="col-lg-1 u-s-m-b-30">
 							<div class="vertical-center">
 								<h1 class="content-span-2 u-c-black vertical-text"><?php echo $categoryName[0]; ?></h1>
 							</div>
 						</div>
-						<div class="col-lg-5 col-md-5 u-s-m-b-30">
+						<div class="col-lg-5 u-s-m-b-30">
 
 
 							<div class="aspect aspect--bg-grey aspect--square">
@@ -107,12 +107,12 @@ if ($result) {
 							</div>
 
 						</div>
-						<div class="col-lg-1 col-md-7 u-s-m-b-30">
+						<div class="col-lg-1 u-s-m-b-30">
 							<div class="vertical-center">
 								<h1 class="content-span-2 u-c-black vertical-text"><?php echo $categoryName[1]; ?></h1>
 							</div>
 						</div>
-						<div class="col-lg-5 col-md-7 u-s-m-b-30">
+						<div class="col-lg-5 u-s-m-b-30">
 
 
 							<div class="aspect aspect--bg-grey aspect--square">
@@ -122,7 +122,7 @@ if ($result) {
 							</div>
 
 						</div>
-						<div class="col-lg-5 col-md-7 u-s-m-b-30">
+						<div class="col-lg-5 u-s-m-b-30">
 
 							<div class="aspect aspect--bg-grey aspect--square">
 
@@ -131,19 +131,19 @@ if ($result) {
 							</div>
 
 						</div>
-						<div class="col-lg-1 col-md-7 u-s-m-b-30">
+						<div class="col-lg-1 u-s-m-b-30">
 							<div class="vertical-center">
 								<h1 class="content-span-2 u-c-black vertical-text"><?php echo $categoryName[2]; ?></h1>
 							</div>
 						</div>
-						<div class="col-lg-5 col-md-5 u-s-m-b-30">
+						<div class="col-lg-5 u-s-m-b-30">
 
 							<div class="aspect aspect--bg-grey aspect--square">
 								<img class="aspect__img collection__img" src="<?php echo $imagePath[3]; ?>"
 								     alt="<?php echo $wearableProduct[3]['productName']; ?>">
 							</div>
 						</div>
-						<div class="col-lg-1 col-md-7 u-s-m-b-30">
+						<div class="col-lg-1 u-s-m-b-30">
 							<div class="vertical-center">
 								<h1 class="content-span-2 u-c-black vertical-text"><?php echo $categoryName[3]; ?></h1>
 							</div>
@@ -201,7 +201,7 @@ if ($result) {
 														</div>
 														<div class="product-detail.php?productId=<?php echo $product['id']; ?>">
 
-															<a href="product-detail.html"><?php echo $product['productName']; ?></a>
+															<a href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo $product['productName']; ?></a>
 														</div>
 														<div class="product-m__rating gl-rating-style"><?php
                                                             $rating = rand(2, 5);
