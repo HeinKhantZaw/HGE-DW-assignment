@@ -1,4 +1,7 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 $GLOBALS['title'] = "HGE - Product Details";
 include 'components/header.php';
 include 'db/connect.php';
@@ -26,6 +29,9 @@ array_walk($imageList, function (&$item) {
     $item = '/dw-assignment-HKZ/images/product/' . $item;
 });
 $currentURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+if (isset($_POST['AddToCartBtn'])) {
+    AddShoppingCart($productId, $_POST['BuyQty']);
+}
 ?>
 
 	<div id="app">    <!--====== Main Header ======-->
@@ -138,7 +144,7 @@ $currentURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 							</div>
 							<br/>
 							<div class="u-s-m-b-15">
-								<form class="pd-detail__form">
+								<form class="pd-detail__form" method="post">
 									<div class="pd-detail-inline-2">
 										<div class="u-s-m-b-15">
 
@@ -148,7 +154,7 @@ $currentURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 												<span class="input-counter__minus fas fa-minus"></span>
 
 												<input class="input-counter__text input-counter--text-primary-style"
-												       type="text" value="1" data-min="1"
+												       type="text" value="1" data-min="1" name="BuyQty"
 												       data-max="<?php echo $productQuantity; ?>">
 
 												<span class="input-counter__plus fas fa-plus"></span></div>
@@ -156,7 +162,9 @@ $currentURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 										</div>
 										<div class="u-s-m-b-15">
 
-											<button class="btn btn--e-brand-b-2" type="submit">Add to Cart</button>
+											<button class="btn btn--e-brand-b-2" name="AddToCartBtn" type="submit">Add
+												to Cart
+											</button>
 										</div>
 									</div>
 								</form>
@@ -166,39 +174,39 @@ $currentURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="u-s-p-y-90">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div id="disqus_thread"></div>
-						<script>
-                            /**
-                             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+			<div class="u-s-p-y-90">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div id="disqus_thread"></div>
+							<script>
+                                /**
+                                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
 
-                            var disqus_config = function () {
-                                this.page.url = '<?php echo $currentURL?>';  // Replace PAGE_URL with your page's canonical URL variable
-                                this.page.identifier = '<?php echo $productId?>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                            };
-                            (function () { // DON'T EDIT BELOW THIS LINE
-                                var d = document, s = d.createElement('script');
-                                s.src = 'https://hge-1.disqus.com/embed.js';
-                                s.setAttribute('data-timestamp', +new Date());
-                                (d.head || d.body).appendChild(s);
-                            })();
-						</script>
-						<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
-								powered by
-								Disqus.</a></noscript>
+                                var disqus_config = function () {
+                                    this.page.url = '<?php echo $currentURL?>';  // Replace PAGE_URL with your page's canonical URL variable
+                                    this.page.identifier = '<?php echo $productId?>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                };
+                                (function () { // DON'T EDIT BELOW THIS LINE
+                                    var d = document, s = d.createElement('script');
+                                    s.src = 'https://hge-1.disqus.com/embed.js';
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    (d.head || d.body).appendChild(s);
+                                })();
+							</script>
+							<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+									powered by
+									Disqus.</a></noscript>
+
+						</div>
 
 					</div>
-
 				</div>
 			</div>
 		</div>
-	</div>    <!--====== Main Footer ======-->
+	</div>	<!--====== Main Footer ======-->
 <?php include 'components/footer.php'; ?>
 	<!--====== Modal Section ======-->
 	<script id="dsq-count-scr" src="//hge-1.disqus.com/count.js" async></script>

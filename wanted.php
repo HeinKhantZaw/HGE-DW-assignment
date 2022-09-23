@@ -148,7 +148,7 @@ if (isset($_GET['q'])) {
 														</div>
 														<div class="product-m__name">
 
-															<a href="product-detail.html"><?php echo $product['productName']; ?></a>
+															<a href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo $product['productName']; ?></a>
 														</div>
 														<br>
 

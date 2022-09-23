@@ -109,7 +109,7 @@ if(session_status() == PHP_SESSION_NONE){
 											<span>Dashboard</span></a>
 									</li>
 									<li>
-										<a href="shoppingCart.php"><i class="fa fa-shopping-cart u-s-m-r-6"></i>
+										<a href="Shopping_Cart.php"><i class="fa fa-shopping-cart u-s-m-r-6"></i>
 										<span>Cart</span></a>
 									</li>
 									<li>

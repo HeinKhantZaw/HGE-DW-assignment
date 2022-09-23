@@ -54,33 +54,34 @@ $query = "CREATE TABLE IF NOT EXISTS `Product`(
     `categoryId` int(11),
      FOREIGN KEY (categoryId) REFERENCES `Category`(`id`)
 )";
-$result = getResult($connection, $query, 'Product');
+//$result = getResult($connection, $query, 'Product');
 
-// THIS IS NOT CREATED YET
+
 $query = "CREATE TABLE IF NOT EXISTS `Order`(
-    `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `orderId` varchar(11) NOT NULL PRIMARY KEY,
     `customerId` int(11),
-    `productId` int(11),
     `orderDate` date,
+    `orderLocation` varchar(255),
+    `orderPhone` varchar(30),
+    `remark` varchar(255),
     `orderStatus` varchar(30),
-    FOREIGN KEY (customerId) REFERENCES `Customer`(`id`),
-    FOREIGN KEY (productId) REFERENCES `Product`(`id`)
+    `grandTotal` int,
+    `paymentMethod` varchar(30),
+    FOREIGN KEY (customerId) REFERENCES `Customer`(`id`)  
 )";
-//$result = getResult($connection, $query, 'Order');
+$result = getResult($connection, $query, 'Order');
 
 $query = "CREATE TABLE IF NOT EXISTS `OrderDetails`(
     `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `orderId` int(11),
-    `orderLocation` varchar(255),
-    `orderPhone` varchar(30),
+    `orderId` varchar(11),
+    `productId` int(11),
     `quantity` int(11),
     `price` int(11),
     `tax` int(11),
     `total` int(11),
-    `remark` varchar(255),
     `status` varchar(30),
-    `paymentMethod` varchar(30),
-    FOREIGN KEY (orderId) REFERENCES `Order`(`id`)
+    FOREIGN KEY (orderId) REFERENCES `Order`(`orderId`),
+    FOREIGN KEY (productId) REFERENCES `Product`(`id`) 
 )";
 $result = getResult($connection, $query, 'OrderDetails');
 

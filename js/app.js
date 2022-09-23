@@ -22,8 +22,6 @@
         $collectionInputCounter = $('.input-counter'),
         $collectionCountDown = $('[data-countdown]'),
         $collectionCartModalLink = $('[data-modal="modal"]'),
-        $defaultAddressCheckbox = $('#get-address'),
-        $collectionFormBill = $('[data-bill]'),
         $collectionPostGallery = $('.post-gallery'),
         $blogMasonry = $('.blog-m'),
         $collectionPostVideo = $('.post-video-block'),
@@ -108,20 +106,7 @@
 
     };
 
-    // Default Billing Address
-    RESHOP.defaultAddressCheckbox = function () {
-        if ($defaultAddressCheckbox.length) {
-            $defaultAddressCheckbox.change(function () {
-                if (this.checked) {
-                    $collectionFormBill.prop("disabled", true);
-                    $('#make-default-address').prop("checked", false);
-                } else {
-                    $collectionFormBill.prop("disabled", false);
-                }
-            });
 
-        }
-    };
 
 
     RESHOP.reshopNavigation = function () {
@@ -658,7 +643,6 @@
     RESHOP.initScrollUp();
     RESHOP.initTooltip();
     RESHOP.initModal();
-    RESHOP.defaultAddressCheckbox();
     RESHOP.initScrollSpy();
     RESHOP.onClickScroll();
     RESHOP.reshopNavigation();
