@@ -987,7 +987,7 @@
                                             <ul style="width:200px">
                                                 <li class="has-dropdown has-dropdown--ul-left-100">
 
-                                                    <a href="dashboard.html">Manage My Account<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+                                                    <a href="dashboard.html">My Information<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
 
                                                     <!--====== Dropdown ======-->
 
@@ -3468,7 +3468,7 @@
                                             <ul style="width:200px">
                                                 <li class="has-dropdown has-dropdown--ul-left-100">
 
-                                                    <a href="dashboard.html">Manage My Account<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+                                                    <a href="dashboard.html">My Information<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
 
                                                     <!--====== Dropdown ======-->
 
