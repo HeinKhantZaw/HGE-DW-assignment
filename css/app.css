@@ -2389,16 +2389,16 @@ input::-ms-clear {
     text-align: center;
 }
 
-#newsletter-modal .modal-dialog {
+#booking-modal .modal-dialog {
     width: 100%;
     max-width: 800px;
 }
 
-#newsletter-modal .modal-body {
+#booking-modal .modal-body {
     padding: 0;
 }
 
-#newsletter-modal .new-l__dismiss {
+#booking-modal .new-l__dismiss {
     z-index: 2;
     position: absolute;
     top: 0;
@@ -2411,7 +2411,7 @@ input::-ms-clear {
     cursor: pointer;
 }
 
-#newsletter-modal .row {
+#booking-modal .row {
     -ms-flex-align: center;
     align-items: center;
 }
@@ -2761,9 +2761,6 @@ input::-ms-clear {
     margin-right: 20px;
 }
 
-.newsletter__radio .radio-box__label {
-    color: #ffffff;
-}
 
 .newsletter__radio:last-child {
     margin-right: 0;
@@ -3439,6 +3436,7 @@ input::-ms-clear {
     border-radius: 40px;
     font-weight: 600;
     font-size: 12px;
+    cursor: pointer;
 }
 
 .team-member {
@@ -4172,7 +4170,7 @@ input::-ms-clear {
 }
 
 .o-summary__item-wrap {
-    max-height: 228px;
+    max-height: 342px;
     padding: 17px;
     overflow-y: auto;
 }
@@ -8733,7 +8731,114 @@ input::-ms-clear {
         bottom: 0;
     }
 }
-
+/* for cards */
+#PaymentTable{
+    display: none;
+}
+.heading {
+    font-size: 40px;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    padding-left: 20px
+}
+.card {
+    border-radius: 10px !important;
+    margin-top: 60px;
+    margin-bottom: 60px
+}
+.form-card {
+    margin-left: 20px;
+    margin-right: 20px
+}
+.form-card input,
+.form-card textarea {
+    padding: 10px 15px 5px 15px;
+    border: none;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: arial;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px
+}
+.form-card input:focus,
+.form-card textarea:focus {
+    -moz-box-shadow: 0px 0px 0px 1.5px skyblue !important;
+    -webkit-box-shadow: 0px 0px 0px 1.5px skyblue !important;
+    box-shadow: 0px 0px 0px 1.5px skyblue !important;
+    font-weight: bold;
+    border: 1px solid #304FFE;
+    outline-width: 0
+}
+.input-group {
+    position: relative;
+    width: 100%;
+    overflow: hidden
+}
+.input-group input {
+    height: 80px;
+    border-radius: 6px;
+    padding-top: 30px;
+    padding-left: 25px
+}
+.input-group label {
+    position: absolute;
+    height: 24px;
+    background: none;
+    border-radius: 6px;
+    line-height: 48px;
+    font-size: 15px;
+    color: gray;
+    width: 100%;
+    font-weight: 100;
+    padding-left: 25px
+}
+input:focus+label {
+    color: #304FFE
+}
+.btn-pay {
+    background-color: #304FFE;
+    height: 60px;
+    color: #ffffff !important;
+    font-weight: bold
+}
+.btn-pay:hover {
+    background-color: #3F51B5
+}
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+img {
+    border-radius: 5px
+}
+.radio-group {
+    position: relative;
+    margin-bottom: 25px
+}
+.radio {
+    display: inline-block;
+    border-radius: 6px;
+    box-sizing: border-box;
+    border: 2px solid lightgrey;
+    cursor: pointer;
+    margin: 12px 25px 12px 0px
+}
+.radio:hover {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2)
+}
+.radio.selected {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 155, 0.4);
+    border: 2px solid blue
+}
+.label-radio {
+    font-weight: bold;
+    color: #000000
+}
 /* for videos */
 
 .ugb-video-popup {

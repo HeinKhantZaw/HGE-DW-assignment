@@ -1,9 +1,9 @@
 /**
- * This is main script file that contains JS code.
+ * This is main script file.
  */
 (function ($) {
     // Main Object
-    var RESHOP = {};
+    let HGE = {};
     // get one day from current date in YYYY/MM/DD format
     const getTmrDate = () => {
         let tmr = new Date();
@@ -11,7 +11,7 @@
         return tmr.getFullYear() + "/" + (tmr.getMonth() + 1) + "/" + tmr.getDate();
     };
     // Predefined variables
-    var
+    let
         $filterGridWrapper = $('.filter__grid-wrapper'),
         $collectionOfFilterBtn = $('.filter__btn'),
         $primarySlider = $('#hero-slider'),
@@ -39,7 +39,7 @@
 
 
     // Bind Scroll Up to all pages
-    RESHOP.initScrollUp = function () {
+    HGE.initScrollUp = function () {
         $.scrollUp({
             scrollName: 'topScroll',
             scrollText: '<i class="fas fa-long-arrow-alt-up"></i>',
@@ -50,8 +50,8 @@
         });
     };
 
-    RESHOP.initScrollSpy = function () {
-        var $bodyScrollSpy = $('#js-scrollspy-trigger');
+    HGE.initScrollSpy = function () {
+        let $bodyScrollSpy = $('#js-scrollspy-trigger');
         if ($bodyScrollSpy.length) {
             $bodyScrollSpy.scrollspy({
                 target: '#init-scrollspy'
@@ -59,12 +59,12 @@
         }
     };
 
-    RESHOP.onClickScroll = function () {
+    HGE.onClickScroll = function () {
         $collectionaClickScroll.on('click', function (e) {
             // prevent default behavior means page doesn't move or show up id's on browser status-bar
             e.preventDefault();
             // Get Target
-            var target = $(this).data('click-scroll');
+            let target = $(this).data('click-scroll');
             // check if anchor has hash
             if ($(target).length) {
                 $('html').animate({
@@ -78,7 +78,7 @@
     };
 
     // Bind Tooltip to all pages
-    RESHOP.initTooltip = function () {
+    HGE.initTooltip = function () {
 
         $('[data-tooltip="tooltip"]').tooltip({
             // The default value for trigger is 'hover focus',
@@ -89,11 +89,11 @@
     };
 
     // Bind Modals
-    RESHOP.initModal = function () {
+    HGE.initModal = function () {
         // Check if these anchors are on page
         if ($collectionCartModalLink.length) {
             $collectionCartModalLink.on('click', function () {
-                var getElemId = $(this).data('modal-id');
+                let getElemId = $(this).data('modal-id');
                 $(getElemId).modal({
                     backdrop: 'static',
                     keyboard: false,
@@ -109,26 +109,26 @@
 
 
 
-    RESHOP.reshopNavigation = function () {
+    HGE.reshopNavigation = function () {
         $('#navigation').shopNav();
         $('#navigation1').shopNav();
         $('#navigation2').shopNav();
         $('#navigation3').shopNav();
     };
 
-    RESHOP.onTabActiveRefreshSlider = function () {
+    HGE.onTabActiveRefreshSlider = function () {
         // When showing a new tab, the events fire.
         // Specificity = 2
         $('.tab-list [data-toggle="tab"]').on('shown.bs.tab', function (e) {
             // Get the current click id of tab
-            var currentID = $(e.target).attr('href');
+            let currentID = $(e.target).attr('href');
             // Trigger refresh `event` to current active `tab`
             $(currentID + '.active').find('.tab-slider').trigger('refresh.owl.carousel');
         });
     };
 
     // Bind all sliders into the page
-    RESHOP.primarySlider = function () {
+    HGE.primarySlider = function () {
         if ($primarySlider.length) {
             $primarySlider.owlCarousel({
                 items: 1,
@@ -149,14 +149,14 @@
     };
 
     // Bind all sliders into the page
-    RESHOP.productSlider = function () {
+    HGE.productSlider = function () {
         // 0 is falsy value, 1 is truthy
         if ($collectionProductSlider.length) {
             $collectionProductSlider.on('initialize.owl.carousel', function () {
                 $(this).closest('.slider-fouc').removeAttr('class');
             }).each(function () {
-                var thisInstance = $(this);
-                var itemPerLine = thisInstance.data('item');
+                let thisInstance = $(this);
+                let itemPerLine = thisInstance.data('item');
                 thisInstance.owlCarousel({
                     autoplay: false,
                     loop: false,
@@ -188,13 +188,13 @@
 
 
     // Bind all sliders into the page
-    RESHOP.tabSlider = function () {
+    HGE.tabSlider = function () {
         if ($collectionTabSlider.length) {
             $collectionTabSlider.on('initialize.owl.carousel', function () {
                 $(this).closest('.slider-fouc').removeAttr('class');
             }).each(function () {
-                var thisInstance = $(this);
-                var itemPerLine = thisInstance.data('item');
+                let thisInstance = $(this);
+                let itemPerLine = thisInstance.data('item');
                 thisInstance.owlCarousel({
                     autoplay: false,
                     loop: false,
@@ -225,11 +225,11 @@
     };
 
     // Bind Brand slider
-    RESHOP.brandSlider = function () {
-        var $brandSlider = $('#brand-slider');
+    HGE.brandSlider = function () {
+        let $brandSlider = $('#brand-slider');
         // Check if brand slider on the page
         if ($brandSlider.length) {
-            var itemPerLine = $brandSlider.data('item');
+            let itemPerLine = $brandSlider.data('item');
             $brandSlider.on('initialize.owl.carousel', function () {
                 $(this).closest('.slider-fouc').removeAttr('class');
             }).owlCarousel({
@@ -261,7 +261,7 @@
     };
 
     // Testimonial Slider
-    RESHOP.testimonialSlider = function () {
+    HGE.testimonialSlider = function () {
         // Check if Testimonial-Slider on the page
         if ($testimonialSlider.length) {
             $testimonialSlider.on('initialize.owl.carousel', function () {
@@ -278,13 +278,13 @@
         }
     };
     // Remove Class from body element
-    RESHOP.appConfiguration = function () {
+    HGE.appConfiguration = function () {
         $('body').removeAttr('class');
         $('.preloader').removeClass('is-active');
     };
 
     // Bind isotope filter plugin
-    RESHOP.isotopeFilter = function () {
+    HGE.isotopeFilter = function () {
 
         // Check if filter grid wrapper on the page
         if ($filterGridWrapper.length) {
@@ -300,7 +300,7 @@
             // Attack click event to these filter buttons
             $collectionOfFilterBtn.on('click', function () {
                 // Get Value of the attribute data-filter
-                var selectorValue = $(this).attr('data-filter');
+                let selectorValue = $(this).attr('data-filter');
                 // Now initialize isotope plugin
                 $filterGridWrapper.isotope({
                     filter: selectorValue
@@ -312,12 +312,12 @@
     };
 
     // Bind countdown plugin
-    RESHOP.timerCountDown = function () {
+    HGE.timerCountDown = function () {
         const countdownDate = getTmrDate();
         // Check if Count Down on the page
         if ($collectionCountDown.length) {
             $collectionCountDown.each(function () {
-                var $this = $(this);
+                let $this = $(this);
                 $this.countdown(countdownDate, function (event) {
                     $this.html(event.strftime('<div class="countdown__content"><div><span class="countdown__value">%D</span><span class="countdown__key">Days</span></div></div><div class="countdown__content"><div><span class="countdown__value">%H</span><span class="countdown__key">Hours</span></div></div><div class="countdown__content"><div><span class="countdown__value">%M</span><span class="countdown__key">Mins</span></div></div><div class="countdown__content"><div><span class="countdown__value">%S</span><span class="countdown__key">Secs</span></div></div>'));
                 });
@@ -327,27 +327,27 @@
     };
 
     // Input Counter
-    RESHOP.initInputCounter = function () {
+    HGE.initInputCounter = function () {
         // Check if Input Counters on the page
         if ($collectionInputCounter.length) {
             // Attach Click event to plus button
             $collectionInputCounter.find('.input-counter__plus').on('click', function () {
-                var $input = $(this).parent().find('input');
-                var count = parseInt($input.val()) + 1; // Number + Number
+                let $input = $(this).parent().find('input');
+                let count = parseInt($input.val()) + 1; // Number + Number
                 $input.val(count).change();
             });
             // Attach Click event to minus button
             $collectionInputCounter.find('.input-counter__minus').on('click', function () {
-                var $input = $(this).parent().find('input');
-                var count = parseInt($input.val()) - 1; // Number - Number
+                let $input = $(this).parent().find('input');
+                let count = parseInt($input.val()) - 1; // Number - Number
                 $input.val(count).change();
             });
             // Fires when the value of the element is changed
             $collectionInputCounter.find('input').change(function () {
-                var $this = $(this);
-                var min = $this.data('min');
-                var max = $this.data('max');
-                var val = parseInt($this.val());// Current value
+                let $this = $(this);
+                let min = $this.data('min');
+                let max = $this.data('max');
+                let val = parseInt($this.val());// Current value
                 // Restrictions check
                 if (!val) {
                     val = 1;
@@ -364,7 +364,7 @@
 
 
     // Blog Post Gallery
-    RESHOP.blogPostGallery = function () {
+    HGE.blogPostGallery = function () {
         if ($collectionPostGallery.length) {
             $collectionPostGallery.on('initialize.owl.carousel', function () {
                 $(this).closest('.slider-fouc').removeAttr('class');
@@ -386,7 +386,7 @@
     };
 
     // Blog Post Masonry
-    RESHOP.blogPostMasonry = function () {
+    HGE.blogPostMasonry = function () {
         if ($blogMasonry.length) {
             $blogMasonry.find('.blog-m-init').isotope({
                 itemSelector: '.blog-m__element',
@@ -396,13 +396,13 @@
     };
 
     // Blog Post Video
-    RESHOP.blogPostVideo = function () {
+    HGE.blogPostVideo = function () {
         if ($collectionPostVideo.length) {
             $collectionPostVideo.on('click', function (e) {
                 e.preventDefault();
-                var $this = $(this);
+                let $this = $(this);
                 // Find immediate child that has .bp__video class
-                var myVideo = $this.find('.post-video')[0];
+                let myVideo = $this.find('.post-video')[0];
                 // Add ended event
                 $(myVideo).on('ended', function () {
                     $this.removeClass('process');// Add play icon
@@ -425,7 +425,7 @@
     };
 
     // Blog Post Embed Video
-    RESHOP.blogPostEmbedVideo = function () {
+    HGE.blogPostEmbedVideo = function () {
         if ($collectionEmbedVideo.length) {
             $collectionEmbedVideo.parent().fitVids();
         }
@@ -433,10 +433,10 @@
 
 
     // Product Detail Init
-    RESHOP.productDetailInit = function () {
+    HGE.productDetailInit = function () {
         if ($productDetailElement.length && $productDetailElementThumbnail.length) {
 
-            var ELEVATE_ZOOM_OBJ = {
+            let ELEVATE_ZOOM_OBJ = {
                 borderSize: 1,
                 autoWidth: true,
                 zoomWindowWidth: 540,
@@ -465,7 +465,7 @@
             // Fires before slide change
             $productDetailElement.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
                 // Get the next slide image
-                var $img = $(slick.$slides[nextSlide]).find('img');
+                let $img = $(slick.$slides[nextSlide]).find('img');
                 // Remove old zoom elements
                 $('.zoomWindowContainer,.zoomContainer').remove();
                 // Reinit elevate zoom plugin to the next slide image
@@ -523,7 +523,7 @@
     };
 
     // Modal Product Detail Init
-    RESHOP.modalProductDetailInit = function () {
+    HGE.modalProductDetailInit = function () {
         if ($modalProductDetailElement.length && $modalProductDetailElementThumbnail.length) {
             $modalProductDetailElement.slick({
                 slidesToShow: 1,
@@ -574,7 +574,7 @@
         }
     };
     // Shop Category Toggle Functionality
-    RESHOP.shopCategoryToggle = function () {
+    HGE.shopCategoryToggle = function () {
         if ($shopCategoryToggleSpan.length) {
             $shopCategoryToggleSpan.on('click', function () {
                 $(this).toggleClass('is-expanded');
@@ -585,7 +585,7 @@
 
 
     // Shop Perspective Change
-    RESHOP.shopPerspectiveChange = function () {
+    HGE.shopPerspectiveChange = function () {
         if ($shopGridBtn.length && $shopListBtn.length) {
             $shopGridBtn.on('click', function () {
                 $(this).addClass('is-active');
@@ -602,36 +602,23 @@
         }
     };
     // Shop Side Filter Settings
-    RESHOP.shopSideFilter = function () {
+    HGE.shopSideFilter = function () {
         if ($shopFilterBtn.length) {
             $shopFilterBtn.on('click', function () {
                 // Add Class Active
                 $(this).toggleClass('is-active');
                 // Get Value of the attribute data-side
-                var target = $(this).attr('data-side');
+                let target = $(this).attr('data-side');
                 // Open Side
                 $(target).toggleClass('is-open');
             });
         }
     };
-
-    // Show Newsletter Modal
-    RESHOP.showNewsletterModal = function () {
-        if ($('#newsletter-modal').length) {
-            setTimeout(function () {
-                // Manually opens a modal
-                $('#newsletter-modal').modal({
-                    backdrop: 'static',
-                    keyboard: false,
-                    show: true
-                });
-            }, 5000);
-        }
-    };
+    
 
     // Check everything including DOM elements and images loaded
     $(window).on('load', function () {
-        RESHOP.showNewsletterModal();
+        HGE.showNewsletterModal();
         if ($primarySlider.length) {
             // Play slider when everything is loaded
             $primarySlider.data('owl.carousel').options.autoplay = true;
@@ -640,29 +627,29 @@
     });
 
 
-    RESHOP.initScrollUp();
-    RESHOP.initTooltip();
-    RESHOP.initModal();
-    RESHOP.initScrollSpy();
-    RESHOP.onClickScroll();
-    RESHOP.reshopNavigation();
-    RESHOP.primarySlider();
-    RESHOP.productSlider();
-    RESHOP.tabSlider();
-    RESHOP.onTabActiveRefreshSlider();
-    RESHOP.brandSlider();
-    RESHOP.testimonialSlider();
-    RESHOP.appConfiguration();
-    RESHOP.isotopeFilter();
-    RESHOP.timerCountDown();
-    RESHOP.initInputCounter();
-    RESHOP.blogPostGallery();
-    RESHOP.blogPostVideo();
-    RESHOP.blogPostEmbedVideo();
-    RESHOP.blogPostMasonry();
-    RESHOP.productDetailInit();
-    RESHOP.modalProductDetailInit();
-    RESHOP.shopCategoryToggle();
-    RESHOP.shopPerspectiveChange();
-    RESHOP.shopSideFilter();
+    HGE.initScrollUp();
+    HGE.initTooltip();
+    HGE.initModal();
+    HGE.initScrollSpy();
+    HGE.onClickScroll();
+    HGE.reshopNavigation();
+    HGE.primarySlider();
+    HGE.productSlider();
+    HGE.tabSlider();
+    HGE.onTabActiveRefreshSlider();
+    HGE.brandSlider();
+    HGE.testimonialSlider();
+    HGE.appConfiguration();
+    HGE.isotopeFilter();
+    HGE.timerCountDown();
+    HGE.initInputCounter();
+    HGE.blogPostGallery();
+    HGE.blogPostVideo();
+    HGE.blogPostEmbedVideo();
+    HGE.blogPostMasonry();
+    HGE.productDetailInit();
+    HGE.modalProductDetailInit();
+    HGE.shopCategoryToggle();
+    HGE.shopPerspectiveChange();
+    HGE.shopSideFilter();
 })(jQuery);
