@@ -128,11 +128,11 @@ VALUES ('$txtOrderID', '$productId', '$BuyQty', '$productPrice', '$total', '$sta
 											</div>
 											<!--====== End - Check Box ======-->
 										</div>
-
+										<input class="hide" id="customerID" value="<?php echo $cusid ?>">
 										<!--====== First Name, Last Name ======-->
 										<div class="gl-inline">
 											<div class="u-s-m-b-15">
-												<input class="hide" id="customerID" value="<?php echo $cusid ?>">
+
 												<label class="gl-label" for="billing-fname">FIRST NAME</label>
 
 												<input class="input-text input-text--primary-style" type="text"

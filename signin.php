@@ -34,11 +34,12 @@ if (isset($_POST['btnLogin'])) {
             if (password_verify($password, $db_password)) {
                 $_SESSION['cid'] = $row['id'];
                 $_SESSION['cname'] = $row['customerFirstName'] . " " . $row['customerLastName'];
+				unset($_SESSION['ShoppingCart']);
 
 	            echo '<div class="message-info success">
 						<strong>Login Successful</strong> - Welcome back!
 					</div>';
-                echo "<script>window.open('featured.php', '_self')</script>";
+                echo "<script>window.open('index.php', '_self')</script>";
             } else {
                 echo '<div class="message-info danger">
 						<strong>Error</strong> - Wrong Password! Total Attempts: ' . $total_login_attempts + 1 . '
@@ -64,7 +65,6 @@ if (isset($_POST['btnLogin'])) {
     <?php include 'components/navbar.php'; ?>
 	<!--====== App Content ======-->
 	<div class="app-content">
-        <?php include "components/cookiePopup.php"; ?>
 		<!--====== Section 1 ======-->
 		<div class="u-s-p-y-60">
 

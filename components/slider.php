@@ -12,7 +12,7 @@
 
                             <span class="content-span-3 u-c-white">Your Top Gym Equipment Specialist</span>
 
-                            <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a>
+                            <a class="shop-now-link btn--e-brand" href="gallery.php">SHOP NOW</a>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
 
                             <span class="content-span-3 u-c-white">Our line of products consist of brand new and reconditioned equipments</span>
 
-                            <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">FIND OUT</a>
+                            <a class="shop-now-link btn--e-brand" href="wanted.php">FIND OUT</a>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
 
                             <span class="content-span-3 u-c-white">We offer fitness equipment repair and maintenance</span>
 
-                            <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SEE MORE</a>
+                            <a class="shop-now-link btn--e-brand" href="workshop.php">SEE MORE</a>
                         </div>
                     </div>
                 </div>

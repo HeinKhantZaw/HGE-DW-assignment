@@ -560,7 +560,7 @@ if ($result) {
 
 									<span class="service__info-text-1">Free Shipping</span>
 
-									<span class="service__info-text-2">Free shipping on all Yangon order</span>
+									<span class="service__info-text-2">Free shipping on all <span id="location"></span> order</span>
 								</div>
 							</div>
 						</div>
@@ -870,6 +870,71 @@ if ($result) {
 <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
 
 <?php include 'components/scripts.php'; ?>
+<script>
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    document.getElementById("location").innerHTML = "Yangon";
 
+    let popUp = document.getElementById("cookiePopup");
+    //When user clicks the accept button
+    document.getElementById("denyCookie").addEventListener("click", function () {
+        //Hide the popup
+        popUp.classList.add("hide");
+        popUp.classList.remove("show");
+        sessionStorage.setItem("cookieDenied", "true");
+    });
+    document.getElementById("acceptCookie").addEventListener("click", () => {
+        //Create date object
+        let d = new Date();
+        //Increment the current time by 1 minute (cookie will expire after 1 minute)
+        d.setMinutes(2 + d.getMinutes());
+        $.getJSON('https://json.geoiplookup.io/?callback=?', function (data) {
+            let userInfo = JSON.stringify(data);
+            document.cookie = "info=" + userInfo + "; expires = " + d + ";";
+        });
+        //Hide the popup
+        popUp.classList.add("hide");
+        popUp.classList.remove("show");
+    });
+    //Check if cookie is already present
+    const checkCookie = () => {
+        //Read the cookie and split on "="
+        let input = document.cookie.split("=");
+        //Check for our cookie
+        if (input[0] === "info") {
+            //Hide the popup
+            const userInfo = getCookie("info");
+            const countryName = JSON.parse(userInfo).country_name;
+            document.getElementById("location").innerHTML = countryName
+            popUp.classList.add("hide");
+            popUp.classList.remove("show");
+        } else {
+            //Show the popup
+            if (sessionStorage.getItem("cookieDenied") !== "true") {
+                popUp.classList.add("show");
+                popUp.classList.remove("hide");
+            }
+        }
+    };
+    //Check if cookie exists when page loads
+    window.onload = () => {
+        setTimeout(() => {
+            checkCookie();
+        }, 2000);
+    }
+</script>
 <!--custom script-->
 <script src="https://cdn.jsdelivr.net/npm/bigpicture@1.2.3/dist/BigPicture.min.js"></script>

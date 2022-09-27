@@ -114,7 +114,7 @@ if (isset($_POST['AddToCartBtn'])) {
 							</div>
 							<div class="u-s-m-b-15">
 								<div class="pd-detail__inline">
-                                    <?php if ($productStatus > 0) { ?>
+                                    <?php if ($productQuantity > 0) { ?>
 										<span class="pd-detail__stock"><?php echo $productQuantity; ?> In Stock</span>
                                     <?php } else { ?>
 									<span class="pd-detail__left">Out Of Stock</span></div>
@@ -154,7 +154,7 @@ if (isset($_POST['AddToCartBtn'])) {
 												<span class="input-counter__minus fas fa-minus"></span>
 
 												<input class="input-counter__text input-counter--text-primary-style"
-												       type="text" value="1" data-min="1" name="BuyQty"
+												       type="text" value="<?php if ($productQuantity>0) echo 1; else echo 0?>" data-min="<?php if ($productQuantity>0) echo 1;?>" name="BuyQty"
 												       data-max="<?php echo $productQuantity; ?>">
 
 												<span class="input-counter__plus fas fa-plus"></span></div>
@@ -181,9 +181,6 @@ if (isset($_POST['AddToCartBtn'])) {
 						<div class="col-lg-12">
 							<div id="disqus_thread"></div>
 							<script>
-                                /**
-                                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
 
                                 var disqus_config = function () {
                                     this.page.url = '<?php echo $currentURL?>';  // Replace PAGE_URL with your page's canonical URL variable

@@ -43,7 +43,7 @@ if (isset($_REQUEST['Action'])) {
 										<a href="index.php">Home</a></li>
 									<li class="is-marked">
 
-										<a href="Shopping_Cart.php">Cart</a></li>
+										<a href="Shopping_Cart.php">Shopping Cart</a></li>
 								</ul>
 							</div>
 						</div>

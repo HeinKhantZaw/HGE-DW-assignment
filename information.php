@@ -21,7 +21,6 @@ if ($resultProduct) {
     <?php include 'components/navbar.php'; ?>
 	<!--====== End - Main Header ======-->
 	<div class="app-content">
-        <?php include "components/cookiePopup.php"; ?>
 		<!--====== Section 1 ======-->
 		<div class="u-s-p-y-60">
 
@@ -190,7 +189,8 @@ if ($resultProduct) {
 															<ul class="product-o__action-list">
 																<li>
 
-																	<a href="product-detail.php?productId=<?php echo $product['id']; ?>"><i class="fas fa-cart-plus"></i></a>
+																	<a href="product-detail.php?productId=<?php echo $product['id']; ?>"><i
+																				class="fas fa-cart-plus"></i></a>
 																</li>
 															</ul>
 														</div>
@@ -246,10 +246,9 @@ if ($resultProduct) {
 
 										<!--====== Image Code ======-->
 
-										<a class="aspect aspect--bg-grey aspect--1366-768 u-d-block"
-										   href="blog-detail.html">
+										<a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog.php?id=1">
 
-											<img class="aspect__img" src="images/blog/post-2.jpg" alt=""></a>
+											<img class="aspect__img" src="images/blog/blog-1.jpg" alt=""></a>
 										<!--====== End - Image Code ======-->
 									</div>
 									<div class="bp-mini__content">
@@ -261,7 +260,7 @@ if ($resultProduct) {
 
                                                     <a>
 
-                                                        <span>25 February 2018</span></a></span></span>
+                                                        <span>10 August 2022</span></a></span></span>
 
 											<span class="bp-mini__stat-wrap">
 
@@ -269,44 +268,34 @@ if ($resultProduct) {
 
                                                 <span class="bp-mini__author">
 
-                                                    <a href="#">Dayle</a></span></span>
+                                                    <a href="#">Richard</a></span></span>
 
 											<span class="bp-mini__stat">
 
                                                 <span class="bp-mini__comment">
 
-                                                    <a href="blog-detail.html"><i class="far fa-comments u-s-m-r-4"></i>
+                                                    <a href="blog.php?id=1"></span></span></div>
 
-                                                        <span>8</span></a></span></span></div>
-										<div class="bp-mini__category">
-
-											<a>Learning</a>
-
-											<a>News</a>
-
-											<a>Health</a></div>
 
 										<span class="bp-mini__h1">
 
-                                            <a href="blog-detail.html">Life is an extraordinary Adventure</a></span>
-										<p class="bp-mini__p">
-											At HGE, We are aware of how important it is to provide high-quality repair
-											and maintenance services for gym equipment on a continuous basis. Not only
-											are we certain that we will be able to resolve your problem, but we are also
-											dedicated to doing it in a way that ensures long-term success at an
-											affordable price. This is the reason why we provide ongoing maintenance
-											plans. Large-scale repairs can be both expensive and inconvenient to deal
-											with. Get rid of the sign that says "out of order" and sign up for
-											preventative maintenance instead; we promise that our qualified specialists
-											will be able to fix your equipment, which means that sudden equipment
-											failures will no longer be an issue! </p>
-										<div class="blog-t-w">
+                                            <a href="blog.php?id=1">Is the ‘Treadmill Strut’ Workout Trend Worth the Hype?</a></span>
+										<p class="bp-mini__p">Does strutting along to Taylor Swift, Lizzo, and Arianna
+											Grande count as a workout?
 
-											<a class="gl-tag btn--e-transparent-hover-brand-b-2">Travel</a>
+											Allie Bennett, the self-proclaimed “CEO of the treadmill strut,” skyrocketed
+											to viral TikTok fame in April 2022 when she decided to create a 36-minute
+											treadmill workout set to a playlist of Taylor Swift songs: the original
+											treadmill strut workout.
 
-											<a class="gl-tag btn--e-transparent-hover-brand-b-2">Culture</a>
+											In that first video, which has garnered 3.7 million
+											views so far, she posted instructions for the workout: Starting with the
+											first song on the playlist, find your pace. When the song changes, increase
+											the pace of the treadmill by 0.1 miles per hour. When you get to the final
+											two songs, either stay at the pace you land at, or crank it up to jogging
+											speed. Then lower the pace for the last song to whichever speed allows you
+											to cool down (and strut it out).</p>
 
-											<a class="gl-tag btn--e-transparent-hover-brand-b-2">Place</a></div>
 									</div>
 								</div>
 							</div>
@@ -316,58 +305,47 @@ if ($resultProduct) {
 
 										<!--====== Image Code ======-->
 
-										<a class="aspect aspect--bg-grey aspect--1366-768 u-d-block"
-										   href="blog-detail.html">
+										<a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog.php?id=2">
 
-											<img class="aspect__img" src="images/blog/post-12.jpg" alt=""></a>
+											<img class="aspect__img" src="images/blog/blog-2.jpg" alt=""></a>
 										<!--====== End - Image Code ======-->
 									</div>
 									<div class="bp-mini__content">
 										<div class="bp-mini__stat">
-
                                             <span class="bp-mini__stat-wrap">
-
                                                 <span class="bp-mini__publish-date">
-
                                                     <a>
-
-                                                        <span>25 February 2018</span></a></span></span>
-
+                                                        <span>16 September 2022</span></a></span></span>
 											<span class="bp-mini__stat-wrap">
-
                                                 <span class="bp-mini__preposition">By</span>
-
                                                 <span class="bp-mini__author">
-
-                                                    <a href="#">Dayle</a></span></span>
-
+                                                    <a href="#">Bob</a></span></span>
 											<span class="bp-mini__stat">
-
                                                 <span class="bp-mini__comment">
-
-                                                    <a href="blog-detail.html"><i class="far fa-comments u-s-m-r-4"></i>
-
-                                                        <span>8</span></a></span></span></div>
-										<div class="bp-mini__category">
-
-											<a>Learning</a>
-
-											<a>News</a>
-
-											<a>Health</a></div>
-
+                                                    <a href="blog.php?id=2">
+                                                </span>
+											</span>
+										</div>
 										<span class="bp-mini__h1">
 
-                                            <a href="blog-detail.html">Wait till its open</a></span>
-										<p class="bp-mini__p">Lorem Ipsum is simply dummy text of the printing and
-											typesetting industry.</p>
-										<div class="blog-t-w">
+                                            <a href="blog.php?id=2">VR Fitness Games That Will Get You Hooked and Make You Sweat</a></span>
+										<p class="bp-mini__p">Slicing orbs to the beat of your favorite song, jumping
+											over and ducking under laser beams, or sword fighting orcs in the middle of
+											a forest — if these workouts sound like a lot more fun than clocking miles
+											on the treadmill, read on.
 
-											<a class="gl-tag btn--e-transparent-hover-brand-b-2">Travel</a>
+											With virtual reality (VR) technology, you can break a sweat and burn some
+											serious calories from the comfort of your living room, says Jimmy Bagley,
+											PhD, an associate professor of kinesiology and research director of the
+											Strength and Conditioning Lab at San Francisco State University, where he
+											studies virtual reality health and exercise. Plus, the games can be a whole
+											lot of fun.
 
-											<a class="gl-tag btn--e-transparent-hover-brand-b-2">Culture</a>
+											“Virtual reality games aren’t always marketed as exercise, but our research
+											shows that when you play them, some can deliver the workout equivalent of
+											walking on a treadmill or cycling on a stationary bike,” Dr. Bagley
+											says.</p>
 
-											<a class="gl-tag btn--e-transparent-hover-brand-b-2">Place</a></div>
 									</div>
 								</div>
 							</div>
@@ -377,10 +355,9 @@ if ($resultProduct) {
 
 										<!--====== Image Code ======-->
 
-										<a class="aspect aspect--bg-grey aspect--1366-768 u-d-block"
-										   href="blog-detail.html">
+										<a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog.php">
 
-											<img class="aspect__img" src="images/blog/post-5.jpg" alt=""></a>
+											<img class="aspect__img" src="images/blog/blog-3.jpg" alt=""></a>
 										<!--====== End - Image Code ======-->
 									</div>
 									<div class="bp-mini__content">
@@ -392,7 +369,7 @@ if ($resultProduct) {
 
                                                     <a>
 
-                                                        <span>25 February 2018</span></a></span></span>
+                                                        <span>20 September 2022</span></a></span></span>
 
 											<span class="bp-mini__stat-wrap">
 
@@ -400,35 +377,33 @@ if ($resultProduct) {
 
                                                 <span class="bp-mini__author">
 
-                                                    <a href="#">Dayle</a></span></span>
+                                                    <a>David</a></span></span>
 
 											<span class="bp-mini__stat">
 
                                                 <span class="bp-mini__comment">
 
-                                                    <a href="blog-detail.html"><i class="far fa-comments u-s-m-r-4"></i>
+                                                    <a href="blog.php?id=3"></span></span></div>
 
-                                                        <span>8</span></a></span></span></div>
-										<div class="bp-mini__category">
-
-											<a>Learning</a>
-
-											<a>News</a>
-
-											<a>Health</a></div>
 
 										<span class="bp-mini__h1">
 
-                                            <a href="blog-detail.html">Tell me difference between smoke and vape</a></span>
-										<p class="bp-mini__p">Lorem Ipsum is simply dummy text of the printing and
-											typesetting industry.</p>
-										<div class="blog-t-w">
+                                            <a href="blog.php?id=3">Should You Get a Personal Trainer?</a></span>
+										<p class="bp-mini__p">Personal training isn’t just for people who are looking to
+											get perfectly toned bodies. A lot of people (no matter what shape they're
+											in) can benefit from working with a personal trainer to set exercise goals
+											and accomplish them (in good health and injury-free).
 
-											<a class="gl-tag btn--e-transparent-hover-brand-b-2">Travel</a>
+											Personal trainers are fitness professionals who work with individuals to
+											teach exercise form and technique, keep clients accountable to their
+											exercise goals, and create customized workout plans based on the
+											individual’s specific health and fitness needs.
 
-											<a class="gl-tag btn--e-transparent-hover-brand-b-2">Culture</a>
+											Many exercise institutions, such as the American Council on Exercise (ACE),
+											the American College of Sports Medicine (ACSM), the National Academy of
+											Sports Medicine (NASM), and the National Strength and Conditioning
+											Association (NSCA) certify personal trainers. </p>
 
-											<a class="gl-tag btn--e-transparent-hover-brand-b-2">Place</a></div>
 									</div>
 								</div>
 							</div>

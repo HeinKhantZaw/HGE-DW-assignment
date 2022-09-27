@@ -26,6 +26,7 @@ if ($GLOBALS['title']) {
 
     <!--====== App ======-->
     <link rel="stylesheet" href="css/app.css">
+	<link href="http://localhost/dw-assignment-HKZ/rss.php" rel="alternate" type="application/rss+xml" title="HGE - RSS feed" />
 </head>
 <body class="config">
 <div class="preloader is-active">

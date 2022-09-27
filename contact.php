@@ -24,7 +24,7 @@ if (isset($_POST['sendBtn'])) {
 		<!--====== Main Header ======-->
         <?php include 'components/navbar.php'; ?>
 		<div class="app-content">
-            <?php include "components/cookiePopup.php"; ?>
+
 			<!--====== Section 1 ======-->
 			<div class="u-s-p-y-60">
 

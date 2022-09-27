@@ -24,7 +24,7 @@ function AddShoppingCart($productId, $BuyQty)
 
     if ($BuyQty < 1) {
         echo "<script>window.alert('Purchase Quantity Cannot be Zero (0)')</script>";
-        echo "<script>window.location='Shopping_Cart.php'</script>";
+        echo "<script>window.location=self.location</script>";
         exit();
     }
 

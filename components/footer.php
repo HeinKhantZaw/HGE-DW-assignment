@@ -26,6 +26,7 @@ if ($GLOBALS['title']) {
 						<div class="outer-footer__text-wrap"><i class="far fa-envelope"></i>
 
 							<span>contact@hge.com</span></div>
+						<i class="fa fa-rss"></i><a class="u-c-white u-s-m-l-10" href="http://localhost/dw-assignment-HKZ/rss.php" target="_blank">RSS Feed</a>
 						<div class="outer-footer__social">
 							<ul>
 								<li>
@@ -39,7 +40,6 @@ if ($GLOBALS['title']) {
 									<a class="s-youtube--color-hover" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
 								</li>
 								<li>
-
 									<a class="s-insta--color-hover" href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
 								</li>
 							</ul>
@@ -59,13 +59,11 @@ if ($GLOBALS['title']) {
 										<li>
 											<a href="index.php">Home</a></li>
 										<li>
-											<a href="dash-payment-option.html">Gallery</a></li>
+											<a href="gallery.php">Gallery</a></li>
 										<li>
-											<a href="shop-side-version-2.html">Featured</a></li>
+											<a href="featured.php">Featured</a></li>
 										<li>
-											<a href="cart.html">New Arrivals</a></li>
-										<li>
-											<a href="dashboard.html">Wanted</a></li>
+											<a href="wanted.php">Wanted</a></li>
 									</ul>
 								</div>
 							</div>
@@ -77,11 +75,12 @@ if ($GLOBALS['title']) {
 									<span class="outer-footer__content-title">Our Company</span>
 									<ul>
 										<li>
+											<a href="information.php">Information</a></li>
+										</li>
+										<li>
 											<a href="workshop.php">Workshop</a></li>
 										<li>
 											<a href="contact.php">Contact Us</a></li>
-										<li>
-											<a href="shop-side-version-2.html">Blog</a></li>
 										<li>
 											<a href="login.php">Login</a></li>
 										<li>
@@ -111,8 +110,6 @@ if ($GLOBALS['title']) {
 								<li><i class="fab fa-cc-paypal"></i></li>
 								<li><i class="fab fa-cc-mastercard"></i></li>
 								<li><i class="fab fa-cc-visa"></i></li>
-								<li><i class="fab fa-cc-discover"></i></li>
-								<li><i class="fab fa-cc-amex"></i></li>
 							</ul>
 						</div>
 					</div>
