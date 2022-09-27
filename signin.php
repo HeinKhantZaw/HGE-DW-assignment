@@ -79,7 +79,7 @@ if (isset($_POST['btnLogin'])) {
 									<a href="index.php">Home</a></li>
 								<li class="is-marked">
 
-									<a href="signin.html">Signin</a></li>
+									<a href="signin.php">Signin</a></li>
 							</ul>
 						</div>
 					</div>
@@ -105,7 +105,7 @@ if (isset($_POST['btnLogin'])) {
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="section__text-wrap">
-								<h1 class="section__heading u-c-secondary">ALREADY REGISTERED?</h1>
+								<h1 class="section__heading u-c-secondary">ALREADY REGISTERED? LOGIN TO HGE</h1>
 							</div>
 						</div>
 					</div>
@@ -128,7 +128,7 @@ if (isset($_POST['btnLogin'])) {
 
 										<a class="l-f-o__create-link btn--e-transparent-brand-b-2" href="signup.php">CREATE
 											AN ACCOUNT</a></div>
-									<h1 class="gl-h1">SIGNIN</h1>
+									<h1 class="gl-h1">SIGN IN</h1>
 
 									<span class="gl-text u-s-m-b-30">If you have an account with us, please log in.</span>
 									<form class="l-f-o__form" action="signin.php" method="post">
@@ -153,10 +153,7 @@ if (isset($_POST['btnLogin'])) {
 												        name="btnLogin">LOGIN
 												</button>
 											</div>
-											<div class="u-s-m-b-30">
 
-												<a class="gl-link" href="lost-password.html">Lost Your Password?</a>
-											</div>
 										</div>
 									</form>
 								</div>

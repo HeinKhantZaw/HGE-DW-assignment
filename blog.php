@@ -89,15 +89,9 @@ Personal-training certifications include “certified personal trainer” (CPT),
 					</div>
 					<div class="bp-detail__info-wrap">
 						<div class="bp-detail__stat">
-
                                 <span class="bp-detail__stat-wrap">
-
                                     <span class="bp-detail__publish-date">
-
-                                        <a href="blog-right-sidebar.html">
-
-                                            <span><?php echo $blog->getDate() ?></span></a></span></span>
-
+                                        <a><span><?php echo $blog->getDate() ?></span></a></span></span>
 							<span class="bp-detail__stat-wrap">
 
                                     <span class="bp-detail__author">

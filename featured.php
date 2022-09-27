@@ -237,7 +237,7 @@ if ($result) {
 									<div class="u-s-m-b-30">
 										<div class="shop-w">
 											<div class="shop-w__intro-wrap">
-												<h1 class="shop-w__h">CATEGORY</h1>
+												<h1 class="shop-w__h">WEARABLE TECHNOLOGY CATEGORIES</h1>
 
 												<span class="fas fa-minus shop-w__toggle" data-target="#s-category"
 												      data-toggle="collapse"></span>

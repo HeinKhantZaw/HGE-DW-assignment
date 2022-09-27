@@ -21,7 +21,7 @@ $customer = "CREATE TABLE IF NOT EXISTS `Customer` (
     `customerAddress` varchar(255),
     `customerPhone` varchar(30),
     `Image` Text,
-    `viewCount` int(11) DEFAULT 1
+    `viewCount` int(11) DEFAULT 0
 )";
 
 

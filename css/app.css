@@ -746,6 +746,21 @@ body {
     }
 }
 
+.panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    border-radius: 50%;
+    line-height: 145px;
+    box-shadow: -1px 1px 80px -35px rgba(0, 0, 0, 0.36);
+}
+
+
+
+
 /*--------------------------------------------------------------
 4.0 Layout Utility Styles
 --------------------------------------------------------------*/

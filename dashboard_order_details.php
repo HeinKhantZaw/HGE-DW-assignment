@@ -7,7 +7,7 @@ $GLOBALS['title'] = "HGE - My Orders";
 include 'components/header.php';
 include 'db/connect.php';
 $_SESSION['dashboardNav'] = 'order';
-
+$status = 1;
 if (!isset($_SESSION['cname']) && $_SESSION['cname']) {
     echo "<script>window.open('signin.php', '_self')</script>";
     header("Location: login.php");
@@ -20,6 +20,11 @@ if (!isset($_SESSION['cname']) && $_SESSION['cname']) {
         $query = "SELECT * FROM `orderdetails` WHERE `orderId` = '$_GET[orderId]';";
         $result = mysqli_query($connection, $query);
         $orderDetails['orderItems'] = mysqli_fetch_all($result, MYSQLI_ASSOC);
+		if($orderDetails['orderStatus'] == 'Shipped'){
+			$status = 2;
+        } else if ($orderDetails['orderStatus'] == 'Delivered'){
+			$status = 3;
+        }
     }
 }
 ?>
@@ -96,7 +101,7 @@ if (!isset($_SESSION['cname']) && $_SESSION['cname']) {
 												<div class="timeline-row">
 													<div class="col-lg-4 u-s-m-b-30">
 														<div class="timeline-step">
-															<div class="timeline-l-i timeline-l-i--finish">
+															<div class="timeline-l-i <?php if($status >= 1) echo "timeline-l-i--finish";?>">
 
 																<span class="timeline-circle"></span></div>
 
@@ -105,7 +110,7 @@ if (!isset($_SESSION['cname']) && $_SESSION['cname']) {
 													</div>
 													<div class="col-lg-4 u-s-m-b-30">
 														<div class="timeline-step">
-															<div class="timeline-l-i timeline-l-i">
+															<div class="timeline-l-i <?php if($status >= 2) echo "timeline-l-i--finish";?>">
 
 																<span class="timeline-circle"></span></div>
 
@@ -114,7 +119,7 @@ if (!isset($_SESSION['cname']) && $_SESSION['cname']) {
 													</div>
 													<div class="col-lg-4 u-s-m-b-30">
 														<div class="timeline-step">
-															<div class="timeline-l-i">
+															<div class="timeline-l-i <?php if($status == 3) echo "timeline-l-i--finish";?>">
 
 																<span class="timeline-circle"></span></div>
 
