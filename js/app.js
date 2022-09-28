@@ -25,16 +25,12 @@
         $collectionPostGallery = $('.post-gallery'),
         $blogMasonry = $('.blog-m'),
         $collectionPostVideo = $('.post-video-block'),
-        // $("iframe[src*="youtube"], iframe[src*="vimeo"]") jQuery Multiple Selector
         $collectionEmbedVideo = $('iframe[src*="youtube"]'),
         $productDetailElement = $('#pd-o-initiate'),
         $productDetailElementThumbnail = $('#pd-o-thumbnail'),
         $modalProductDetailElement = $('#js-product-detail-modal'),
         $modalProductDetailElementThumbnail = $('#js-product-detail-modal-thumbnail'),
         $shopCategoryToggleSpan = $('.shop-w__category-list .has-list > .js-shop-category-span'),// Recursive
-        $shopGridBtn = $('.js-shop-grid-target'),
-        $shopListBtn = $('.js-shop-list-target'),
-        $shopPerspectiveRow = $('.shop-p__collection > div'),
         $shopFilterBtn = $('.js-shop-filter-target');
 
 
@@ -585,24 +581,6 @@
     };
 
 
-    // Shop Perspective Change
-    HGE.shopPerspectiveChange = function () {
-        if ($shopGridBtn.length && $shopListBtn.length) {
-            $shopGridBtn.on('click', function () {
-                $(this).addClass('is-active');
-                $shopListBtn.removeClass('is-active');
-                $shopPerspectiveRow.removeClass('is-list-active');
-                $shopPerspectiveRow.addClass('is-grid-active');
-            });
-            $shopListBtn.on('click', function () {
-                $(this).addClass('is-active');
-                $shopGridBtn.removeClass('is-active');
-                $shopPerspectiveRow.removeClass('is-grid-active');
-                $shopPerspectiveRow.addClass('is-list-active');
-            });
-        }
-    };
-    // Shop Side Filter Settings
     HGE.shopSideFilter = function () {
         if ($shopFilterBtn.length) {
             $shopFilterBtn.on('click', function () {
@@ -615,11 +593,6 @@
             });
         }
     };
-    
-
-
-
-
 
     HGE.initScrollUp();
     HGE.initTooltip();
@@ -644,6 +617,5 @@
     HGE.productDetailInit();
     HGE.modalProductDetailInit();
     HGE.shopCategoryToggle();
-    HGE.shopPerspectiveChange();
     HGE.shopSideFilter();
 })(jQuery);
