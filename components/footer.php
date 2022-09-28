@@ -100,8 +100,8 @@ if ($GLOBALS['title']) {
 				<div class="col-lg-12">
 					<div class="lower-footer__content">
 						<div class="lower-footer__copyright">
-                            <span>Copyright © <script>
-		                            document.write(new Date().getFullYear());
+                            <span>Copyright ©  <script>
+								document.write(new Date().getFullYear());
 	                            </script></span>
 							<span>All Right Reserved</span></div>
 						<div class="lower-footer__payment">

@@ -73,7 +73,6 @@ if (isset($_POST['AddToCartBtn'])) {
                                         <?php } ?>
 									</div>
 
-									<span class="pd-text">Click for larger zoom</span>
 								</div>
 								<div class="u-s-m-t-15">
 									<div class="slider-fouc">

@@ -132,7 +132,8 @@
         if ($primarySlider.length) {
             $primarySlider.owlCarousel({
                 items: 1,
-                autoplayTimeout: 8000,
+                autoplay: true,
+                autoplayTimeout: 4000,
                 loop: true,
                 margin: -1,
                 dots: false,
@@ -233,10 +234,10 @@
             $brandSlider.on('initialize.owl.carousel', function () {
                 $(this).closest('.slider-fouc').removeAttr('class');
             }).owlCarousel({
-                autoplay: false,
+                autoplay: true,
                 loop: false,
                 dots: false,
-                rewind: true,
+                rewind: false,
                 nav: true,
                 navElement: 'div',
                 navClass: ['b-prev', 'b-next'],
@@ -268,8 +269,8 @@
                 $(this).closest('.slider-fouc').removeAttr('class');
             }).owlCarousel({
                 items: 1,
-                autoplay: false,
-                loop: false,
+                autoplay: true,
+                loop: true,
                 dots: true,
                 rewind: false,
                 smartSpeed: 1500,
