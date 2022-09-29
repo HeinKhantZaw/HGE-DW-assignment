@@ -25,7 +25,6 @@
         $collectionPostGallery = $('.post-gallery'),
         $blogMasonry = $('.blog-m'),
         $collectionPostVideo = $('.post-video-block'),
-        $collectionEmbedVideo = $('iframe[src*="youtube"]'),
         $productDetailElement = $('#pd-o-initiate'),
         $productDetailElementThumbnail = $('#pd-o-thumbnail'),
         $modalProductDetailElement = $('#js-product-detail-modal'),
@@ -421,12 +420,6 @@
         }
     };
 
-    // Blog Post Embed Video
-    HGE.blogPostEmbedVideo = function () {
-        if ($collectionEmbedVideo.length) {
-            $collectionEmbedVideo.parent().fitVids();
-        }
-    };
 
 
     // Product Detail Init
@@ -612,7 +605,6 @@
     HGE.initInputCounter();
     HGE.blogPostGallery();
     HGE.blogPostVideo();
-    HGE.blogPostEmbedVideo();
     HGE.blogPostMasonry();
     HGE.productDetailInit();
     HGE.modalProductDetailInit();
