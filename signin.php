@@ -20,14 +20,14 @@ if (isset($_POST['btnLogin'])) {
         $db_password = $row['customerPassword'];
         $cid = $row['id'];
         $ip = $_SERVER['REMOTE_ADDR'];
-        $time = time() - (3 * 60);
+        $time = time() - (10 * 60);
         $query = "SELECT count(*) as total_attempts from LoginAttempt where loginTime > $time and loginIP ='$ip'";
         $result = mysqli_query($connection, $query);
         $login_data = mysqli_fetch_assoc($result);
         $total_login_attempts = $login_data['total_attempts'];
         if ($total_login_attempts >= 3) {
             echo '<div class="message-info danger">
-						<strong>Error</strong> - Too many failed attempts. Please try after 3 minutes.
+						<strong>Error</strong> - Too many failed attempts. Please try after 10 minutes.
 					</div>';
 
         } else {
