@@ -59,7 +59,6 @@ if(session_status() == PHP_SESSION_NONE){
 										<li class="nav-item-hover"><a href="gallery.php">Gallery</a></li>
 										<li class="nav-item-hover"><a href="contact.php">Contact</a></li>
 										<li class="nav-item-hover"><a href="featured.php">Featured</a></li>
-										<!--	                                    <li class="nav-item-hover"><a href="blog.php">Blog</a></li>-->
 									</ul>
 									<!--====== End - List ======-->
 								</div>

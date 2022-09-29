@@ -355,7 +355,7 @@ if ($resultProduct) {
 
 										<!--====== Image Code ======-->
 
-										<a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog.php">
+										<a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="blog.php?id=3">
 
 											<img class="aspect__img" src="images/blog/blog-3.jpg" alt=""></a>
 										<!--====== End - Image Code ======-->
