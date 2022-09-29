@@ -1,3 +1,40 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Base Styles
+2.0 Typography
+3.0 Pre-configured styles
+4.0 Layout Utility Styles
+5.0 Components
+6.0 Header
+  6.1 Primary Nav
+  6.2 Secondary Nav
+7.0 Footer
+  7.1 Outer-Footer
+  7.3 Lower-Footer
+9.0 Workshop-Page
+10.0 Contact-Page
+11.0 Cart-Pages
+12.0 Wanted-Pages
+13.0 Checkout-Page
+14.0 Dashboard-Pages
+15.0  Blog-Pages
+16.0  Product-Detail-Pages
+17.0  Product-Showing-Pages
+18.0  Vendor Extension Pages
+  18.1 Bootstrap
+  18.2 jquery.shopnav
+  18.3 Owl-Carousel
+  18.4 jquery.scrollUp
+  18.5 Slick Carousel
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 Base Styles
+--------------------------------------------------------------*/
+/**
+ * Setup box-sizing
+ */
 html {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
@@ -3638,7 +3675,7 @@ input::-ms-clear {
 }
 
 /*--------------------------------------------------------------
-11.0 Cart-Wishlist-Pages
+11.0 Cart-Pages
 --------------------------------------------------------------*/
 .table-responsive {
     overflow-x: auto;
@@ -3987,7 +4024,7 @@ input::-ms-clear {
 }
 
 /*--------------------------------------------------------------
-12.0 Empty-404-Pages
+12.0 Wanted-Pages
 --------------------------------------------------------------*/
 .empty {
     text-align: center;
@@ -4320,97 +4357,9 @@ input::-ms-clear {
     }
 }
 
-/*--------------------------------------------------------------
-14.0 Signin Signup Lost Password-Page
---------------------------------------------------------------*/
-.l-f-o {
-    border: 1px solid #eee;
-}
-
-.l-f-o__pad-box {
-    padding: 20px;
-}
-
-.l-f-o__form {
-    width: 100%;
-}
-
-.l-f-o .input-text, .l-f-o .btn, .l-f-o .select-box {
-    border-radius: 6px;
-}
-
-.l-f-o .input-text {
-    width: 100%;
-}
-
-.l-f-o .btn {
-    font-weight: 600;
-    padding: 12px 18px;
-}
-
-.l-f-o__create-link {
-    font-size: 13px;
-    text-align: center;
-    padding: 12px;
-    display: block;
-    font-weight: 600;
-    border-radius: 6px;
-}
 
 /*--------------------------------------------------------------
-15.0 FAQ-Page
---------------------------------------------------------------*/
-.faq__heading {
-    font-weight: 700;
-    font-size: 13px;
-    color: #333333;
-    margin-bottom: 6px;
-}
-
-.faq__text {
-    font-size: 13px;
-    color: #7f7f7f;
-}
-
-.faq__list {
-    border-top: 1px solid #eee;
-    padding: 14px 0;
-}
-
-.faq__list:last-child {
-    border-bottom: 1px solid #eee;
-}
-
-.faq__question {
-    display: block;
-    position: relative;
-    padding: 8px 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: #333333;
-}
-
-.faq__question:before {
-    content: "\F107";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    position: absolute;
-    top: 8px;
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-    right: 12px;
-    transition: -webkit-transform 0.5s ease-in-out;
-    transition: transform 0.5s ease-in-out;
-    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
-}
-
-.faq__question.collapsed:before {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-}
-
-/*--------------------------------------------------------------
-16.0 Dashboard-Pages
+14.0 Dashboard-Pages
 --------------------------------------------------------------*/
 .dash__box--bg-white {
     background-color: #ffffff;
@@ -4998,7 +4947,7 @@ input::-ms-clear {
 }
 
 /*--------------------------------------------------------------
-17.0 Blog-Pages
+15.0  Blog-Pages
 --------------------------------------------------------------*/
 .blog-t-w {
     display: -ms-flexbox;
@@ -5862,7 +5811,7 @@ input::-ms-clear {
 }
 
 /*--------------------------------------------------------------
-18.0 Product-Detail-Pages
+16.0  Product-Detail-Pages
 --------------------------------------------------------------*/
 .pd-breadcrumb__list {
     list-style: none;
@@ -6460,7 +6409,7 @@ input::-ms-clear {
 }
 
 /*--------------------------------------------------------------
-19.0 Shop-Pages
+17.0  Product-Showing-Pages
 --------------------------------------------------------------*/
 .shop-w-master__heading {
     font-size: 18px;
@@ -7283,10 +7232,10 @@ input::-ms-clear {
 }
 
 /*--------------------------------------------------------------
-20.0 Vendor Extension Pages
+18.0  Vendor Extension Pages
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-20.1 Bootstrap
+18.1 Bootstrap
 --------------------------------------------------------------*/
 /* Modal styles */
 .modal {
@@ -7347,7 +7296,7 @@ input::-ms-clear {
 }
 
 /*--------------------------------------------------------------
-20.2 jquery.shopnav
+18.2 jquery.shopnav
 --------------------------------------------------------------*/
 .ah-list {
     margin: 0;
@@ -8050,7 +7999,7 @@ input::-ms-clear {
 }
 
 /*--------------------------------------------------------------
-20.3 Owl-Carousel
+18.3 Owl-Carousel
 --------------------------------------------------------------*/
 .slider-fouc {
     display: none;
@@ -8537,7 +8486,7 @@ input::-ms-clear {
 }
 
 /*--------------------------------------------------------------
-20.4 jquery.scrollUp
+18.4 jquery.scrollUp
 --------------------------------------------------------------*/
 /* ScrollUp Custom */
 #topScroll {
@@ -8554,7 +8503,7 @@ input::-ms-clear {
 }
 
 /*--------------------------------------------------------------
-20.5 Slick Carousel
+18.5 Slick Carousel
 --------------------------------------------------------------*/
 .slick-slide, .slick-slide * {
     outline: none;

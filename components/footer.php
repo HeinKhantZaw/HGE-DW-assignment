@@ -31,16 +31,16 @@ if ($GLOBALS['title']) {
 							<ul>
 								<li>
 
-									<a class="s-fb--color-hover" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+									<a aria-label="facebook" class="s-fb--color-hover" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 								<li>
 
-									<a class="s-tw--color-hover" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+									<a aria-label="twitter" class="s-tw--color-hover" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
 								<li>
 
-									<a class="s-youtube--color-hover" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+									<a aria-label="youtube" class="s-youtube--color-hover" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
 								</li>
 								<li>
-									<a class="s-insta--color-hover" href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+									<a aria-label="instagram" class="s-insta--color-hover" href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
 								</li>
 							</ul>
 						</div>

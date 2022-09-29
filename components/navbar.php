@@ -81,7 +81,7 @@ if(session_status() == PHP_SESSION_NONE){
 					<input class="input-text input-text--border-radius input-text--style-1" type="text" id="main-search" name="q"
 					       placeholder="Search" required>
 
-					<button class="btn btn--icon fas fa-search main-search-button" type="submit"></button>
+					<button class="btn btn--icon fas fa-search main-search-button" aria-label="search-button" type="submit"></button>
 				</form>
 
 				<!--====== Dropdown Main plugin ======-->

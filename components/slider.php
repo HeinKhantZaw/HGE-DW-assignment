@@ -48,7 +48,7 @@
 
                             <span class="content-span-3 u-c-white">We offer fitness equipment repair and maintenance</span>
 
-                            <a class="shop-now-link btn--e-brand" href="workshop.php">SEE MORE</a>
+                            <a class="shop-now-link btn--e-brand" href="workshop.php">GO TO WORKSHOP</a>
                         </div>
                     </div>
                 </div>

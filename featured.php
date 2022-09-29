@@ -57,10 +57,10 @@ if ($result) {
 							<ul class="breadcrumb__list">
 								<li class="has-separator">
 
-									<a href="index.php">Home</a></li>
+									<a aria-label="home page" href="index.php">Home</a></li>
 								<li class="is-marked">
 
-									<a href="featured.php">Featured</a></li>
+									<a aria-label="featured page" href="featured.php">Featured</a></li>
 							</ul>
 						</div>
 					</div>
@@ -197,11 +197,11 @@ if ($result) {
 													<div class="product-m__content">
 														<div class="product-m__category">
 
-															<a href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo explode('-', $product['categoryName'])[1]; ?></a>
+															<a aria-label="product detail" href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo explode('-', $product['categoryName'])[1]; ?></a>
 														</div>
 														<div class="product-detail.php?productId=<?php echo $product['id']; ?>">
 
-															<a href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo $product['productName']; ?></a>
+															<a aria-label="product detail" href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo $product['productName']; ?></a>
 														</div>
 														<div class="product-m__rating gl-rating-style"><?php
                                                             $rating = rand(2, 5);
@@ -314,7 +314,7 @@ if ($result) {
 										<div class="product-o__action-wrap">
 											<ul class="product-o__action-list">
 												<li>
-													<a href="product-detail.php?productId=<?php echo $product['id']; ?>"><i class="fas fa-search"></i></a>
+													<a aria-label="product detail" href="product-detail.php?productId=<?php echo $product['id']; ?>"><i class="fas fa-search"></i></a>
 												</li>
 											</ul>
 										</div>
@@ -324,7 +324,7 @@ if ($result) {
 									<?php echo $product['categoryName']; ?></span>
 									<span class="product-o__name">
 
-                                        <a href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo $product['productName']; ?></a></span>
+                                        <a aria-label="product detail" href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo $product['productName']; ?></a></span>
 
 									<span class="product-o__price">
 										<?php echo number_format($product['productPrice']) . " MMK"; ?>
