@@ -10,7 +10,7 @@ if (!isset($_SESSION['cid'])) {
 $GLOBALS['title'] = "HGE - Shopping Cart";
 include 'components/header.php';
 include 'db/connect.php';
-include 'Shopping_Cart_Functions.php';
+include 'shopping_cart_functions.php';
 if (isset($_REQUEST['Action'])) {
     $Action = $_REQUEST['Action'];
     if ($Action == 'Remove') {

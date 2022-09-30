@@ -53,7 +53,7 @@ function AddShoppingCart($productId, $BuyQty)
         $_SESSION['ShoppingCart'][0]['BuyQty'] = $BuyQty;
         $_SESSION['ShoppingCart'][0]['productImage'] = $productImage;
     }
-    echo "<script>window.location='Shopping_Cart.php'</script>";
+    echo "<script>window.location='shopping_cart.php'</script>";
 }
 
 function RemoveShoppingCart($productId)
@@ -62,13 +62,13 @@ function RemoveShoppingCart($productId)
     unset($_SESSION['ShoppingCart'][$Index]);
     $_SESSION['ShoppingCart'] = array_values($_SESSION['ShoppingCart']);
 
-    echo "<script>window.location='Shopping_Cart.php'</script>";
+    echo "<script>window.location='shopping_cart.php'</script>";
 }
 
 function ClearShoppingCart()
 {
     unset($_SESSION['ShoppingCart']);
-    echo "<script>window.location='Shopping_Cart.php'</script>";
+    echo "<script>window.location='shopping_cart.php'</script>";
 }
 
 function CalculateTotalAmount()

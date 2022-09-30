@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
 $GLOBALS['title'] = "HGE - Product Details";
 include 'components/header.php';
 include 'db/connect.php';
-include 'Shopping_Cart_Functions.php';
+include 'shopping_cart_functions.php';
 if (isset($_GET['productId'])) {
     $productId = $_GET['productId'];
     $query = "SELECT * FROM `product`,`category` WHERE `product`.`id` = $productId AND `product`.`categoryId` = `category`.`id`";

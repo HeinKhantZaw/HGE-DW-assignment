@@ -8,7 +8,7 @@ $count = mysqli_num_rows($result);
 
 	<!--====== Dashboard Features ======-->
 	<div class="dash__box dash__box--bg-white dash__box--shadow u-s-m-b-30">
-        <?php include 'components/dashboardNav.php'; ?>
+        <?php include 'components/dashboard_nav.php'; ?>
 	</div>
 	<div class="dash__box dash__box--bg-white dash__box--shadow dash__box--w">
 		<div class="dash__pad-1">

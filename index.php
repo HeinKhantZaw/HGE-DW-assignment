@@ -57,7 +57,7 @@ if (isset($_SESSION['cid'])) {
         <?php include "components/slider.php"; ?>
 		<!--====== End - Primary Slider ======-->
 		<!--====== Cookie Policy Modal ======-->
-        <?php include "components/cookiePopup.php"; ?>
+        <?php include "components/cookie_popup.php"; ?>
 		<!--====== End - Cookie Policy Modal ======-->
 		<!--====== Section 1 ======-->
 		<div class="u-s-p-y-60">

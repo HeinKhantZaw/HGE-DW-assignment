@@ -5,8 +5,8 @@ if (session_status() == PHP_SESSION_NONE) {
 $GLOBALS['title'] = "HGE - Checkout";
 include 'components/header.php';
 include 'db/connect.php';
-include 'AutoID_Functions.php';
-include 'Shopping_Cart_Functions.php';
+include 'auto_id_functions.php';
+include 'shopping_cart_functions.php';
 
 if (!isset($_SESSION['cid'])) {
     echo "<script>alert('Please login first');</script>";

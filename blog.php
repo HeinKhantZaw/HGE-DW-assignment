@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 $GLOBALS['title'] = "HGE - Blog";
 include 'components/header.php';
-include 'blogClass.php';
+include 'blog_class.php';
 $id = $_GET['id'];
 
 
