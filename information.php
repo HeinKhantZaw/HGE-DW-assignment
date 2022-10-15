@@ -112,7 +112,7 @@ if ($resultProduct) {
 											</div>
 											<span class="product-o__category">
 
-                                            <a href="shop-side-version-2.html"><?php echo $product['categoryName'] ?></a></span>
+                                            <a><?php echo $product['categoryName'] ?></a></span>
 											<span class="product-o__name">
 
                                             <a href="product-detail.php?productId=<?php echo $product['id']; ?>"><?php echo $product['productName'] ?></a></span>
@@ -198,7 +198,7 @@ if ($resultProduct) {
 
 													<span class="product-o__category">
 
-                                                    <a href="shop-side-version-2.html"><?php echo $product['categoryName']; ?></a></span>
+                                                    <a><?php echo $product['categoryName']; ?></a></span>
 
 													<span class="product-o__name">
 
